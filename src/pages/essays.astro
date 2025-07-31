@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = "Essays";
 ---
 
@@ -12,9 +14,7 @@ const pageTitle = "Essays";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/essays/">{pageTitle}</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
         <h2>Essays are more integrated thought pieces or narratives. I'll also upload these to my Substack.</h2>
 		<ul>
@@ -22,5 +22,6 @@ const pageTitle = "Essays";
 			<li><a href="/posts/post-2/">Post 2</a></li>
 			<li><a href="/posts/post-3/">Post 3</a></li>
 		  </ul>
+		  <Footer />
 	</body>
 </html>

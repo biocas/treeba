@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
 const pageTitle = "About";
 
 const identity = {
@@ -48,9 +50,7 @@ const textCase = "uppercase";
 		  </style>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">{pageTitle}</a>
-		<a href="/essays/">Essays</a>
+		<Navigation />
 		<h1>{pageTitle}</h1>
 		<h2>
 			Here you'll find my free exploration focused on regeneration in
@@ -73,6 +73,7 @@ const textCase = "uppercase";
 		<ul>
 			{interests.map((interest) => <li class="interest">{interest}</li>)}
 		</ul>
+		<Footer />
 		{happy && <p>I am happy to be learning Astro!</p>}
 
 		{finished && <p>I finished this tutorial!</p>}
