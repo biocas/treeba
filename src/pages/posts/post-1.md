@@ -1,5 +1,5 @@
 ---
-
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Introducing Treeba'
 pubDate: 2025-07-27
 description: 'Today I am setting up the website for my Treeba digital garden'
@@ -9,12 +9,6 @@ image:
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["treeba", "regeneration", "learning in public"]
 ---
-# Testing Infrastructure
-
-Published on: 2025-07-27
-
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
-
 ## What I've accomplished
 
 1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
