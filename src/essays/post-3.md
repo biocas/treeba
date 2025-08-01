@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: My Third Blog Post
 author: 'Margarida Salvado'
 description: "But I do feel like a nap now."

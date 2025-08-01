@@ -38,7 +38,7 @@ import BaseLayout from './BaseLayout.astro';
       </div>
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} class="postfeaturedImg" />
     <p>Written by {frontmatter.author}</p>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p>Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
     <p>{frontmatter.description}</p>
     <slot />
 </BaseLayout>

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Next steps
 author: 'Margarida Salvado'
 description: "What I am doing after finishing the Astro tutorial"

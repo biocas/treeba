@@ -1,13 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const allPosts = await getCollection("blog");
 const pageTitle = "Essays";
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<h2>Essays are more integrated thought pieces or narratives. I'll also upload these to my Substack.</h2>
 	<ul>
-		{allPosts.map((post: any) => <BlogPost url={`/${post.url.replace(/^\/?/, '')}`} title={post.frontmatter.title} />)}
+		{allPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />)}
 	  </ul>
 </BaseLayout>
        
