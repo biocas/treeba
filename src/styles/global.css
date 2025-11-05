@@ -7,24 +7,36 @@
   }
   
   :root {
+    /* Colours */
   --primary-orange: #FF4E00; 
   --primary-green: #88D700; 
   --primary-purple: #FF4E00; 
   --primary-blue: #88D700; 
   --primary-yellow: #FF4E00; 
-  --brand-white: #F8F8F8; 
-  --brand-black: #000A0F;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
   --stroke-green: #497400;
+  /* Fonts */
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
-
+/* Border radius */
+  --border-radius-sm: 0.2rem;
+  --border-radius-base: 0.4rem;
+  --border-radius-lg: 0.6rem;
 }
 
+.whiteAndStroke {
+ color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
   h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
+    font-family: var(--title-font);
+    font-size: 3.1rem;
+  }
+  h2 {
+    font-family: var(--text-font);
+    font-size: 1.5rem;
   }
   /* dark and light mode toggle styles*/
   html.dark {
