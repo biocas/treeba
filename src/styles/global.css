@@ -55,9 +55,18 @@ h5 {
 /* Media Queries - Phones */
 @media (max-width: 481px) {
   h1 {
-    font-family: var(--title-font);
-    font-size: 3.1rem;
+    font-size: 2.5rem;
   }
+  .whiteAndStroke {
+  -webkit-text-stroke-width: 1.5px;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-family: var(--text-font);
+  font-size: 1.3rem;
+}
 }
 
 /* dark and light mode toggle styles

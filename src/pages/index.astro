@@ -32,6 +32,23 @@ import Sidebar from "../layouts/Sidebar.astro";
     align-items: center;
     gap: 120px 80px;
   }
+  @media (max-width: 481px) {
+    body {
+    height: fit-content;
+        max-height: fit-content;
+  }
+  .container {
+    gap: 0;
+    margin: 1.5rem;
+  }
+  .mainHomepageSection h1{
+    margin: 1rem 0 0.5rem 0;
+  }
+  .pagesGrid {
+    gap: 20px;
+  }
+
+  }
 </style>
 
 <BaseLayout>
