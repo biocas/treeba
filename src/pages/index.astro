@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 const pageTitle = "Treeba";
+import HomepageCard from "../layouts/homepageCard.astro";
 ---
 
 <style>
@@ -9,21 +10,53 @@ const pageTitle = "Treeba";
     background-image: url("src/images/rootsBckHome.png");
     background-color: #cccccc;
   }
+  .pagesGrid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 120px 80px;
+  }
 </style>
 
 <BaseLayout>
   <div class="container">
     <section>
       <h1 class="whiteAndStroke">{pageTitle}</h1>
-      <h2 class="whiteAndStroke">
+      <h5 class="whiteAndStroke">
         Digital woodlands where regenerative work germinates and grows, fruits
         and decays, eventually composting, circling in tender connections and
         the hopeful flow of gifts. Focused on the Iberian Peninsula.
       </h2>
       <div class="pagesGrid">
-        <div class="gridItem"></div>
+        <HomepageCard
+          image="src/images/favicon.svg"
+          href="/lore/"
+          name="Lore"
+        />
+        <HomepageCard
+          image="src/images/forest.svg"
+          href="forest/"
+          name="Forest"
+        />
+        <HomepageCard image="src/images/map.svg" href="/map/" name="Map" />
+        <HomepageCard
+          image="src/images/bee.svg"
+          href="/bookshelf/"
+          name="Bookshelf"
+        />
+          <HomepageCard
+            image="src/images/berry.svg"
+            href="/forage/"
+            name="Forage"
+          />
+          <HomepageCard
+            image="src/images/flower.svg"
+            href="/margarida/"
+            name="Margarida"
+          />
+        </HomepageCard>
       </div>
     </section>
   </div>
 </BaseLayout>
-

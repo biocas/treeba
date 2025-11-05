@@ -1,0 +1,21 @@
+---
+const {image, href, name} = Astro.props;
+
+---
+<a class="card" href={href}>
+  <img src={image} class="card-img-top" alt={name}>
+    <h2 class="card-title whiteAndStroke">{name}</h5>
+</a>
+<style>
+.card {
+    text-decoration: none;
+display: flex;
+flex-flow: column wrap;
+align-items: center;
+}
+.card-img-top {
+width: 180px;
+}
+.card-title {
+}
+</style>
