@@ -34,8 +34,8 @@ import Sidebar from "../layouts/Sidebar.astro";
   }
   @media (max-width: 481px) {
     body {
-    height: fit-content;
-        max-height: fit-content;
+    height: 100vh;
+        max-height: none;
   }
   .container {
     gap: 0;
@@ -45,7 +45,8 @@ import Sidebar from "../layouts/Sidebar.astro";
     margin: 1rem 0 0.5rem 0;
   }
   .pagesGrid {
-    gap: 20px;
+    gap: 10px;
+    justify-content: space-evenly;
   }
 .mainHomepageSection h5{
     margin: 1rem 0 1.5rem 0;
