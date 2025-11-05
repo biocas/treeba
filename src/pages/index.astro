@@ -7,16 +7,27 @@ import Sidebar from "../layouts/Sidebar.astro";
 ---
 
 <style>
-  html {
+  body {
     background-image: url("/images/rootsBckHome.png");
     background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 100vh;
   }
-.container {
-
-}
+  .container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 6.5rem;
+    margin: 1rem 2rem 3rem 4rem;
+  }
+  .mainHomepageSection {
+    width: 80vw;
+  }
   .pagesGrid {
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     gap: 120px 80px;
@@ -25,43 +36,31 @@ import Sidebar from "../layouts/Sidebar.astro";
 
 <BaseLayout>
   <div class="container">
-    <section>
+    <section class="mainHomepageSection">
       <h1 class="whiteAndStroke">{pageTitle}</h1>
       <h5 class="whiteAndStroke">
         Digital woodlands where regenerative work germinates and grows, fruits
         and decays, eventually composting, circling in tender connections and
         the hopeful flow of gifts. Focused on the Iberian Peninsula.
-      </h2>
+      </h5>
       <div class="pagesGrid">
-        <HomepageCard
-          image="/images/favicon.svg"
-          href="/lore/"
-          name="Lore"
-        />
-        <HomepageCard
-          image="/images/forest.svg"
-          href="forest/"
-          name="Forest"
-        />
+        <HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
+        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
         <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
         <HomepageCard
           image="/images/bee.svg"
           href="/bookshelf/"
-          name="Bookshelf"
+          name="Books"
         />
-          <HomepageCard
-            image="/images/berry.svg"
-            href="/forage/"
-            name="Forage"
-          />
-          <HomepageCard
-            image="/images/flower.svg"
-            href="/margarida/"
-            name="Margarida"
-          />
-        </HomepageCard>
+        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
+        <HomepageCard
+          image="/images/flower.svg"
+          href="/margarida/"
+          name="About"
+        />
       </div>
     </section>
-    <Sidebar/>
+
+    <Sidebar />
   </div>
 </BaseLayout>

@@ -1,21 +1,29 @@
 ---
-const {image, href, name} = Astro.props;
-
+const { image, href, name } = Astro.props;
 ---
+
 <a class="card" href={href}>
-  <img src={image} class="card-img-top" alt={name}>
-    <h2 class="card-title whiteAndStroke">{name}</h5>
+    <img src={image} class="card-img-top" alt={name} />
+    <h2 class="card-title whiteAndStroke">{name}</h2>
 </a>
 <style>
-.card {
-    text-decoration: none;
-display: flex;
-flex-flow: column wrap;
-align-items: center;
-}
-.card-img-top {
-width: 180px;
-}
-.card-title {
-}
+    .card {
+        text-decoration: none;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        flex-basis: 20%;
+    }
+    .card:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .card-img-top {
+        width: 120px;
+    }
+    .card-img-top:hover {
+        transform: rotate(-10deg);
+    }
+    .card-title {
+    }
 </style>

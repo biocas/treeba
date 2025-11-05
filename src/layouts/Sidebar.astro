@@ -1,9 +1,23 @@
 ---
 import Navigation from "../components/Navigation.astro";
 ---
-<section> 
+<section class="wrapper"> 
     <Navigation />
-    <div class="greeTextSection">
+    <div class="greenTextSection">
        <slot />
     </div>
 </section>
+<style>
+    .wrapper {
+        background-color: #A0DF33B0;
+        border: 4px solid var(--stroke-green);
+        border-radius: 40px;
+        padding: 20px;
+    }
+    .greenTextSection {
+        background-color: #C3EB80;
+        border: 2px solid var(--stroke-green);
+        border-radius: 40px;
+        height: 80%;
+    }
+</style>
