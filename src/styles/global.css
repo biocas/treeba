@@ -42,7 +42,7 @@
     font-family: var(--text-font);
     font-size: 1.5rem;
   }
-  /* dark and light mode toggle styles*/
+  /* dark and light mode toggle styles
   html.dark {
     background-color: #0d0950;
     color: #fff;
@@ -50,5 +50,5 @@
   
   .dark .nav-links a {
     color: #fff;
-  }
+  }*/
   
