@@ -15,11 +15,18 @@ import Navigation from "../components/Navigation.astro";
         padding: 20px;
         width: 40vw;
         margin-bottom: 1.5rem;
+        height: 95vh;
     }
     .greenTextSection {
         background-color: #C3EB80;
         border: 2px solid var(--stroke-green);
         border-radius: 40px;
-        height: 90%;
+        height: 94%;
     }
+    @media (max-width: 481px) {
+  .wrapper {
+    display: none;
+  }
+}
+
 </style>

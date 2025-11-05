@@ -1,48 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
+* {
+  box-sizing: border-box;
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  :root {
-    /* Colours */
-  --primary-orange: #FF4E00; 
-  --primary-green: #88D700; 
-  --primary-purple: #FF4E00; 
-  --primary-blue: #88D700; 
-  --primary-yellow: #FF4E00; 
+}
+
+body {
+  cursor: url("/images/beetlecursor.png") 2 2, pointer;
+  ;
+}
+
+:root {
+  /* Colours */
+  --primary-orange: #FF4E00;
+  --primary-green: #88D700;
+  --primary-purple: #FF4E00;
+  --primary-blue: #88D700;
+  --primary-yellow: #FF4E00;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
   --stroke-green: #497400;
   /* Fonts */
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
-/* Border radius */
+  /* Border radius */
   --border-radius-sm: 0.2rem;
   --border-radius-base: 0.4rem;
   --border-radius-lg: 0.6rem;
 }
 
+/* Text and Headings */
 .whiteAndStroke {
- color: white;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
+
+h1 {
+  font-family: var(--title-font);
+  font-size: 3.1rem;
+}
+
+h2 {
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-family: var(--text-font);
+  font-size: 1.5rem;
+}
+
+/* Media Queries - Phones */
+@media (max-width: 481px) {
   h1 {
     font-family: var(--title-font);
     font-size: 3.1rem;
   }
-  h2 {
-    font-family: var(--title-font);
-    font-size: 1.8rem;
-  }
-  h5 {
-    font-family: var(--text-font);
-    font-size: 1.5rem;
-  }
-  /* dark and light mode toggle styles
+}
+
+/* dark and light mode toggle styles
   html.dark {
     background-color: #0d0950;
     color: #fff;
@@ -51,4 +69,3 @@
   .dark .nav-links a {
     color: #fff;
   }*/
-  
