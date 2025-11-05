@@ -8,9 +8,12 @@ import Sidebar from "../layouts/Sidebar.astro";
 
 <style>
   html {
-    background-image: url("src/images/rootsBckHome.png");
+    background-image: url("/images/rootsBckHome.png");
     background-color: #cccccc;
   }
+.container {
+
+}
   .pagesGrid {
     display: flex;
     flex-flow: row wrap;
@@ -31,33 +34,34 @@ import Sidebar from "../layouts/Sidebar.astro";
       </h2>
       <div class="pagesGrid">
         <HomepageCard
-          image="src/images/favicon.svg"
+          image="/images/favicon.svg"
           href="/lore/"
           name="Lore"
         />
         <HomepageCard
-          image="src/images/forest.svg"
+          image="/images/forest.svg"
           href="forest/"
           name="Forest"
         />
-        <HomepageCard image="src/images/map.svg" href="/map/" name="Map" />
+        <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
         <HomepageCard
-          image="src/images/bee.svg"
+          image="/images/bee.svg"
           href="/bookshelf/"
           name="Bookshelf"
         />
           <HomepageCard
-            image="src/images/berry.svg"
+            image="/images/berry.svg"
             href="/forage/"
             name="Forage"
           />
           <HomepageCard
-            image="src/images/flower.svg"
+            image="/images/flower.svg"
             href="/margarida/"
             name="Margarida"
           />
         </HomepageCard>
       </div>
     </section>
+    <Sidebar/>
   </div>
 </BaseLayout>
