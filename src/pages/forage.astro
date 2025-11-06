@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Treeba";
+import HomepageCard from "../layouts/homepageCard.astro";
+---
+
+<style>
+  body {
+    background-image: url("/images/rootsBckHome.png");
+    background-color: #FF4E00;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 100vh;
+    margin: 0;
+  }
+  .container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 3.5rem;
+    margin: 1rem 2rem 3rem 4rem;
+  }
+  .mainHomepageSection {
+    width: 80vw;
+  }
+  .pagesGrid {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 120px 80px;
+  }
+  .scroll-container {
+  border: 3px solid black;
+  background-color: var(--primary-purple);
+  overflow: hidden;
+}
+
+.scroll-text {
+    white-space: nowrap;
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 25s linear infinite;
+  -webkit-animation: my-animation 25s linear infinite;
+  animation: my-animation 25s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+  @media (max-width: 481px) {
+    body {
+    height: 100vh;
+        max-height: none;
+  }
+  .container {
+    gap: 0;
+    margin: 1.5rem;
+  }
+  .mainHomepageSection h1{
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .pagesGrid {
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+
+  }
+</style>
+
+<BaseLayout>
+    <div class="scroll-container">
+<div class="scroll-text">
+        <h5 class="whiteAndStroke">Digital woodlands where regenerative work germinates and grows, fruits
+        and decays, eventually composting, circling in tender connections and
+        the hopeful flow of gifts. Focused on the Iberian Peninsula.</h5>
+</div>
+    </div>
+  <div class="container">
+    <section class="mainHomepageSection">
+      <h1 class="whiteAndStroke">{pageTitle}</h1>
+      
+      <div class="pagesGrid">
+        <HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
+        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
+        <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
+        <HomepageCard
+          image="/images/bee.svg"
+          href="/bookshelf/"
+          name="Books"
+        />
+        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
+        <HomepageCard
+          image="/images/flower.svg"
+          href="/margarida/"
+          name="About"
+        />
+      </div>
+    </section>
+  </div>
+</BaseLayout>

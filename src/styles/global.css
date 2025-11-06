@@ -15,9 +15,9 @@ body {
   /* Colours */
   --primary-orange: #FF4E00;
   --primary-green: #88D700;
-  --primary-purple: #FF4E00;
-  --primary-blue: #88D700;
-  --primary-yellow: #FF4E00;
+  --primary-purple: #730260;
+  --primary-blue: #B6F0FF;
+  --primary-yellow: #FEF96E;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
   --stroke-green: #497400;
@@ -50,6 +50,7 @@ h2 {
 h5 {
   font-family: var(--text-font);
   font-size: 1.5rem;
+  margin: 0.5rem;
 }
 
 /* Media Queries - Phones */
