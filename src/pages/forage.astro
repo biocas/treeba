@@ -5,6 +5,9 @@ import HomepageCard from "../layouts/homepageCard.astro";
 ---
 
 <style>
+    h1 {
+        text-align: center;
+    }
   body {
     background-image: url("/images/rootsBckHome.png");
     background-color: #FF4E00;
@@ -16,24 +19,21 @@ import HomepageCard from "../layouts/homepageCard.astro";
   }
   .container {
     display: flex;
-    flex-flow: row nowrap;
-    gap: 3.5rem;
+    flex-flow: column nowrap;
     margin: 1rem 2rem 3rem 4rem;
-  }
-  .mainHomepageSection {
-    width: 80vw;
+    align-items: center;
   }
   .pagesGrid {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
+    width: 70vw;
     justify-content: space-between;
     align-items: center;
-    gap: 120px 80px;
+    gap: 20px 20px;
   }
   .scroll-container {
   border: 3px solid black;
-  background-color: var(--primary-purple);
+  background-color: var(--primary-orange);
   overflow: hidden;
 }
 
@@ -79,11 +79,7 @@ import HomepageCard from "../layouts/homepageCard.astro";
     height: 100vh;
         max-height: none;
   }
-  .container {
-    gap: 0;
-    margin: 1.5rem;
-  }
-  .mainHomepageSection h1{
+   h1{
     margin: 0.5rem 0 0.5rem 0;
   }
   .pagesGrid {
@@ -103,7 +99,6 @@ import HomepageCard from "../layouts/homepageCard.astro";
 </div>
     </div>
   <div class="container">
-    <section class="mainHomepageSection">
       <h1 class="whiteAndStroke">{pageTitle}</h1>
       
       <div class="pagesGrid">
@@ -122,6 +117,5 @@ import HomepageCard from "../layouts/homepageCard.astro";
           name="About"
         />
       </div>
-    </section>
   </div>
 </BaseLayout>

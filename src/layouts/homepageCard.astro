@@ -4,15 +4,20 @@ const { image, href, name } = Astro.props;
 
 <a class="card" href={href}>
     <img src={image} class="card-img-top" alt={name} />
-    <h2 class="card-title whiteAndStroke">{name}</h2>
+    <div class="wrapper">
+    <h2 class="card-title whiteAndStroke ">{name}</h2>
+    </div>
 </a>
+
+
 <style>
     .card {
         text-decoration: none;
+        width: 20vw;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        flex-basis: 20%;
+        gap: 10px;
     }
     .card:hover {
         transform: scale(1.1);
@@ -25,6 +30,7 @@ const { image, href, name } = Astro.props;
         transform: rotate(-10deg);
     }
     .card-title {
+       
     }
     @media (max-width: 481px) { 
         .card-img-top {

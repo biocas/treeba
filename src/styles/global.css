@@ -52,7 +52,35 @@ h5 {
   font-size: 1.5rem;
   margin: 0.5rem;
 }
+/* Buttons */
+.buttonPill {
+        text-decoration: none;
+        padding: 10px 14px;
+        background-color: var(--background-light-green);
+        border: 4px solid var(--stroke-green);
+        border-radius: 11px;
+    }
 
+    buttonPill:hover,
+    buttonPill:focus {
+        background-color: var(--stroke-green);
+        color: white;
+        border: 4px solid var(--background-light-green);
+    }
+
+.buttonPillOrange {
+  text-decoration: none;
+        padding: 10px 14px;
+        background-color: var(--primary-green);
+        border: 4px solid white;
+        border-radius: 11px;
+}
+ buttonPillOrange:hover,
+    buttonPillOrange:focus {
+        background-color: white;
+        
+        border: 4px solid var(--primary-orange);
+    }
 /* Media Queries - Phones */
 @media (max-width: 481px) {
   h1 {
