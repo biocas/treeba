@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import LanguagePicker from "../components/LanguagePicker.astro";
 import Greeting from "../components/Greeting";
 const pageTitle = "Treeba";
 import HomepageCard from "../layouts/homepageCard.astro";
@@ -61,6 +62,7 @@ export async function getStaticPaths() {
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
+  <LanguagePicker />
   <div class="container">
     <section class="mainHomepageSection">
       <h1 class="whiteAndStroke">{pageTitle}</h1>

@@ -1,0 +1,27 @@
+---
+// Import Astro's i18n routing utility
+import { getRelativeLocaleUrlList } from 'astro:i18n';
+
+// Get the current locale and the list of all locale URLs
+const currentLocale = Astro.currentLocale;
+const localeUrls = getRelativeLocaleUrlList();
+---
+
+<select
+  id="language-picker"
+  aria-label="Select language"
+>
+  {localeUrls.map((url) => {
+    const locale = url.split('/')[1] || 'en'; // Default locale if no prefix
+   // const imgSource = String("/images/" + locale + "flag.svg");  
+    return (
+      <option value={locale} selected={currentLocale === locale}>
+       {locale.toUpperCase()}
+      </option>
+    );
+  })}
+</select>
+
+<!-- Link to the JavaScript file for interactivity -->
+<script src="/src/scripts/languagePicker.js" defer>
+</script>

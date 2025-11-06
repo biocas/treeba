@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LanguagePicker from "../components/LanguagePicker.astro";
+const pageTitle = "Interactive Map";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+
+<style>
+  body {
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 100vh;
+  }
+</style>
+
+<BaseLayout currentLocale={currentLocale}>
+  <LanguagePicker />
+  <div class="container">
+    <section class="mainHomepageSection">
+      <h1 class="whiteAndStroke">{pageTitle}</h1>
+      <div id="map"></div>
+    </section>
+
+  </div>
+</BaseLayout>
+
