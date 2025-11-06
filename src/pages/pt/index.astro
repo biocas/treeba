@@ -1,15 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Greeting from "../../components/Greeting";
 const pageTitle = "Treeba";
-import HomepageCard from "../layouts/homepageCard.astro";
-import Sidebar from "../components/Sidebar.astro";
-const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+import HomepageCard from "../../layouts/homepageCard.astro";
+import Sidebar from "../../components/Sidebar.astro";
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
     return { params: { lang } };
   });
 }
+
+
 ---
 
 <style>
@@ -60,7 +61,7 @@ export async function getStaticPaths() {
   }
 </style>
 
-<BaseLayout currentLocale={currentLocale}>
+<BaseLayout>
   <div class="container">
     <section class="mainHomepageSection">
       <h1 class="whiteAndStroke">{pageTitle}</h1>
