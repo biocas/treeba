@@ -9,8 +9,14 @@ export async function getStaticPaths() {
   });
 }
 ---
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
 
 <style>
+    #treeba-map {
+    height: 100vh;
+    width: 100%;
+}
   body {
     background-color: #cccccc;
     background-size: cover;
@@ -25,9 +31,11 @@ export async function getStaticPaths() {
   <div class="container">
     <section class="mainHomepageSection">
       <h1 class="whiteAndStroke">{pageTitle}</h1>
-      <div id="map"></div>
+      <div id="treeba-map"></div>
     </section>
 
   </div>
 </BaseLayout>
-
+<!-- Link to the JavaScript file for interactivity -->
+<script src="/src/scripts/map.js" defer>
+</script>
