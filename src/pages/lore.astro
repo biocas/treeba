@@ -26,6 +26,7 @@ const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
 	<h2>
 		Here you'll find my free exploration focused on regeneration in
@@ -43,11 +44,12 @@ const textCase = "uppercase";
 				</li>
 			)
 		}
-	</ul>
+	</ul>s
 	<p>My skills are:</p>
 	<ul>
 		{interests.map((interest) => <li class="interest">{interest}</li>)}
 	</ul>
+	
 	<style is:global define:vars={{skillColor, fontWeight, textCase}}>
 		h1 {
 		  color: purple;

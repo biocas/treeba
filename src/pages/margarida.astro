@@ -4,113 +4,245 @@ import LanguagePicker from "../components/LanguagePicker.astro";
 const pageTitle = "Treeba";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
-  return ["en", "pt"].map((lang) => {
-    return { params: { lang } };
-  });
+    return ["en", "pt"].map((lang) => {
+        return { params: { lang } };
+    });
 }
 ---
+
 <style>
     h1 {
         text-align: center;
     }
-  body {
-    background-image: url("/images/rootsBckHome.png");
-    background-color: #FF4E00;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    max-height: 100vh;
-    margin: 0;
-  }
-  .container {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 1rem 2rem 3rem 4rem;
-    align-items: center;
-  }
-  .pagesGrid {
-    display: flex;
-    flex-flow: row wrap;
-    width: 70vw;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px 20px;
-  }
-  .scroll-container {
-  border: 3px solid black;
-  background-color: var(--primary-orange);
-  overflow: hidden;
-}
-
-.scroll-text {
-    white-space: nowrap;
-  /* animation properties */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  
-  -moz-animation: my-animation 25s linear infinite;
-  -webkit-animation: my-animation 25s linear infinite;
-  animation: my-animation 25s linear infinite;
-}
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-
-  @media (max-width: 481px) {
     body {
-    height: 100vh;
-        max-height: none;
-  }
-   h1{
-    margin: 0.5rem 0 0.5rem 0;
-  }
-  .pagesGrid {
-    gap: 10px;
-    justify-content: space-evenly;
-  }
+        background-image: url("/images/rootsBckHome.png");
+        background-color: #ff4e00;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        max-height: 100vh;
+        margin: 0;
+    }
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+        margin: 1rem 2rem 3rem 4rem;
+        align-items: center;
+    }
+    .pagesGrid {
+        display: flex;
+        flex-flow: row wrap;
+        width: 70vw;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px 20px;
+    }
+    table a {
+        text-decoration: none;
+    }
+    .scroll-container {
+        border: 3px solid black;
+        background-color: var(--primary-orange);
+        overflow: hidden;
+    }
 
-  }
+    .scroll-text {
+        white-space: nowrap;
+        /* animation properties */
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+
+        -moz-animation: my-animation 25s linear infinite;
+        -webkit-animation: my-animation 25s linear infinite;
+        animation: my-animation 25s linear infinite;
+    }
+
+    /* for Firefox */
+    @-moz-keyframes my-animation {
+        from {
+            -moz-transform: translateX(100%);
+        }
+        to {
+            -moz-transform: translateX(-100%);
+        }
+    }
+
+    /* for Chrome */
+    @-webkit-keyframes my-animation {
+        from {
+            -webkit-transform: translateX(100%);
+        }
+        to {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+
+    @keyframes my-animation {
+        from {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+        to {
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+    }
+
+    @media (max-width: 481px) {
+        body {
+            height: 100vh;
+            max-height: none;
+        }
+        h1 {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+        .pagesGrid {
+            gap: 10px;
+            justify-content: space-evenly;
+        }
+    }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
-  <LanguagePicker />
-  <div class="scroll-container">
-<div class="scroll-text">
-        <h5 class="whiteAndStroke">Digital woodlands where regenerative work germinates and grows, fruits
-        and decays, eventually composting, circling in tender connections and
-        the hopeful flow of gifts. Focused on the Iberian Peninsula.</h5>
-</div>
+    <div class="scroll-container">
+        <div class="scroll-text">
+            <h5 class="whiteAndStroke">
+                Digital woodlands where regenerative work germinates and grows,
+                fruits and decays, eventually composting, circling in tender
+                connections and the hopeful flow of gifts. Focused on the
+                Iberian Peninsula.
+            </h5>
+        </div>
     </div>
-  <div class="container">
-      <h1 class="whiteAndStroke">{pageTitle}</h1>
-      <div class="pagesGrid">
-        
-      </div>
-    </section>
+    <LanguagePicker />
 
-  </div>
+    <div class="container">
+        <table width="500" border="0">
+            <tbody
+                ><tr> <td colspan="5" align="right" valign="top"> </td></tr>
+
+                <tr>
+                    <td colspan="2" align="right" valign="middle">
+                        <br />
+
+                        <br />
+
+                        <br />
+                        <a href="/lore/">
+                            <img
+                                src="/images/favicon.svg"
+                                height="56"
+                                width="131"
+                                alt="Lore"
+                            />
+                            <h2 class="whiteAndStroke">Lore</h2>
+                        </a>
+                    </td>
+
+                    <td align="center" valign="middle">
+                        <a href="/forest/"
+                            ><img
+                                src="/images/forest.svg"
+                                height="67"
+                                width="55"
+                                alt="Forest"
+                            />
+                            <h2 class="whiteAndStroke">Forest</h2>
+                            </a
+                        >
+                    </td>
+
+                    <td align="center" valign="top">
+                        <a href="/map/"
+                            ><img
+                                src="/images/map.svg"
+                                height="62"
+                                width="62"
+                                alt="Map"
+                            />
+                            <h2 class="whiteAndStroke">Map</h2>
+                            </a
+                        >
+                    </td>
+
+                    <td align="center" valign="bottom">
+                        <br />
+
+                        <br />
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" valign="top">
+                        <br />
+
+                        <br />
+
+                        
+                    </td>
+
+                    <td colspan="3" rowspan="2" align="right" valign="middle">
+                        <h1 class="whiteAndStroke">Treeba</h1>
+                    </td>
+
+                    
+                </tr>
+
+                <tr>
+                    <td align="left" valign="top">
+                        <br />
+
+                        <br />
+
+                        <a href="/forage/"
+                            ><img
+                                src="/images/berry.svg"
+                                height="52"
+                                width="63"
+                                alt="Forage"
+                            /><h2 class="whiteAndStroke">Forage</h2></a
+                        >
+                    </td>
+
+                    <td rowspan=2 align="right" valign="bottom">
+                        <a href="/about/"
+                            ><img
+                                src="/images/flower.svg"
+                                height="52"
+                                width="58"
+                                alt="ABout"
+                            /><h2 class="whiteAndStroke">About</h2></a
+                        >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> </td>
+
+                    <td align="center" valign="bottom">
+                        <br />
+
+                        <br />
+
+                        <a href="/bookshelf/"
+                            ><img
+                                src="/images/bee.svg"
+                                height="77"
+                                width="95"
+                                alt="Bookshelf"
+                            /> <h2 class="whiteAndStroke">Bookshelf</h2></a
+                        >
+                    </td>
+
+                    
+
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </BaseLayout>
-
