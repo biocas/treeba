@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LanguagePicker from "../components/LanguagePicker.astro";
+const pageTitle = "Centrais Solares";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+
+<style>
+    #solar-map {
+    height: 100vh;
+    width: 100%;
+}
+  body {
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 100vh;
+  }
+</style>
+
+<BaseLayout currentLocale={currentLocale}>
+  <LanguagePicker />
+  <div class="container">
+    <section class="mainHomepageSection">
+      <h1 class="whiteAndStroke">{pageTitle}</h1>
+      <div id="solar-map"></div>
+    </section>
+
+  </div>
+</BaseLayout>
+<!-- Link to the JavaScript file for interactivity -->
+<script src="/src/scripts/solarmap.js" defer>
+</script>
