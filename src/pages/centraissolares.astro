@@ -39,10 +39,15 @@ export async function getStaticPaths() {
   .container {
     display: flex;
     flex-flow: row nowrap;
+    height: 100vh; 
+    overflow: hidden; 
   }
   .mainHomepageSection {
     padding: 1rem;
     width: 40%;
+    height: 100%;                 /* fill vertical space */
+  overflow-y: auto;             /* only this scrolls */
+  box-sizing: border-box;
   }
   .infoCard {
     border: 2px sold var(--dark-brown);
@@ -57,53 +62,53 @@ export async function getStaticPaths() {
     font-size: 1.2rem;
     font-family: var(--text-font);
     color: whitesmoke;
-    background-color: var(--dark-brown);
-    border-radius: 20px 20px 0px 0px;
-    padding: 10px;
   }
   .mainHomepageSection h5 {
     font-size: 1rem;
   }
   /* Dropdown Cards */
   .infoCard {
-  height: 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: normal;
-  gap: 15px;
-  border: 2px solid #ededed;
-  border-radius: 10px;
-  transition: all 0.3s ease;
   overflow: hidden;
-  flex-shrink: 0;
-}
-
-.infoCard.expanded {
-  height: auto;
-}
-
-.image-space {
-  width: 150px;
-  height: 275px;
-  background: url("https://okdiario.com/img/2018/07/25/cmo-leer-posos-cafe.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  margin-bottom: 2rem;
+  }
+.infoHeadWrapper {
   cursor: pointer;
-  background-blend-mode: overlay;
-  background-color: #000000b0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-brown);
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+}
+.infoHeadWrapper h2 {
+  margin: 10px;
+}
+.infoHeadWrapper .arrow {
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
+.contentContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.content-for-card {
-  padding: 5px 20px;
-  display: none;
-  width: calc(100% - 150px);
+.infoCard.active .contentContainer {
+  max-height: 500px; /* adjust based on your content */
+  border: 2px solid var(--dark-brown);
+  border-radius: 0px 0px 20px 20px;
+  padding: 10px;
 }
 
-.new-card.expanded .content-for-card {
-  display: block;
+.arrow {
+  transition: transform 0.3s ease;
 }
 
+.infoCard.active .arrow {
+  transform: rotate(180deg);
+}
   /* Media Queries - Phones */
   @media (max-width: 481px) {
     #solar-map {
@@ -135,29 +140,99 @@ export async function getStaticPaths() {
     <section class="mainHomepageSection">
       <h1>{pageTitle}</h1>
       <p class="introText">
-            O mapa interativo mostra a distribuição geográfica das centrais solares existentes, em processo de licenciamento, 
-            e projectos de centrais solares fotovoltaicas propostos para o território. O mapa explora a interseção destes projetos com 
-            zonas de interesse natural e cultural.
-          </p>
-      <div class="infoCard">
-        <h2 class="infoHeading">Filtrar</h2>
-        <nav id="filter-group" class="filter-group"></nav>
-      </div>
-      <div class="new-card" id="card3">
-        <div class="image-space">
-          <h2>Lorem Ipsum</h2>
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+      <div class="infoCard" id="filtro">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Filtrar</h2>
+          <span class="arrow">&#9662;</span>
         </div>
-        <div class="content-for-card">
-          <h3>What is Lorem Ipsum?</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum</p>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      <div class="infoCard" id="legenda">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Legenda</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      <div class="infoCard" id="fontes">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Fontes</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      <div class="infoCard" id="recursos">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Recursos</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      <div class="infoCard" id="consultas">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Consultas Públicas</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      <div class="infoCard" id="ajuda">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Ajuda</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
         </div>
       </div>
     </section>
@@ -166,5 +241,5 @@ export async function getStaticPaths() {
 </BaseLayout>
 <!-- Link to the JavaScript file for interactivity -->
 <script>
-			import "../scripts/solarmap.js";
-		</script>
+  import "../scripts/solarmap.js";
+</script>

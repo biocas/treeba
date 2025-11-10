@@ -1,21 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Dropdown Cards 
-     const imageSpaces = document.querySelectorAll(".image-space");
-
-  imageSpaces.forEach(function (imageSpace) {
-    imageSpace.addEventListener("click", function () {
-      const card = imageSpace.parentElement;
-
-      if (card.classList.contains("expanded")) {
-        card.classList.remove("expanded");
-      } else {
-        document.querySelectorAll(".new-card").forEach(function (c) {
-          c.classList.remove("expanded");
-        });
-        card.classList.add("expanded");
-      }
+const cards = document.querySelectorAll('.infoCard');
+  document.querySelectorAll('.infoCard .infoHeadWrapper').forEach((header) => {
+    header.addEventListener('click', () => {
+      const card = header.closest('.infoCard');
+      cards.forEach(c => c !== card && c.classList.remove('active'));
+      card.classList.toggle('active');
     });
   });
+
+  //map
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFyZ2FyaWRhc2FsdmFkbyIsImEiOiJja2pndWUzMm80ZmowMnFwZDVxYmt5NWZjIn0.wh2-Kf9dve6BZJGX2hEjEw';
  const map = new mapboxgl.Map({
     container: 'solar-map',

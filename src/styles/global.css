@@ -57,9 +57,6 @@ h5 {
 /* Map styles */
 .mapboxgl-popup .mapboxgl-popup-tip {
   border-top-color: var(--background-cream);
-  border-left-color: var(--background-cream);
-  border-right-color: var(--background-cream);
-  border-bottom-color: var(--background-cream);
 }
 .mapboxgl-popup .mapboxgl-popup-close-button {
   margin-top: 5px;
