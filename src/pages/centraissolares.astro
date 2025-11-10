@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Centrais Solares e interação com zonas de interesse ambiental e cultural";
+const pageTitle =
+  "Centrais Solares e interação com zonas de interesse ambiental e cultural";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
@@ -8,14 +9,19 @@ export async function getStaticPaths() {
   });
 }
 ---
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"
+></script>
 
 <style>
-    #solar-map {
+  #solar-map {
     height: 100vh;
     width: 60%;
-}
+  }
   body {
     background-color: #fff3df;
     background-size: cover;
@@ -24,7 +30,10 @@ export async function getStaticPaths() {
     max-height: 100vh;
     margin: 0;
   }
-  .prop-publica1, .site_code, .gid, .publica1{
+  .prop-publica1,
+  .site_code,
+  .gid,
+  .publica1 {
     display: none !important;
   }
   .container {
@@ -33,67 +42,89 @@ export async function getStaticPaths() {
   }
   .mainHomepageSection {
     padding: 1rem;
-     width: 40%;
+    width: 40%;
   }
   .infoCard {
     border: 2px sold var(--dark-brown);
   }
-  .mainHomepageSection h1{
+  .mainHomepageSection h1 {
     font-size: 1.8rem;
     font-weight: 600;
-    font-family: var(--text-font); 
+    font-family: var(--text-font);
     color: var(--dark-brown);
   }
   .mainHomepageSection h2 {
-  font-size: 1.2rem;
-  font-family: var(--text-font); 
-  color: whitesmoke; 
-  background-color: var(--dark-brown); 
-  border-radius: 20px 20px 0px 0px;
-  padding: 10px;
-}
+    font-size: 1.2rem;
+    font-family: var(--text-font);
+    color: whitesmoke;
+    background-color: var(--dark-brown);
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+  }
   .mainHomepageSection h5 {
-  font-size: 1rem;
-}
-/* Media Queries - Phones */
-@media (max-width: 481px) {
-  #solar-map {
-    height: 60vh;
-    width: 100%;
-}
-.container {
-    display: flex;
-    flex-flow: column-reverse nowrap;
+    font-size: 1rem;
   }
-  .mainHomepageSection {
-     width: 100%;
-  }
-  .mainHomepageSection h1{ 
-margin: 0;
-font-size: 1.2rem;
+  /* Media Queries - Phones */
+  @media (max-width: 481px) {
+    #solar-map {
+      height: 60vh;
+      width: 100%;
+    }
+    .container {
+      display: flex;
+      flex-flow: column-reverse nowrap;
+    }
+    .mainHomepageSection {
+      width: 100%;
+    }
+    .mainHomepageSection h1 {
+      margin: 0;
+      font-size: 1.2rem;
     }
     .mainHomepageSection h2 {
-  font-size: 1rem;
-}
-  .mainHomepageSection h5 {
-  font-size: 0.9rem;
-}
- }
+      font-size: 1rem;
+    }
+    .mainHomepageSection h5 {
+      font-size: 0.9rem;
+    }
+  }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
   <div class="container">
     <section class="mainHomepageSection">
       <h1>{pageTitle}</h1>
+      <p class="introText">
+            O mapa interativo mostra a distribuição geográfica das centrais solares existentes, em processo de licenciamento, 
+            e projectos de centrais solares fotovoltaicas propostos para o território. O mapa explora a interseção destes projetos com 
+            zonas de interesse natural e cultural para informar co
+          </p>
       <div class="infoCard">
-      <h2 class="infoHeading">Filtrar</h2>
-      <nav id="filter-group" class="filter-group"></nav>
+        <h2 class="infoHeading">Filtrar</h2>
+        <nav id="filter-group" class="filter-group"></nav>
       </div>
-      
+      <div class="new-card" id="card3">
+        <div class="image-space" onclick="toggleCard('card3')">
+          <h2>Lorem Ipsum</h2>
+        </div>
+        <div class="content-for-card">
+          <h3>What is Lorem Ipsum?</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum
+          </p>
+        </div>
+      </div>
     </section>
-      <div id="solar-map"></div>
+    <div id="solar-map"></div>
   </div>
 </BaseLayout>
 <!-- Link to the JavaScript file for interactivity -->
-<script src="/src/scripts/solarmap.js" defer>
-</script>
+<script src="/scripts/solarmap.js" defer></script>
