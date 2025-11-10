@@ -39,12 +39,10 @@ body {
 }
 
 h1 {
-  font-family: var(--title-font);
   font-size: 3.1rem;
 }
 
 h2 {
-  font-family: var(--title-font);
   font-size: 1.8rem;
 }
 
