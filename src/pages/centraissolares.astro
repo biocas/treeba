@@ -66,6 +66,27 @@ export async function getStaticPaths() {
   .mainHomepageSection h5 {
     font-size: 1rem;
   }
+  /* Icon key list */
+  #legenda ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+  font-family: var(--text-font);
+}
+
+#legenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#legenda img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
   /* Dropdown Cards */
   .infoCard {
   overflow: hidden;
@@ -172,13 +193,46 @@ export async function getStaticPaths() {
           <span class="arrow">&#9662;</span>
         </div>
         <div class="contentContainer">
-          <nav id="filter-group" class="filter-group"></nav>
-          <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+         <ul>
+    <li>
+      <img src="/images/solaricons/Geoparques.svg" alt="Geoparques" />
+      <span>Geoparques</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/RNAP.svg" alt="RNAP" />
+      <span>RNAP</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Rede Natura 2000 ZPE.svg" alt="Rede Natura 2000 ZPE" />
+      <span>Rede Natura 2000 ZPE</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Rede Natura 2000 ZEC.svg" alt="Rede Natura 2000 ZEC" />
+      <span>Rede Natura 2000 ZEC</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Rede Natura 2000 SIC.svg" alt="Rede Natura 2000 SIC" />
+      <span>Rede Natura 2000 SIC</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Cultura - MN PM.svg" alt="Património Cultural - MN & PM" />
+      <span>Património Cultural - Monumento Nacional & Património Mundial</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Cultura MIP e SIP.svg" alt="Património Cultural - MIP & SIP" />
+      <span>Património Cultural - Monumento de Interesse Público & Sítio de Interesse Público</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Centrais Solares existentes e em licenciamento.svg"
+           alt="Centrais Solares existentes e em licenciamento" />
+      <span>Centrais Solares existentes e em licenciamento</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Centrais Solares propostas.svg"
+           alt="Centrais Solares propostas" />
+      <span>Centrais Solares propostas</span>
+    </li>
+  </ul>
         </div>
       </div>
       <div class="infoCard" id="fontes">
