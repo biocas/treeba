@@ -55,6 +55,30 @@ export async function getStaticPaths() {
   .mainHomepageSection h5 {
   font-size: 1rem;
 }
+/* Media Queries - Phones */
+@media (max-width: 481px) {
+  #solar-map {
+    height: 60vh;
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+  }
+  .mainHomepageSection {
+     width: 100%;
+  }
+  .mainHomepageSection h1{ 
+margin: 0;
+font-size: 1.2rem;
+    }
+    .mainHomepageSection h2 {
+  font-size: 1rem;
+}
+  .mainHomepageSection h5 {
+  font-size: 0.9rem;
+}
+ }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>

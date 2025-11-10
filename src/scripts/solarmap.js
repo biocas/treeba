@@ -51,9 +51,9 @@ const propertyLabels = {
   area_ha: "Área (ha)",
   area__ha_: "Área (ha)",
   tipo: "Tipo", 
-  //Sub-tipo_Instalação: "Tipo", 
-  //Potência__KW: "Potência (Kw)",
-  //Data_Licença_Produção: "Data da Licença de Produção",
+  "Sub-tipo_Instalação": "Tipo", 
+  "Potência__KW_": "Potência (Kw)",
+  "Data_Licença_Produção": "Data da Licença de Produção",
   classifica: "Classificação",
   Description: "Descrição",
   NUTS_NAME: "Região NUTS",
@@ -64,6 +64,7 @@ const propertyLabels = {
       const f = e.features[0];
       if (!f) return;
       const props = f.properties;
+      console.log(props);
       const layerTitle = f.layer?.id; // you can replace this with a custom title map if needed
 
 const html = `
@@ -71,7 +72,6 @@ const html = `
   ${Object.entries(props)
     .map(([k, v]) => {
         //if K is date, transform to cool date
-        
       const label = propertyLabels[k] || k; //uses sanitising property labels
       const safeKey = safeClassName(k); //safe css classes
       return `

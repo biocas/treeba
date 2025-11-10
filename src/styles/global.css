@@ -20,8 +20,10 @@ body {
   --primary-yellow: #FEF96E;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
+  --background-cream: #fff3df;
   --stroke-green: #497400;
   --dark-brown: #684232;
+
   /* Fonts */
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
@@ -33,7 +35,6 @@ body {
 
 /* Text and Headings */
 .whiteAndStroke {
-
   color: white;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
@@ -54,7 +55,24 @@ h5 {
 }
 
 /* Map styles */
+.mapboxgl-popup .mapboxgl-popup-tip {
+  border-top-color: var(--background-cream);
+}
+.mapboxgl-popup .mapboxgl-popup-close-button {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.mapboxgl-popup .mapboxgl-popup-content {
+  font-family: var(--text-font);
+  font-size: 0.8rem;
+  border-radius: 20px;
+border: 2px sold var(--dark-brown);
+background-color: var(--background-cream);
+}
 
+.mapboxgl-popup .mapboxgl-popup-content .popupPropertyTitle {
+  font-weight: 600;
+}
 /* Hide selected properties inside Mapbox popups */
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-jurisdicao,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-site_code,
