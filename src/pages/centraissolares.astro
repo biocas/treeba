@@ -114,14 +114,20 @@ export async function getStaticPaths() {
     #solar-map {
       height: 60vh;
       width: 100%;
+      flex: none;  
     }
     .container {
       display: flex;
       flex-flow: column-reverse nowrap;
+      height: 100vh;
     }
     .mainHomepageSection {
-      width: 100%;
-    }
+    flex: 1;
+    height: 40vh;                /* or auto if you want it to fill leftover space */
+    overflow-y: auto;
+    width: 100%;
+  }
+
     .mainHomepageSection h1 {
       margin: 0;
       font-size: 1.2rem;
