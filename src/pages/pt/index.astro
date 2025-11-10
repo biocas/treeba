@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Greeting from "../../components/Greeting";
+import LanguagePicker from "../../components/LanguagePicker.astro";
 const pageTitle = "Treeba";
 import HomepageCard from "../../layouts/homepageCard.astro";
-import Sidebar from "../../components/Sidebar.astro";
+
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
     return { params: { lang } };
@@ -13,10 +14,11 @@ export async function getStaticPaths() {
 
 ---
 
+
 <style>
   body {
     background-image: url("/images/rootsBckHome.png");
-    background-color: #cccccc;
+    background-color: var(--primary-orange);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -26,18 +28,35 @@ export async function getStaticPaths() {
     display: flex;
     flex-flow: row nowrap;
     gap: 3.5rem;
-    margin: 1rem 2rem 3rem 4rem;
+    margin: 3rem 2rem 3rem 4rem;
+  }
+  .treebaLogo {
+    width: 30vw;
   }
   .mainHomepageSection {
-    width: 80vw;
-  }
-  .pagesGrid {
+    background-color: var(--primary-orange);
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px var(--primary-blue);
     display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    justify-content: space-between;
     align-items: center;
-    gap: 120px 80px;
+    flex-flow: column wrap;
+    gap: 10px;
+  }
+  .cardWrapper {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+  }
+  .cardWrapperBottom {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 10px;
   }
   @media (max-width: 481px) {
     body {
@@ -48,47 +67,42 @@ export async function getStaticPaths() {
     gap: 0;
     margin: 1.5rem;
   }
-  .mainHomepageSection h1{
-    margin: 0.5rem 0 0.5rem 0;
-  }
-  .pagesGrid {
-    gap: 10px;
-    justify-content: space-evenly;
-  }
 .mainHomepageSection h5{
     margin: 1rem 0 1.5rem 0;
   }
   }
 </style>
 
-<BaseLayout>
+<BaseLayout currentLocale={currentLocale}>
+  <LanguagePicker />
   <div class="container">
-    <section class="mainHomepageSection">
-      <h1 class="whiteAndStroke">{pageTitle}</h1>
+    <div class="cardWrapper">
+<HomepageCard image="/images/favicon.svg" href="/lore/" name="Estórias" />
+        <HomepageCard image="/images/forest.svg" href="forest/" name="Floresta" />
+    </div>
+    <div class="middleWrapper">
+<section class="mainHomepageSection">
+      <img class="treebaLogo" alt="Treeba" src="/images/Treeba.svg">
       <h5 class="whiteAndStroke">
-        Digital woodlands where regenerative work germinates and grows, fruits
-        and decays, eventually composting, circling in tender connections and
-        the hopeful flow of gifts. Focused on the Iberian Peninsula.
+        Bosque digital onde o labor da regeneração germina e cresce, frutifica e decai, eventualmente tornando-se composto, retecendo relação e presença.
+        Sobre a Península Ibérica.
       </h5>
-      <div class="pagesGrid">
-        <HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
-        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
-        <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
+    
+    </section>
+    <div class="cardWrapperBottom"><HomepageCard image="/images/map.svg" href="/map/" name="Mapa" />
         <HomepageCard
           image="/images/bee.svg"
           href="/bookshelf/"
-          name="Books"
-        />
-        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
+          name="Livros"
+        /></div>
+    </div>
+    
+        <div class="cardWrapper"> <HomepageCard image="/images/berry.svg" href="/forage/" name="Recolecção" />
         <HomepageCard
           image="/images/flower.svg"
           href="/margarida/"
-          name="About"
-        />
-      </div>
-    </section>
-
-    <Sidebar />
+          name="Sobre"
+        /></div>
   </div>
 </BaseLayout>
 
