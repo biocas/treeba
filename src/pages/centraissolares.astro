@@ -65,8 +65,8 @@ export async function getStaticPaths() {
     font-size: 1rem;
   }
   /* Dropdown Cards */
-  .new-card {
-  height: 275px;
+  .infoCard {
+  height: 2rem;
   display: flex;
   flex-direction: row;
   align-items: normal;
@@ -74,13 +74,12 @@ export async function getStaticPaths() {
   border: 2px solid #ededed;
   border-radius: 10px;
   transition: all 0.3s ease;
-  width: 150px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.new-card.expanded {
-  width: 900px;
+.infoCard.expanded {
+  height: auto;
 }
 
 .image-space {
@@ -145,7 +144,7 @@ export async function getStaticPaths() {
         <nav id="filter-group" class="filter-group"></nav>
       </div>
       <div class="new-card" id="card3">
-        <div class="image-space" onclick="toggleCard('card3')">
+        <div class="image-space">
           <h2>Lorem Ipsum</h2>
         </div>
         <div class="content-for-card">

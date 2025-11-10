@@ -57,6 +57,9 @@ h5 {
 /* Map styles */
 .mapboxgl-popup .mapboxgl-popup-tip {
   border-top-color: var(--background-cream);
+  border-left-color: var(--background-cream);
+  border-right-color: var(--background-cream);
+  border-bottom-color: var(--background-cream);
 }
 .mapboxgl-popup .mapboxgl-popup-close-button {
   margin-top: 5px;
@@ -87,6 +90,8 @@ box-shadow: 2px 2px 0px 2px var(--dark-brown);
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-processo,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-thematic_id,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-globalid, 
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-propostasid, 
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-propostasclass,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-integrado_conj, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-outras_des, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-situacao_a {
   display: none !important;
 }

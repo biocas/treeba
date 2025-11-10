@@ -48,6 +48,43 @@ function safeClassName(key) {
     // avoid leading/trailing dashes
     .replace(/^-|-$/g, '');
 }
+map.addSource('Centrais Solares propostas', {
+                    'type': 'geojson',
+                    'data': {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas1",
+        "propostasclass": "pinProposed",
+        "Nome": "Central Solar Fotovoltaica (CSF) de Sophia e as Linhas de Muito Alta Tensão (LMAT) associadas",
+        "Consulta Pública": "2025-10-10 a 2025-11-20",
+        "Tipologia": "Licenciamento Único de Ambiente",
+        "Entidade promotora do projeto": "Coloursflow – Unipessoal, LDA"
+      },
+      "geometry": {
+        "coordinates": [
+          -7.25548757386062,
+          40.0750654533158
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    }
+  ]
+}
+
+});
+map.addLayer({
+                    'id': 'Centrais Solares propostas',
+                    'type': 'circle',
+                    'source': 'Centrais Solares propostas',
+                    'paint': {
+            'circle-radius': 10,
+            'circle-color': '#FE0606',
+                    }
+                });
 //get all the layer IDs 
 let mapLayers = map.getStyle().layers;
 // Filter out the layers where visibility is "none"
