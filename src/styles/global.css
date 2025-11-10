@@ -33,7 +33,7 @@ body {
 
 /* Text and Headings */
 .whiteAndStroke {
-  
+
   color: white;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
@@ -52,50 +52,73 @@ h5 {
   font-size: 1.5rem;
   margin: 0.5rem;
 }
+
+/* Map styles */
+
+/* Hide selected properties inside Mapbox popups */
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-jurisdicao,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-site_code,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-gid,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-sigla,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-inspire_id,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-nut_ii,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-objectid,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-processo,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-thematic_id,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-globalid, 
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-integrado_conj, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-outras_des, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-situacao_a {
+  display: none !important;
+}
+
 /* Buttons */
 .buttonPill {
-        text-decoration: none;
-        padding: 10px 14px;
-        background-color: var(--background-light-green);
-        border: 4px solid var(--stroke-green);
-        border-radius: 11px;
-    }
+  text-decoration: none;
+  padding: 10px 14px;
+  background-color: var(--background-light-green);
+  border: 4px solid var(--stroke-green);
+  border-radius: 11px;
+}
 
-    buttonPill:hover,
-    buttonPill:focus {
-        background-color: var(--stroke-green);
-        color: white;
-        border: 4px solid var(--background-light-green);
-    }
+buttonPill:hover,
+buttonPill:focus {
+  background-color: var(--stroke-green);
+  color: white;
+  border: 4px solid var(--background-light-green);
+}
 
 .buttonPillOrange {
   text-decoration: none;
-        padding: 10px 14px;
-        background-color: var(--primary-green);
-        border: 4px solid white;
-        border-radius: 11px;
+  padding: 10px 14px;
+  background-color: var(--primary-green);
+  border: 4px solid white;
+  border-radius: 11px;
 }
- buttonPillOrange:hover,
-    buttonPillOrange:focus {
-        background-color: white;
-        
-        border: 4px solid var(--primary-orange);
-    }
+
+buttonPillOrange:hover,
+buttonPillOrange:focus {
+  background-color: white;
+
+  border: 4px solid var(--primary-orange);
+}
+
 /* Media Queries - Phones */
 @media (max-width: 481px) {
   h1 {
     font-size: 2.5rem;
   }
+
   .whiteAndStroke {
-  -webkit-text-stroke-width: 1.5px;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-family: var(--text-font);
-  font-size: 1.3rem;
-}
+    -webkit-text-stroke-width: 1.5px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-family: var(--text-font);
+    font-size: 1.3rem;
+  }
 }
 
 /* dark and light mode toggle styles

@@ -16,6 +16,7 @@ let popup = new mapboxgl.Popup({
 // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
+    map.on('load', function() { 
 //create safe css classes from map property names
 function safeClassName(key) {
   return 'prop-' + key.toString()
@@ -30,9 +31,6 @@ function safeClassName(key) {
     // avoid leading/trailing dashes
     .replace(/^-|-$/g, '');
 }
-
-
-    map.on('load', function() { 
 //get all the layer IDs 
 let mapLayers = map.getStyle().layers;
 // Filter out the layers where visibility is "none"
@@ -48,9 +46,15 @@ const propertyLabels = {
   nome_ap: "Nome",
   Name: "Nome",
   site_name: "Nome",
+  Denominação: "Nome",
+  Designacao: "Nome",
   area_ha: "Área (ha)",
   area__ha_: "Área (ha)",
-  tipo: "Tipo",
+  tipo: "Tipo", 
+  //Sub-tipo_Instalação: "Tipo", 
+  //Potência__KW: "Potência (Kw)",
+  //Data_Licença_Produção: "Data da Licença de Produção",
+  classifica: "Classificação",
   Description: "Descrição",
   NUTS_NAME: "Região NUTS",
   LEVL_CODE: "Nível",
@@ -66,6 +70,8 @@ const html = `
   <div class="popupLayerTitle"><strong>${layerTitle}</strong></div>
   ${Object.entries(props)
     .map(([k, v]) => {
+        //if K is date, transform to cool date
+        
       const label = propertyLabels[k] || k; //uses sanitising property labels
       const safeKey = safeClassName(k); //safe css classes
       return `
