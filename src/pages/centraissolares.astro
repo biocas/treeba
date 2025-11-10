@@ -97,7 +97,7 @@ export async function getStaticPaths() {
       <p class="introText">
             O mapa interativo mostra a distribuição geográfica das centrais solares existentes, em processo de licenciamento, 
             e projectos de centrais solares fotovoltaicas propostos para o território. O mapa explora a interseção destes projetos com 
-            zonas de interesse natural e cultural para informar co
+            zonas de interesse natural e cultural.
           </p>
       <div class="infoCard">
         <h2 class="infoHeading">Filtrar</h2>
@@ -109,8 +109,7 @@ export async function getStaticPaths() {
         </div>
         <div class="content-for-card">
           <h3>What is Lorem Ipsum?</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
@@ -118,8 +117,7 @@ export async function getStaticPaths() {
             remaining essentially unchanged. It was popularised in the 1960s
             with the release of Letraset sheets containing Lorem Ipsum passages,
             and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum
-          </p>
+            PageMaker including versions of Lorem Ipsum</p>
         </div>
       </div>
     </section>
@@ -127,4 +125,7 @@ export async function getStaticPaths() {
   </div>
 </BaseLayout>
 <!-- Link to the JavaScript file for interactivity -->
-<script src="../scripts/solarmap.js" defer></script>
+<script type="module">
+  import init from '../scripts/solarmap.js';
+  init?.();
+</script>
