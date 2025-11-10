@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Centrais Solares";
+const pageTitle = "Centrais Solares e interação com zonas de interesse ambiental e cultural";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
@@ -24,6 +24,9 @@ export async function getStaticPaths() {
     max-height: 100vh;
     margin: 0;
   }
+  .jurisdicao, .site_code, .gid, .publica1{
+    display: none;
+  }
   .container {
     display: flex;
     flex-flow: row nowrap;
@@ -32,13 +35,22 @@ export async function getStaticPaths() {
     padding: 1rem;
      width: 40%;
   }
+  .infoCard {
+    border: 2px sold var(--dark-brown);
+  }
   .mainHomepageSection h1{
-    font-size: 3.1rem;
+    font-size: 2.2rem;
+    font-weight: 600;
     font-family: var(--text-font); 
+    color: var(--dark-brown);
   }
   .mainHomepageSection h2 {
   font-size: 1.8rem;
   font-family: var(--text-font); 
+  color: whitesmoke; 
+  background-color: var(--dark-brown); 
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px;
 }
   .mainHomepageSection h5 {
   font-size: 1.5rem;
@@ -48,7 +60,7 @@ export async function getStaticPaths() {
 <BaseLayout currentLocale={currentLocale}>
   <div class="container">
     <section class="mainHomepageSection">
-      <h1 class="whiteAndStroke">{pageTitle}</h1>
+      <h1>{pageTitle}</h1>
       <div class="infoCard">
       <h2 class="infoHeading">Filtrar</h2>
       <nav id="filter-group" class="filter-group"></nav>

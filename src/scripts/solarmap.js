@@ -16,34 +16,67 @@ let popup = new mapboxgl.Popup({
 // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
+//create safe css classes from map property names
+function safeClassName(key) {
+  return 'prop-' + key.toString()
+    .trim()
+    .toLowerCase()
+    // turn "Jurisdição" -> "jurisdicao"
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    // replace spaces/illegal chars with a single dash
+    .replace(/[^a-z0-9_-]+/g, '-')
+    // collapse multiple dashes
+    .replace(/-+/g, '-')
+    // avoid leading/trailing dashes
+    .replace(/^-|-$/g, '');
+}
+
+
     map.on('load', function() { 
 //get all the layer IDs 
 let mapLayers = map.getStyle().layers;
 // Filter out the layers where visibility is "none"
 const visibleLayers = mapLayers.filter(layer => {
-  return !(layer.layout && layer.layout.visibility === 'none' || layer.id === 'NUTS' || layer.id === 'NUTS Nomes');
+  return !(layer.layout && layer.layout.visibility === 'none' || layer.id === 'place-label' || layer.id === 'NUTS' || layer.id === 'NUTS Nomes');
 });
-console.log(visibleLayers);
 //popup functionality
 visibleLayers
   .forEach(l => {
+    // Create a map of property key → display label
+const propertyLabels = {
+  nome: "Nome",
+  nome_ap: "Nome",
+  Name: "Nome",
+  site_name: "Nome",
+  area_ha: "Área (ha)",
+  area__ha_: "Área (ha)",
+  tipo: "Tipo",
+  Description: "Descrição",
+  NUTS_NAME: "Região NUTS",
+  LEVL_CODE: "Nível",
+};
+
     map.on('click', l.id, (e) => {
       const f = e.features[0];
       if (!f) return;
-    //  var zoneName = e.features[0].properties.name;
       const props = f.properties;
       const layerTitle = f.layer?.id; // you can replace this with a custom title map if needed
 
 const html = `
   <div class="popupLayerTitle"><strong>${layerTitle}</strong></div>
   ${Object.entries(props)
-    .map(([k, v]) => `
-      <div class="popupProperty">
-        <span class="${k} popupPropertyTitle">${k}:</span>
-        <span class="${v} popupPropertyValue">${v}</span>
-      </div>
-    `)
+    .map(([k, v]) => {
+      const label = propertyLabels[k] || k; //uses sanitising property labels
+      const safeKey = safeClassName(k); //safe css classes
+      return `
+        <div class="popupProperty ${safeKey}">
+          <span class="popupPropertyTitle">${label}:</span>
+          <span class="popupPropertyValue">${v}</span>
+        </div>
+      `;
+    })
     .join('')}
+    
 `;
 
     //  const html = Object.entries(props).map(([k, v]) => `<div><span class="${k} popupPropertyTitle">${k}: </span><span class="${v} popupPropertyValue" ${v}</div>`).join('');
