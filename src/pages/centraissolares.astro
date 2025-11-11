@@ -172,21 +172,6 @@ export async function getStaticPaths() {
         solares fotovoltaicas propostos para o território. O mapa explora a
         interseção destes projetos com zonas de interesse natural e cultural.
       </p>
-      <div class="infoCard" id="filtro">
-        <div class="infoHeadWrapper">
-          <h2 class="infoHeading">Filtrar</h2>
-          <span class="arrow">&#9662;</span>
-        </div>
-        <div class="contentContainer">
-          <nav id="filter-group" class="filter-group"></nav>
-          <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
-        </div>
-      </div>
       <div class="infoCard" id="legenda">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Legenda</h2>
@@ -194,6 +179,16 @@ export async function getStaticPaths() {
         </div>
         <div class="contentContainer">
          <ul>
+          <li>
+      <img src="/images/solaricons/Centrais Solares existentes e em licenciamento.svg"
+           alt="Centrais Solares existentes e em licenciamento" />
+      <span>Centrais Solares existentes e em licenciamento</span>
+    </li>
+    <li>
+      <img src="/images/solaricons/Centrais Solares propostas.svg"
+           alt="Centrais Solares propostas" />
+      <span>Centrais Solares propostas</span>
+    </li>
     <li>
       <img src="/images/solaricons/Geoparques.svg" alt="Geoparques" />
       <span>Geoparques</span>
@@ -222,19 +217,25 @@ export async function getStaticPaths() {
       <img src="/images/solaricons/Cultura MIP e SIP.svg" alt="Património Cultural - MIP & SIP" />
       <span>Património Cultural - Monumento de Interesse Público & Sítio de Interesse Público</span>
     </li>
-    <li>
-      <img src="/images/solaricons/Centrais Solares existentes e em licenciamento.svg"
-           alt="Centrais Solares existentes e em licenciamento" />
-      <span>Centrais Solares existentes e em licenciamento</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Centrais Solares propostas.svg"
-           alt="Centrais Solares propostas" />
-      <span>Centrais Solares propostas</span>
-    </li>
   </ul>
         </div>
       </div>
+      <div class="infoCard" id="filtro">
+        <div class="infoHeadWrapper">
+          <h2 class="infoHeading">Filtrar</h2>
+          <span class="arrow">&#9662;</span>
+        </div>
+        <div class="contentContainer">
+          <nav id="filter-group" class="filter-group"></nav>
+          <p class="introText">
+        O mapa interativo mostra a distribuição geográfica das centrais solares
+        existentes, em processo de licenciamento, e projectos de centrais
+        solares fotovoltaicas propostos para o território. O mapa explora a
+        interseção destes projetos com zonas de interesse natural e cultural.
+      </p>
+        </div>
+      </div>
+      
       <div class="infoCard" id="fontes">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Fontes</h2>
