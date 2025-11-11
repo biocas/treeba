@@ -8,7 +8,8 @@ const cards = document.querySelectorAll('.infoCard');
       card.classList.toggle('active');
     });
   });
-
+//filter functionality
+const filterGroup = document.getElementById('filter-group');
   //map
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFyZ2FyaWRhc2FsdmFkbyIsImEiOiJja2pndWUzMm80ZmowMnFwZDVxYmt5NWZjIn0.wh2-Kf9dve6BZJGX2hEjEw';
  const map = new mapboxgl.Map({
