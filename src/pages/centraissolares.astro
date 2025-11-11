@@ -67,7 +67,7 @@ export async function getStaticPaths() {
     font-size: 1rem;
   }
   /* Icon key list */
-  #legenda ul {
+  #legenda ul, #fontes li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -76,7 +76,7 @@ export async function getStaticPaths() {
   font-family: var(--text-font);
 }
 
-#legenda li {
+#legenda li, #fontes li {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -243,12 +243,44 @@ export async function getStaticPaths() {
           <span class="arrow">&#9662;</span>
         </div>
         <div class="contentContainer">
-          <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+        <ul>
+          <li><a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
+            <span>Centrais Solares existentes e em licenciamento</span>
+          </a>
+    </li>
+    <li>
+      
+      <span>Centrais Solares propostas</span>
+    </li>
+    <li>
+      
+      <span>Geoparques</span>
+    </li>
+    <li>
+      
+      <span>RNAP</span>
+    </li>
+    <li>
+      
+      <span>Rede Natura 2000 ZPE</span>
+    </li>
+    <li>
+      
+      <span>Rede Natura 2000 ZEC</span>
+    </li>
+    <li>
+      
+      <span>Rede Natura 2000 SIC</span>
+    </li>
+    <li>
+      
+      <span>Património Cultural - Monumento Nacional & Património Mundial</span>
+    </li>
+    <li>
+      
+      <span>Património Cultural - Monumento de Interesse Público & Sítio de Interesse Público</span>
+    </li>
+  </ul>
         </div>
       </div>
       <div class="infoCard" id="recursos">
