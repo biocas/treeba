@@ -85,7 +85,7 @@ function createLayeredNameLister(map, {
     const name = decodeURIComponent(li.getAttribute('data-name'));
     const b = index[lid]?.[name];
     if (b && !b.isEmpty()) {
-      map.fitBounds(b, { padding: 60, maxZoom: 14, duration: 600 });
+      map.fitBounds(b, { padding: 60, maxZoom: 14, duration: 1000 });
     }
   });
 
