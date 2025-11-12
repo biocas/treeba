@@ -39,7 +39,9 @@ body {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
-
+.note {
+  font-size: 0.8rem;
+} 
 h1 {
   font-size: 3.1rem;
 }

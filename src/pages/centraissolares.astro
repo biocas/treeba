@@ -48,6 +48,7 @@ export async function getStaticPaths() {
     height: 100%; /* fill vertical space */
     overflow-y: auto; /* only this scrolls */
     box-sizing: border-box;
+    font-family: var(--text-font);
   }
   .infoCard {
     border: 2px sold var(--dark-brown);
@@ -55,33 +56,28 @@ export async function getStaticPaths() {
   .mainHomepageSection h1 {
     font-size: 1.8rem;
     font-weight: 600;
-    font-family: var(--text-font);
     color: var(--dark-brown);
   }
   .mainHomepageSection h2 {
     font-size: 1.2rem;
-    font-family: var(--text-font);
     color: whitesmoke;
   }
   .mainHomepageSection h5 {
     font-size: 1rem;
   }
   /* Icon key list */
-  #fontes ul {
+  .mainHomepageSection ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
     gap: 0.6rem;
-    font-family: var(--text-font);
   }
-
   #fontes li {
     display: flex;
     align-items: center;
     gap: 0.6rem;
   }
-
   /* --- Key Button --- */
   /* button (stick it bottom-right; swap to absolute if you want it inside a map container) */
   .legenda-toggle {
@@ -181,7 +177,7 @@ export async function getStaticPaths() {
   }
 
   .infoCard.active .contentContainer {
-    max-height: 500px; /* adjust based on your content */
+    max-height: 100%; /* adjust based on your content */
     border: 2px solid var(--dark-brown);
     border-radius: 0px 0px 20px 20px;
     padding: 10px;
@@ -194,6 +190,21 @@ export async function getStaticPaths() {
   .infoCard.active .arrow {
     transform: rotate(180deg);
   }
+  /*filter */
+  #filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* space between rows */
+}
+
+#filter-group input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+#filter-group label {
+  display: inline-block;
+}
+
   /* Media Queries - Phones */
 
   @media (max-width: 481px) {
@@ -254,6 +265,8 @@ padding: 0;
       <p class="funkyList">
         Para explorar o mapa, as várias camadas de informação podem ser adicionadas ou removidas no separador Filtrar. Ao clicar nos elementos do mapa, aparece uma janela com mais informação. 
       </p>
+      <p class="note">Nota: Alguns elementos só se tornam visíveis aumentando ou diminuindo o zoom do mapa, pelo que nem todos os elementos estão visiveís dependendo do nível de zoom.</p>
+        
       <div class="infoCard" id="filtro">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Filtrar</h2>
@@ -261,13 +274,6 @@ padding: 0;
         </div>
         <div class="contentContainer">
           <nav id="filter-group" class="filter-group"></nav>
-          <p class="introText">
-            O mapa interativo mostra a distribuição geográfica das centrais
-            solares existentes, em processo de licenciamento, e projectos de
-            centrais solares fotovoltaicas propostos para o território. O mapa
-            explora a interseção destes projetos com zonas de interesse natural
-            e cultural.
-          </p>
         </div>
       </div>
 <div class="infoCard" id="listaCentrais">
@@ -276,8 +282,7 @@ padding: 0;
           <span class="arrow">&#9662;</span>
         </div>
         <div class="contentContainer">
-          
-        </div>
+          </div>
       </div>
       <div class="infoCard" id="fontes">
         <div class="infoHeadWrapper">
