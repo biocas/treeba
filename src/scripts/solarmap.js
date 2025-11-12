@@ -85,7 +85,7 @@ function createLayeredNameLister(map, {
     const name = decodeURIComponent(li.getAttribute('data-name'));
     const b = index[lid]?.[name];
     if (b && !b.isEmpty()) {
-      map.fitBounds(b, { padding: 60, maxZoom: 14, duration: 1000 });
+      map.fitBounds(b, { padding: 80, maxZoom: 10, duration: 1000 });
     }
   });
 
@@ -343,7 +343,6 @@ map.addLayer({
                 });
 //get all the layer IDs 
 let mapLayers = map.getStyle().layers;
-console.log(mapLayers);
 // Filter out the layers where visibility is "none"
 const visibleLayers = mapLayers.filter(layer => {
   return !(layer.layout && layer.layout.visibility === 'none' || layer.id === 'place-label' || layer.id === 'NUTS' || layer.id === 'NUTS Nomes');
@@ -427,7 +426,7 @@ const filterGroup = document.getElementById('filter-group');
                     );
                 });
 
-             //   map.getStyle().layers.map(l => l.id)
+             //  map.getStyle().layers.map(l => l.id)
 //list all centrals 
 const lister = createLayeredNameLister(map, {
   layerIds: [
