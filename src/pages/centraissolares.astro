@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     width: 60%;
   }
   body {
-    background-color: #fff3df;
+    background-color: var(--background-cream);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -39,15 +39,15 @@ export async function getStaticPaths() {
   .container {
     display: flex;
     flex-flow: row nowrap;
-    height: 100vh; 
-    overflow: hidden; 
+    height: 100vh;
+    overflow: hidden;
   }
   .mainHomepageSection {
     padding: 1rem;
     width: 40%;
-    height: 100%;                 /* fill vertical space */
-  overflow-y: auto;             /* only this scrolls */
-  box-sizing: border-box;
+    height: 100%; /* fill vertical space */
+    overflow-y: auto; /* only this scrolls */
+    box-sizing: border-box;
   }
   .infoCard {
     border: 2px sold var(--dark-brown);
@@ -67,76 +67,153 @@ export async function getStaticPaths() {
     font-size: 1rem;
   }
   /* Icon key list */
-  #legenda ul, #fontes ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.6rem;
-  font-family: var(--text-font);
-}
+  #fontes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+    font-family: var(--text-font);
+  }
 
+  #fontes li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
 
-#legenda li, #fontes li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
+  /* --- Key Button --- */
+  /* button (stick it bottom-right; swap to absolute if you want it inside a map container) */
+  .legenda-toggle {
+    position: absolute;
+    left: 42vw;
+    top: 1rem;
+    border: 0;
+    padding: 0.4rem;
+    border-radius: 0.6rem;
+    background: var(--dark-brown);
+    color: var(--background-cream);
+    cursor: pointer;
+    font-family: var(--text-font);
+    border: 2px solid var(--dark-brown);
+  }
+  .legenda-toggle:hover {
+    background: var(--background-cream);
+    color: var(--dark-brown);
+    border: 2px solid var(--dark-brown);
+  }
+  /* Popover */
+  .legenda-popover[hidden] {
+    display: none !important;
+  }
+  .legenda-popover {
+    position: fixed; /* anchors to viewport; JS keeps it under the button */
+    z-index: 9999;
+    background: var(--background-cream);
+    color: var(--dark-brown);
+    border: 1px solid var(--background-cream);
+    border-radius: 0.7rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    padding: 0.6rem 0.6rem 1rem;
+    width: min(250px, 85vw);
+    max-height: 70vh;
+    overflow: auto;
+  }
+  .legenda-x {
+    position: absolute;
+    right: 1rem;
+    border: 0;
+    background: transparent;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.35rem;
+  }
+  .legenda-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.25rem;
+    font-family: var(--text-font);
+    font-size: 10px;
+  }
+  .legenda-list li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.1rem 0.25rem;
+  }
+  .legenda-list img {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
 
-#legenda img {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
   /* Dropdown Cards */
   .infoCard {
-  overflow: hidden;
-  margin-bottom: 2rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
   }
-.infoHeadWrapper {
-  cursor: pointer;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--dark-brown);
+  .infoHeadWrapper {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-brown);
     border-radius: 20px 20px 0px 0px;
     padding: 10px;
-}
-.infoHeadWrapper h2 {
-  margin: 10px;
-}
-.infoHeadWrapper .arrow {
-  color: whitesmoke;
-  font-size: 1.5rem;
-}
-.contentContainer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  border: 2px solid transparent;
-}
+  }
+  .infoHeadWrapper h2 {
+    margin: 10px;
+  }
+  .infoHeadWrapper .arrow {
+    color: whitesmoke;
+    font-size: 1.5rem;
+  }
+  .contentContainer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border: 2px solid transparent;
+  }
 
-.infoCard.active .contentContainer {
-  max-height: 500px; /* adjust based on your content */
-  border: 2px solid var(--dark-brown);
-  border-radius: 0px 0px 20px 20px;
-  padding: 10px;
-}
+  .infoCard.active .contentContainer {
+    max-height: 500px; /* adjust based on your content */
+    border: 2px solid var(--dark-brown);
+    border-radius: 0px 0px 20px 20px;
+    padding: 10px;
+  }
 
-.arrow {
-  transition: transform 0.3s ease;
-}
+  .arrow {
+    transition: transform 0.3s ease;
+  }
 
-.infoCard.active .arrow {
-  transform: rotate(180deg);
-}
+  .infoCard.active .arrow {
+    transform: rotate(180deg);
+  }
   /* Media Queries - Phones */
+
   @media (max-width: 481px) {
+    .legenda-toggle {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.4rem;
+    border-radius: 0.6rem;
+  }
+   .legenda-list li {
+padding: 0;
+   }
+   .legenda-popover {
+    width: min(150px, 55vw);
+  }
+    
     #solar-map {
       height: 60vh;
       width: 100%;
-      flex: none;  
+      flex: none;
     }
     .container {
       display: flex;
@@ -145,11 +222,11 @@ export async function getStaticPaths() {
     }
     .mainHomepageSection {
       margin-top: 1rem;
-    flex: 1;
-    height: 40vh;                /* or auto if you want it to fill leftover space */
-    overflow-y: auto;
-    width: 100%;
-  }
+      flex: 1;
+      height: 40vh; /* or auto if you want it to fill leftover space */
+      overflow-y: auto;
+      width: 100%;
+    }
 
     .mainHomepageSection h1 {
       margin: 0;
@@ -174,54 +251,7 @@ export async function getStaticPaths() {
         solares fotovoltaicas propostos para o território. O mapa explora a
         interseção destes projetos com zonas de interesse natural e cultural.
       </p>
-      <div class="infoCard" id="legenda">
-        <div class="infoHeadWrapper">
-          <h2 class="infoHeading">Legenda</h2>
-          <span class="arrow">&#9662;</span>
-        </div>
-        <div class="contentContainer">
-         <ul>
-          <li>
-      <img src="/images/solaricons/Centrais Solares existentes e em licenciamento.svg"
-           alt="Centrais Solares existentes e em licenciamento" />
-      <span>Centrais Solares existentes e em licenciamento</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Centrais Solares propostas.svg"
-           alt="Centrais Solares propostas" />
-      <span>Centrais Solares propostas</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Geoparques.svg" alt="Geoparques" />
-      <span>Geoparques</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/RNAP.svg" alt="RNAP" />
-      <span>RNAP</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Rede Natura 2000 ZPE.svg" alt="Rede Natura 2000 ZPE" />
-      <span>Rede Natura 2000 ZPE</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Rede Natura 2000 ZEC.svg" alt="Rede Natura 2000 ZEC" />
-      <span>Rede Natura 2000 ZEC</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Rede Natura 2000 SIC.svg" alt="Rede Natura 2000 SIC" />
-      <span>Rede Natura 2000 SIC</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Cultura - MN PM.svg" alt="Património Cultural - MN & PM" />
-      <span>Património Cultural - Monumento Nacional & Património Mundial</span>
-    </li>
-    <li>
-      <img src="/images/solaricons/Cultura MIP e SIP.svg" alt="Património Cultural - MIP & SIP" />
-      <span>Património Cultural - Monumento de Interesse Público & Sítio de Interesse Público</span>
-    </li>
-  </ul>
-        </div>
-      </div>
+      
       <div class="infoCard" id="filtro">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Filtrar</h2>
@@ -230,66 +260,89 @@ export async function getStaticPaths() {
         <div class="contentContainer">
           <nav id="filter-group" class="filter-group"></nav>
           <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+            O mapa interativo mostra a distribuição geográfica das centrais
+            solares existentes, em processo de licenciamento, e projectos de
+            centrais solares fotovoltaicas propostos para o território. O mapa
+            explora a interseção destes projetos com zonas de interesse natural
+            e cultural.
+          </p>
         </div>
       </div>
-      
+
       <div class="infoCard" id="fontes">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Fontes</h2>
           <span class="arrow">&#9662;</span>
         </div>
         <div class="contentContainer">
-        <ul>
-          <li><a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources">
-            <span>Centrais Solares existentes e em licenciamento</span>
-          </a>
-    </li>
-    <li>
-      <a href="">
-      <span>Centrais Solares propostas</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Geoparques</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>RNAP</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Rede Natura 2000 ZPE</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Rede Natura 2000 ZEC</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Rede Natura 2000 SIC</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Património Cultural - Monumento Nacional & Património Mundial</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources ">
-      <span>Património Cultural - Monumento de Interesse Público & Sítio de Interesse Público</span>
-      </a>
-    </li>
-  </ul>
+          <ul>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources"
+              >
+                <span>Centrais Solares existentes e em licenciamento</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span>Centrais Solares propostas</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span>Geoparques</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span>RNAP</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span>Rede Natura 2000 ZPE</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span>Rede Natura 2000 ZEC</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span>Rede Natura 2000 SIC</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span
+                  >Património Cultural - Monumento Nacional & Património Mundial</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dados.gov.pt/pt/datasets/centrais-solares/#/resources "
+              >
+                <span
+                  >Património Cultural - Monumento de Interesse Público & Sítio
+                  de Interesse Público</span
+                >
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="infoCard" id="recursos">
@@ -299,11 +352,12 @@ export async function getStaticPaths() {
         </div>
         <div class="contentContainer">
           <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+            O mapa interativo mostra a distribuição geográfica das centrais
+            solares existentes, em processo de licenciamento, e projectos de
+            centrais solares fotovoltaicas propostos para o território. O mapa
+            explora a interseção destes projetos com zonas de interesse natural
+            e cultural.
+          </p>
         </div>
       </div>
       <div class="infoCard" id="consultas">
@@ -313,25 +367,27 @@ export async function getStaticPaths() {
         </div>
         <div class="contentContainer">
           <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+            O mapa interativo mostra a distribuição geográfica das centrais
+            solares existentes, em processo de licenciamento, e projectos de
+            centrais solares fotovoltaicas propostos para o território. O mapa
+            explora a interseção destes projetos com zonas de interesse natural
+            e cultural.
+          </p>
         </div>
       </div>
-       <div class="infoCard" id="sobre">
+      <div class="infoCard" id="sobre">
         <div class="infoHeadWrapper">
           <h2 class="infoHeading">Sobre</h2>
           <span class="arrow">&#9662;</span>
         </div>
         <div class="contentContainer">
           <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+            O mapa interativo mostra a distribuição geográfica das centrais
+            solares existentes, em processo de licenciamento, e projectos de
+            centrais solares fotovoltaicas propostos para o território. O mapa
+            explora a interseção destes projetos com zonas de interesse natural
+            e cultural.
+          </p>
         </div>
       </div>
       <div class="infoCard" id="ajuda">
@@ -341,18 +397,81 @@ export async function getStaticPaths() {
         </div>
         <div class="contentContainer">
           <p class="introText">
-        O mapa interativo mostra a distribuição geográfica das centrais solares
-        existentes, em processo de licenciamento, e projectos de centrais
-        solares fotovoltaicas propostos para o território. O mapa explora a
-        interseção destes projetos com zonas de interesse natural e cultural.
-      </p>
+            O mapa interativo mostra a distribuição geográfica das centrais
+            solares existentes, em processo de licenciamento, e projectos de
+            centrais solares fotovoltaicas propostos para o território. O mapa
+            explora a interseção destes projetos com zonas de interesse natural
+            e cultural.
+          </p>
         </div>
       </div>
     </section>
     <div id="solar-map"></div>
+
+    <button id="legenda-btn" class="legenda-toggle">Legenda</button>
+    <div id="legenda-popover" class="legenda-popover" hidden>
+        <button id="legenda-close" class="legenda-x" aria-label="Close"
+          >✕</button>
+
+      <ul class="legenda-list">
+        <li>
+          <img
+            src="/images/solaricons/Centrais Solares existentes e em licenciamento.svg"
+            alt="Centrais Solares existentes e em licenciamento"
+          />
+          <span>Centrais Solares existentes e em licenciamento</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Centrais Solares propostas.svg"
+            alt="Centrais Solares propostas"
+          />
+          <span>Centrais Solares propostas</span>
+        </li>
+        <li>
+          <img src="/images/solaricons/Geoparques.svg" alt="Geoparques" /><span
+            >Geoparques</span>
+        </li>
+        <li>
+          <img src="/images/solaricons/RNAP.svg" alt="RNAP" /><span>RNAP</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Rede Natura 2000 ZPE.svg"
+            alt="Rede Natura 2000 ZPE"
+          /><span>Rede Natura 2000 ZPE</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Rede Natura 2000 ZEC.svg"
+            alt="Rede Natura 2000 ZEC"
+          /><span>Rede Natura 2000 ZEC</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Rede Natura 2000 SIC.svg"
+            alt="Rede Natura 2000 SIC"
+          /><span>Rede Natura 2000 SIC</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Cultura - MN PM.svg"
+            alt="Património Cultural - MN & PM"
+          /><span
+            >Património Cultural - Monumento Nacional & Património Mundial</span>
+        </li>
+        <li>
+          <img
+            src="/images/solaricons/Cultura MIP e SIP.svg"
+            alt="Património Cultural - MIP & SIP"
+          /><span
+            >Património Cultural - Monumento de Interesse Público & Sítio de
+            Interesse Público</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </BaseLayout>
-<!-- Link to the JavaScript file for interactivity -->
 <script>
   import "../scripts/solarmap.js";
 </script>

@@ -1,4 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Key button functionality 
+const btn    = document.getElementById('legenda-btn') || document.querySelector('.legenda-toggle');
+const pop    = document.getElementById('legenda-popover');
+const closeB = document.getElementById('legenda-close');
+
+function openPopover(){
+  pop.hidden = false;
+
+  // Temporarily show to measure
+  pop.style.visibility = 'hidden';
+  pop.style.top = '0px';
+  pop.style.left = '0px';
+
+  const b = btn.getBoundingClientRect();
+  const pw = pop.offsetWidth;
+  const ph = pop.offsetHeight;
+  const gap = 8;
+
+  // Default: place below the button
+  let top = b.bottom + gap;
+  let left = Math.min(Math.max(b.left, 8), window.innerWidth - pw - 8);
+  let arrowClass = 'arrow-top';
+
+  // Flip above if not enough space below
+  if (top + ph > window.innerHeight - 8){
+    top = Math.max(8, b.top - ph - gap);
+    arrowClass = 'arrow-bottom';
+  }
+
+  pop.classList.remove('arrow-top','arrow-bottom');
+  pop.classList.add(arrowClass);
+  pop.style.left = `${left}px`;
+  pop.style.top  = `${top}px`;
+  pop.style.visibility = '';
+}
+
+function closePopover(){ pop.hidden = true; }
+
+btn.addEventListener('click', (e) => {
+  if (pop.hidden) openPopover(); else closePopover();
+});
+closeB.addEventListener('click', closePopover);
+
+// Click outside closes (but page remains interactive)
+document.addEventListener('click', (e) => {
+  if (!pop.hidden && !pop.contains(e.target) && e.target !== btn) closePopover();
+});
+
+// Esc to close
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !pop.hidden) closePopover();
+});
+
+// Reposition on resize/scroll (keeps it under the button)
+['resize','scroll'].forEach(ev => window.addEventListener(ev, () => {
+  if (!pop.hidden) openPopover();
+}));
+
     // Dropdown Cards 
 const cards = document.querySelectorAll('.infoCard');
   document.querySelectorAll('.infoCard .infoHeadWrapper').forEach((header) => {
