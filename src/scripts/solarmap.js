@@ -271,11 +271,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     //map
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFyZ2FyaWRhc2FsdmFkbyIsImEiOiJja2pndWUzMm80ZmowMnFwZDVxYmt5NWZjIn0.wh2-Kf9dve6BZJGX2hEjEw';
+    // match media and device mapbox coordinates for centre
+    const mobileCenter = window.matchMedia ('(max-width: 767px)');
+    const mapMobileCenter = [-8.173136, 39.712646];
+    const mapDesktopCenter = [-8.804163, 39.094384];
+    const defaultZoom = 6.25;
+    const mobileMapZoom = 5.65;
+    let mapCenter;
+    let mapZoom;
+    //change zoom and map centre on viewport
+    if (mobileCenter) {
+        mapCenter = mapMobileCenter;
+        mapZoom = mobileMapZoom;
+    } else {
+        mapCenter = mapDesktopCenter;
+        mapZoom = defaultZoom;
+    }
     const map = new mapboxgl.Map({
         container: 'solar-map',
         style: 'mapbox://styles/margaridasalvado/cmhrl2ube009i01quhtjdcvm6', //hosted style id
-        center: [-8.804163, 39.094384], // starting position
-        zoom: 6.25
+        center: mapCenter,
+        zoom: mapZoom
     });
 
     let popup = new mapboxgl.Popup({
