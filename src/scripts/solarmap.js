@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Nome": "Central Solar Fotovoltaica (CSF) de Sophia e as Linhas de Muito Alta Tensão (LMAT) associadas",
                             "Consulta Pública": "https://participa.pt/pt/consulta/a-csf-de-sophia-e-as-lmat-associadas",
                             "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
-                            "Área do projeto": "public/images/solarmapimages/Mapa Sophia.jpg",
+                            "Área do projeto": "/images/solarmapimages/Mapa Sophia.jpg",
                             "Tipologia": "Licenciamento Único de Ambiente",
                             "Entidade": "Coloursflow – Unipessoal, LDA"
                         },
@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isURL) {
         // Render clickable link
-        displayValue = `<a href="${v}" target="_blank" rel="noopener noreferrer style="cursor:pointer;"">${v}</a>`;
+        displayValue = `<a href="${v}" target="_blank" rel="noopener noreferrer style="cursor:pointer;">Abrir Link</a>`;
       }
       
       else if (isImage) {
