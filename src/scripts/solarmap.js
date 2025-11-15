@@ -332,9 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
         map.addSource('Centrais Solares propostas', {
             'type': 'geojson',
             'data': {
-                "type": "FeatureCollection",
-                "features": [
-                    {
+  "type": "FeatureCollection",
+  "features": [
+    {
                         "type": "Feature",
                         "properties": {
                             "propostasid": "CSPropostas1",
@@ -355,9 +355,104 @@ document.addEventListener('DOMContentLoaded', () => {
                             "type": "Point"
                         },
                         "id": 0
-                    }
-                ]
-            }
+                    },
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas2",
+        "propostasclass": "pinProposed",
+        "Nome": "Central Fotovoltaica da Beira (269 MWP), e Linha Elétrica 220kv de Ligação à RESP",
+        "Consulta Pública": "https://participa.pt/pt/consulta/central-fotovoltaica-da-beira-269-mwp-e-linha-eletrica-220kv-de-ligacao-a-resp",
+        "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
+        "Entidade": "IGNICHOICE RENEWWABLE ENERGY UNIPESSOAL LDA."
+      },
+      "geometry": {
+        "coordinates": [
+          -7.212838035517336,
+          39.79057502417467
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas3",
+        "propostasclass": "pinProposed",
+        "Nome": "Central Solar de Fundão Penamacor",
+        "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fundao-penamacor",
+        "Hectares": 251,
+        "Número de painéis": "177,565"
+      },
+      "geometry": {
+        "coordinates": [
+          -7.133587936902103,
+          40.26954253504954
+        ],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas4",
+        "propostasclass": "pinProposed",
+        "Nome": "Centro Electroprodutor de Valverdinho",
+        "Consulta Pública": "https://participa.pt/pt/consulta/projeto-de-execucao-do-centro-electroprodutor-de-valverdinho",
+        "Hectares": 345,
+        "Número de módulos": "305,550"
+      },
+      "geometry": {
+        "coordinates": [
+          -7.306152694644652,
+          40.288648215906306
+        ],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas5",
+        "propostasclass": "pinProposed",
+        "Nome": "Central Solar Fotovoltaica da Gardunha",
+        "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fotovoltaica-da-gardunha",
+        "Hectares": 66,
+        "Número de painéis": "163,000"
+      },
+      "geometry": {
+        "coordinates": [
+          -7.560045926376375,
+          39.951499834153424
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "propostasid": "CSPropostas6",
+        "propostasclass": "pinProposed",
+        "Nome": "PDA Central Solar do Pinhal Interior II",
+        "Consulta Pública": "https://participa.pt/pt/consulta/pda-central-solar-do-pinhal-interior-ii-hibridizacao-do-pe-pinhal-interior-e-le-a-60-kv",
+        "Hectares": 100,
+        "Número de painéis": "171,710"
+      },
+      "geometry": {
+        "coordinates": [
+          -7.705869931743791,
+          39.820964497941674
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    }
+  ]
+}
 
         });
         map.addLayer({
@@ -365,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'type': 'circle',
             'source': 'Centrais Solares propostas',
             'paint': {
-                'circle-radius': 10,
+                'circle-radius': 6,
                 'circle-color': '#FE0606',
             }
         });
