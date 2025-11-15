@@ -344,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
                             "Área do projeto": "/images/solarmapimages/Mapa Sophia.jpg",
                             "Hectares": "434",
+                            "Número de Módulos": "1,365,588",
                             "Entidade": "Coloursflow – Unipessoal, LDA"
                         },
                         "geometry": {
