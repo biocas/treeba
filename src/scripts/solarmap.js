@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapMobileCenter = [-8.173136, 39.712646];
     const mapDesktopCenter = [-8.804163, 39.094384];
     const defaultZoom = 6.25;
-    const mobileMapZoom = 5.65;
+    const mobileMapZoom = 5.50;
     let mapCenter;
     let mapZoom;
     //change zoom and map centre on viewport
