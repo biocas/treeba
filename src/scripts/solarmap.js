@@ -362,6 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Sub-tipo_Instalação": "Tipo",
                     "Potência__KW_": "Potência (Kw)",
                     "Data_Licença_Produção": "Data da Licença de Produção",
+                    "Data_Licença_Exploração": "Data da Licença de Exploração",
                     classifica: "Classificação",
                     Description: "Descrição",
                     NUTS_NAME: "Região NUTS",

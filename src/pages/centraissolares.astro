@@ -50,9 +50,7 @@ export async function getStaticPaths() {
     box-sizing: border-box;
     font-family: var(--text-font);
   }
-  .infoCard {
-    border: 2px sold var(--dark-brown);
-  }
+  
   .mainHomepageSection h1 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -151,7 +149,9 @@ export async function getStaticPaths() {
   .infoCard {
     overflow: hidden;
     margin-bottom: 2rem;
+    border: 2px sold var(--dark-brown);
   }
+  
   .infoHeadWrapper {
     cursor: pointer;
     display: flex;
@@ -238,7 +238,16 @@ padding: 0;
       overflow-y: auto;
       width: 100%;
     }
-
+.infoCard {
+    margin-bottom: 1rem;
+  }
+  .infoHeadWrapper {
+    padding: 5px;
+  }
+  .infoHeadWrapper .arrow {
+    font-size: 1.2rem;
+        margin-right: 10px;
+  }
     .mainHomepageSection h1 {
       margin: 0;
       font-size: 1.2rem;
@@ -407,6 +416,7 @@ conservação médio a elevado para as aves." (página 24)</li>
         <div class="contentContainer">
           <p class="introText"><strong>Estudos, artigos e notícias relevantes</strong></p>
           <a href="https://extreme-spoonbill.super.site/">STOP Sophia</a>
+          <p>Website com eventos, petições e mais informação para travar o projeto Sophia.</p>
           <a href="https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/102-2025-913048483">Resolução da Assembleia da República n.º 102/2025, de 31 de março
 </a>
 <p>Recomendação da Assembleia ao Governo para compatibilizar a produção de energia renovável com a preservação ambiental e social.</p>
