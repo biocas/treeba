@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     // handle image lightbox from proposed centrals image property
- window.openLightbox = function (src) {
-    const overlay = document.getElementById("lightboxOverlay");
-    const img = document.getElementById("lightboxImage");
-    img.src = src;
-    overlay.style.display = "flex";
-  };
+    window.openLightbox = function (src) {
+        const overlay = document.getElementById("lightboxOverlay");
+        const img = document.getElementById("lightboxImage");
+        img.src = src;
+        overlay.style.display = "flex";
+    };
 
-  window.closeLightbox = function () {
-    document.getElementById("lightboxOverlay").style.display = "none";
-  };
+    window.closeLightbox = function () {
+        document.getElementById("lightboxOverlay").style.display = "none";
+    };
     // Get bounds from any GeoJSON feature 
     function featureBounds(f) {
         const b = new mapboxgl.LngLatBounds();
@@ -332,9 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
         map.addSource('Centrais Solares propostas', {
             'type': 'geojson',
             'data': {
-  "type": "FeatureCollection",
-  "features": [
-    {
+                "type": "FeatureCollection",
+                "features": [
+                    {
                         "type": "Feature",
                         "properties": {
                             "propostasid": "CSPropostas1",
@@ -356,103 +356,112 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         "id": 0
                     },
-    {
-      "type": "Feature",
-      "properties": {
-        "propostasid": "CSPropostas2",
-        "propostasclass": "pinProposed",
-        "Nome": "Central Fotovoltaica da Beira (269 MWP), e Linha Elétrica 220kv de Ligação à RESP",
-        "Consulta Pública": "https://participa.pt/pt/consulta/central-fotovoltaica-da-beira-269-mwp-e-linha-eletrica-220kv-de-ligacao-a-resp",
-        "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
-        "Entidade": "IGNICHOICE RENEWWABLE ENERGY UNIPESSOAL LDA."
-      },
-      "geometry": {
-        "coordinates": [
-          -7.212838035517336,
-          39.79057502417467
-        ],
-        "type": "Point"
-      },
-      "id": 1
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "propostasid": "CSPropostas3",
-        "propostasclass": "pinProposed",
-        "Nome": "Central Solar de Fundão Penamacor",
-        "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fundao-penamacor",
-        "Hectares": 251,
-        "Número de painéis": "177,565"
-      },
-      "geometry": {
-        "coordinates": [
-          -7.133587936902103,
-          40.26954253504954
-        ],
-        "type": "Point"
-      },
-      "id": 2
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "propostasid": "CSPropostas4",
-        "propostasclass": "pinProposed",
-        "Nome": "Centro Electroprodutor de Valverdinho",
-        "Consulta Pública": "https://participa.pt/pt/consulta/projeto-de-execucao-do-centro-electroprodutor-de-valverdinho",
-        "Hectares": 345,
-        "Número de módulos": "305,550"
-      },
-      "geometry": {
-        "coordinates": [
-          -7.306152694644652,
-          40.288648215906306
-        ],
-        "type": "Point"
-      },
-      "id": 3
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "propostasid": "CSPropostas5",
-        "propostasclass": "pinProposed",
-        "Nome": "Central Solar Fotovoltaica da Gardunha",
-        "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fotovoltaica-da-gardunha",
-        "Hectares": 66,
-        "Número de painéis": "163,000"
-      },
-      "geometry": {
-        "coordinates": [
-          -7.560045926376375,
-          39.951499834153424
-        ],
-        "type": "Point"
-      },
-      "id": 4
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "propostasid": "CSPropostas6",
-        "propostasclass": "pinProposed",
-        "Nome": "PDA Central Solar do Pinhal Interior II",
-        "Consulta Pública": "https://participa.pt/pt/consulta/pda-central-solar-do-pinhal-interior-ii-hibridizacao-do-pe-pinhal-interior-e-le-a-60-kv",
-        "Hectares": 100,
-        "Número de painéis": "171,710"
-      },
-      "geometry": {
-        "coordinates": [
-          -7.705869931743791,
-          39.820964497941674
-        ],
-        "type": "Point"
-      },
-      "id": 5
-    }
-  ]
-}
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "propostasid": "CSPropostas2",
+                            "propostasclass": "pinProposed",
+                            "Nome": "Central Fotovoltaica da Beira (269 MWP), e Linha Elétrica 220kv de Ligação à RESP",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/central-fotovoltaica-da-beira-269-mwp-e-linha-eletrica-220kv-de-ligacao-a-resp",
+                            "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
+                            "Área do projeto": "/images/solarmapimages/fotovoltaicadabeira.png",
+                            "Entidade": "IGNICHOICE RENEWWABLE ENERGY UNIPESSOAL LDA."
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                -7.212838035517336,
+                                39.79057502417467
+                            ],
+                            "type": "Point"
+                        },
+                        "id": 1
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "propostasid": "CSPropostas3",
+                            "propostasclass": "pinProposed",
+                            "Nome": "Central Solar de Fundão Penamacor",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fundao-penamacor",
+                            "Área do projeto": "/images/solarmapimages/fundãopenamacor.png",
+                            "Hectares": 251,
+                            "Número de painéis": "177,565",
+"Entidade": "Lestenergia Exploração de Parques Eólicos, S A ."
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                -7.133587936902103,
+                                40.26954253504954
+                            ],
+                            "type": "Point"
+                        },
+                        "id": 2
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "propostasid": "CSPropostas4",
+                            "propostasclass": "pinProposed",
+                            "Nome": "Centro Electroprodutor de Valverdinho",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/projeto-de-execucao-do-centro-electroprodutor-de-valverdinho",
+                            "Área do projeto": "/images/solarmapimages/Valverdinho.png",
+                            "Hectares": 345,
+                            "Número de módulos": "305,550",
+"Entidade": "VVD - Produtora de Energia Renovável de Valverdinho, S.A."
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                -7.306152694644652,
+                                40.288648215906306
+                            ],
+                            "type": "Point"
+                        },
+                        "id": 3
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "propostasid": "CSPropostas5",
+                            "propostasclass": "pinProposed",
+                            "Nome": "Central Solar Fotovoltaica da Gardunha",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/central-solar-fotovoltaica-da-gardunha",
+                            "Área do projeto": "/images/solarmapimages/gardunha.png",
+                            "Hectares": 66,
+                            "Número de painéis": "163,000",
+"Entidade": "Generg Hibridização, S.A"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                -7.560045926376375,
+                                39.951499834153424
+                            ],
+                            "type": "Point"
+                        },
+                        "id": 4
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "propostasid": "CSPropostas6",
+                            "propostasclass": "pinProposed",
+                            "Nome": "PDA Central Solar do Pinhal Interior II",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/pda-central-solar-do-pinhal-interior-ii-hibridizacao-do-pe-pinhal-interior-e-le-a-60-kv",
+                            "Área do projeto": "/images/solarmapimages/pinhalinteriorii.png",
+                            "Hectares": 100,
+                            "Número de painéis": "171,710",
+"Entidade": "TotalEnergies Renewables Portugal Hibridização"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                -7.705869931743791,
+                                39.820964497941674
+                            ],
+                            "type": "Point"
+                        },
+                        "id": 5
+                    }
+                ]
+            }
 
         });
         map.addLayer({
@@ -539,31 +548,31 @@ document.addEventListener('DOMContentLoaded', () => {
                                 // Detect URL (simple match)
                                 const isURL = typeof v === "string" && v.startsWith("http");
 
-                               
-                                    // Detect image file
-      const isImage =
-        typeof v === "string" &&
-        /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(v);
 
-      let displayValue;
+                                // Detect image file
+                                const isImage =
+                                    typeof v === "string" &&
+                                    /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(v);
 
-      if (isURL) {
-        // Render clickable link
-        displayValue = `<a href="${v}" target="_blank" rel="noopener noreferrer style="cursor:pointer;">Abrir Link</a>`;
-      }
-      
-      else if (isImage) {
-  displayValue = `
+                                let displayValue;
+
+                                if (isURL) {
+                                    // Render clickable link
+                                    displayValue = `<a href="${v}" target="_blank" rel="noopener noreferrer style="cursor:pointer;">Abrir Link</a>`;
+                                }
+
+                                else if (isImage) {
+                                    displayValue = `
     <img src="${v}" 
          alt="${label}" 
          class="popupImage"
          onclick="openLightbox('${v}')">
   `;
-}
+                                }
 
-      else {
-        displayValue = v;
-      }
+                                else {
+                                    displayValue = v;
+                                }
                                 return `
         <div class="popupProperty ${safeKey}">
           <span class="popupPropertyTitle">${label}:</span>
@@ -575,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 `;
 
-                new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(html).addTo(map);
+                    new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(html).addTo(map);
                 });
 
                 map.on('mouseenter', l.id, () => map.getCanvas().style.cursor = 'pointer');
