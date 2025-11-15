@@ -36,6 +36,25 @@ export async function getStaticPaths() {
   .publica1 {
     display: none !important;
   }
+  .lightboxOverlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Above Mapbox */
+  cursor: zoom-out;
+}
+
+.lightboxImage {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 8px;
+}
   .container {
     display: flex;
     flex-flow: row nowrap;
@@ -513,6 +532,10 @@ southern Portugal</a>
       </ul>
     </div>
   </div>
+  <div id="lightboxOverlay" class="lightboxOverlay" onclick="closeLightbox()">
+  <img id="lightboxImage" class="lightboxImage">
+</div>
+
 </BaseLayout>
 <script>
   import "../scripts/solarmap.js";

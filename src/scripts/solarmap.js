@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // handle image lightbox from proposed centrals image property
+ window.openLightbox = function (src) {
+    const overlay = document.getElementById("lightboxOverlay");
+    const img = document.getElementById("lightboxImage");
+    img.src = src;
+    overlay.style.display = "flex";
+  };
+
+  window.closeLightbox = function () {
+    document.getElementById("lightboxOverlay").style.display = "none";
+  };
     // Get bounds from any GeoJSON feature 
     function featureBounds(f) {
         const b = new mapboxgl.LngLatBounds();
@@ -272,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //map
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFyZ2FyaWRhc2FsdmFkbyIsImEiOiJja2pndWUzMm80ZmowMnFwZDVxYmt5NWZjIn0.wh2-Kf9dve6BZJGX2hEjEw';
     // match media and device mapbox coordinates for centre
-    const mobileCenter = window.matchMedia ('(max-width: 767px)');
+    const mobileCenter = window.matchMedia('(max-width: 767px)');
     const mapMobileCenter = [-8.173136, 39.712646];
     const mapDesktopCenter = [-8.804163, 39.094384];
     const defaultZoom = 6.25;
@@ -329,9 +340,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             "propostasid": "CSPropostas1",
                             "propostasclass": "pinProposed",
                             "Nome": "Central Solar Fotovoltaica (CSF) de Sophia e as Linhas de Muito Alta Tensão (LMAT) associadas",
-                            "Consulta Pública": "2025-10-10 a 2025-11-20",
+                            "Consulta Pública": "https://participa.pt/pt/consulta/a-csf-de-sophia-e-as-lmat-associadas",
+                            "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
+                            "Área do projeto": "public/images/solarmapimages/Mapa Sophia.jpg",
                             "Tipologia": "Licenciamento Único de Ambiente",
-                            "Entidade promotora do projeto": "Coloursflow – Unipessoal, LDA"
+                            "Entidade": "Coloursflow – Unipessoal, LDA"
                         },
                         "geometry": {
                             "coordinates": [
@@ -385,40 +398,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     LEVL_CODE: "Nível",
                 };
                 //filter functionality
-        const filterGroup = document.getElementById('filter-group');
+                const filterGroup = document.getElementById('filter-group');
 
-        // Add checkbox and label elements for the layer.
-        const filterInput = document.createElement('input');
-        filterInput.type = 'checkbox';
-        filterInput.id = l.id;
-        filterInput.checked = true;
-        filterGroup.appendChild(filterInput);
+                // Add checkbox and label elements for the layer.
+                const filterInput = document.createElement('input');
+                filterInput.type = 'checkbox';
+                filterInput.id = l.id;
+                filterInput.checked = true;
+                filterGroup.appendChild(filterInput);
 
 
-        const filterLabel = document.createElement('label');
-        filterLabel.setAttribute('for', l.id);
-        filterLabel.textContent = l.id;
-        filterGroup.appendChild(filterLabel);
+                const filterLabel = document.createElement('label');
+                filterLabel.setAttribute('for', l.id);
+                filterLabel.textContent = l.id;
+                filterGroup.appendChild(filterLabel);
 
-        const wrapper = document.createElement('div');
-wrapper.className = 'filter-row';
-wrapper.appendChild(filterInput);
-wrapper.appendChild(filterLabel);
-filterGroup.appendChild(wrapper);
+                const wrapper = document.createElement('div');
+                wrapper.className = 'filter-row';
+                wrapper.appendChild(filterInput);
+                wrapper.appendChild(filterLabel);
+                filterGroup.appendChild(wrapper);
 
-        // When the checkbox changes, update the visibility of the layer.
-        filterInput.addEventListener('change', (e) => {
-            map.setLayoutProperty(
-                l.id,
-                'visibility',
-                e.target.checked ? 'visible' : 'none'
-            );
-        });
+                // When the checkbox changes, update the visibility of the layer.
+                filterInput.addEventListener('change', (e) => {
+                    map.setLayoutProperty(
+                        l.id,
+                        'visibility',
+                        e.target.checked ? 'visible' : 'none'
+                    );
+                });
                 map.on('click', l.id, (e) => {
                     const f = e.features[0];
                     if (!f) return;
                     const props = f.properties;
-                    console.log(props);
                     const layerTitle = f.layer?.id; // you can replace this with a custom title map if needed
 
                     const html = `
@@ -428,10 +440,39 @@ filterGroup.appendChild(wrapper);
                                 //if K is date, transform to cool date
                                 const label = propertyLabels[k] || k; //uses sanitising property labels
                                 const safeKey = safeClassName(k); //safe css classes
+                                // Detect URL (simple match)
+                                const isURL = typeof v === "string" && v.startsWith("http");
+
+                               
+                                    // Detect image file
+      const isImage =
+        typeof v === "string" &&
+        /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(v);
+
+      let displayValue;
+
+      if (isURL) {
+        // Render clickable link
+        displayValue = `<a href="${v}" target="_blank" rel="noopener noreferrer style="cursor:pointer;"">${v}</a>`;
+      }
+      
+      else if (isImage) {
+  displayValue = `
+    <img src="${v}" 
+         alt="${label}" 
+         class="popupImage"
+        style="width: 100%; display: block; cursor: zoom-in;"
+         onclick="openLightbox('${v}')">
+  `;
+}
+
+      else {
+        displayValue = v;
+      }
                                 return `
         <div class="popupProperty ${safeKey}">
           <span class="popupPropertyTitle">${label}:</span>
-          <span class="popupPropertyValue">${v}</span>
+          <span class="popupPropertyValue">${displayValue}</span>
         </div>
       `;
                             })
@@ -439,14 +480,13 @@ filterGroup.appendChild(wrapper);
     
 `;
 
-                    //  const html = Object.entries(props).map(([k, v]) => `<div><span class="${k} popupPropertyTitle">${k}: </span><span class="${v} popupPropertyValue" ${v}</div>`).join('');
-                    new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(html).addTo(map);
+                new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(html).addTo(map);
                 });
 
                 map.on('mouseenter', l.id, () => map.getCanvas().style.cursor = 'pointer');
                 map.on('mouseleave', l.id, () => map.getCanvas().style.cursor = '');
             });
-        
+
 
         //list all centrals 
         const lister = createLayeredNameLister(map, {
