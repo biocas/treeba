@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Consulta Pública": "https://participa.pt/pt/consulta/a-csf-de-sophia-e-as-lmat-associadas",
                             "Petição": "https://peticaopublica.com/pview.aspx?pi=PT126132",
                             "Área do projeto": "/images/solarmapimages/Mapa Sophia.jpg",
-                            "Tipologia": "Licenciamento Único de Ambiente",
+                            "Hectares": "434",
                             "Entidade": "Coloursflow – Unipessoal, LDA"
                         },
                         "geometry": {
@@ -461,7 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="${v}" 
          alt="${label}" 
          class="popupImage"
-        style="width: 100%; display: block; cursor: zoom-in;"
          onclick="openLightbox('${v}')">
   `;
 }
