@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //draggable divider
+    const divider = document.getElementById("divider");
+    const sidebar = document.getElementById("mainHomepageSection");
+    const layout   = document.getElementById("container");
+    let isDragging = false;
+
+    divider.addEventListener("mousedown", () => {
+        isDragging = true;
+        document.body.style.cursor = "col-resize";
+    });
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const bounds = layout.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+
+    // Convert drag position into % width
+    const percent = (x / bounds.width) * 100;
+
+    // Enforce 40% minimum
+    const clampedPercent = Math.max(percent, 40);
+
+    sidebar.style.width = `${clampedPercent}%`;
+  });
+    
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+        document.body.style.cursor = "default";
+    });
+
+    // Restore saved width
+    const savedWidth = localStorage.getItem("sidebarWidth");
+    if (savedWidth) {
+        sidebar.style.width = savedWidth + "px";
+    }
+
     // handle image lightbox from proposed centrals image property
     window.openLightbox = function (src) {
         const overlay = document.getElementById("lightboxOverlay");
@@ -386,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Área do projeto": "/images/solarmapimages/fundãopenamacor.png",
                             "Hectares": 251,
                             "Número de painéis": "177,565",
-"Entidade": "Lestenergia Exploração de Parques Eólicos, S A ."
+                            "Entidade": "Lestenergia Exploração de Parques Eólicos, S A ."
                         },
                         "geometry": {
                             "coordinates": [
@@ -407,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Área do projeto": "/images/solarmapimages/Valverdinho.png",
                             "Hectares": 345,
                             "Número de módulos": "305,550",
-"Entidade": "VVD - Produtora de Energia Renovável de Valverdinho, S.A."
+                            "Entidade": "VVD - Produtora de Energia Renovável de Valverdinho, S.A."
                         },
                         "geometry": {
                             "coordinates": [
@@ -428,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Área do projeto": "/images/solarmapimages/gardunha.png",
                             "Hectares": 66,
                             "Número de painéis": "163,000",
-"Entidade": "Generg Hibridização, S.A"
+                            "Entidade": "Generg Hibridização, S.A"
                         },
                         "geometry": {
                             "coordinates": [
@@ -449,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Área do projeto": "/images/solarmapimages/pinhalinteriorii.png",
                             "Hectares": 100,
                             "Número de painéis": "171,710",
-"Entidade": "TotalEnergies Renewables Portugal Hibridização"
+                            "Entidade": "TotalEnergies Renewables Portugal Hibridização"
                         },
                         "geometry": {
                             "coordinates": [

@@ -20,7 +20,8 @@ export async function getStaticPaths() {
 <style>
   #solar-map {
     height: 100vh;
-    width: 60%;
+    width: 100%;
+    flex: 1;
   }
   body {
     background-color: var(--background-cream);
@@ -30,6 +31,11 @@ export async function getStaticPaths() {
     max-height: 100vh;
     margin: 0;
   }
+  #divider {
+  width: 5px;
+  cursor: col-resize;
+  background: #ccc;
+}
   .prop-publica1,
   .site_code,
   .gid,
@@ -55,13 +61,13 @@ export async function getStaticPaths() {
   max-height: 95%;
   border-radius: 8px;
 }
-  .container {
+  #container {
     display: flex;
     flex-flow: row nowrap;
     height: 100vh;
     overflow: hidden;
   }
-  .mainHomepageSection {
+  #mainHomepageSection {
     padding: 1rem;
     width: 40%;
     height: 100%; /* fill vertical space */
@@ -70,20 +76,20 @@ export async function getStaticPaths() {
     font-family: var(--text-font);
   }
   
-  .mainHomepageSection h1 {
+  #mainHomepageSection h1 {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--dark-brown);
   }
-  .mainHomepageSection h2 {
+  #mainHomepageSection h2 {
     font-size: 1.2rem;
     color: whitesmoke;
   }
-  .mainHomepageSection h5 {
+  #mainHomepageSection h5 {
     font-size: 1rem;
   }
   /* Icon key list */
-  .mainHomepageSection ul {
+  #mainHomepageSection ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -109,8 +115,9 @@ export async function getStaticPaths() {
   /* --- Key Button --- */
   /* button (stick it bottom-right; swap to absolute if you want it inside a map container) */
   .legenda-toggle {
+    z-index: 1;
     position: absolute;
-    left: 42vw;
+    left: 2vw;
     top: 1rem;
     border: 0;
     padding: 0.4rem;
@@ -257,12 +264,12 @@ padding: 0;
       width: 100%;
       flex: none;
     }
-    .container {
+    #container {
       display: flex;
       flex-flow: column-reverse nowrap;
       height: 100vh;
     }
-    .mainHomepageSection {
+    #mainHomepageSection {
       margin-top: 1rem;
       flex: 1;
       height: 40vh; /* or auto if you want it to fill leftover space */
@@ -279,22 +286,22 @@ padding: 0;
     font-size: 1.2rem;
         margin-right: 10px;
   }
-    .mainHomepageSection h1 {
+    #mainHomepageSection h1 {
       margin: 0;
       font-size: 1.2rem;
     }
-    .mainHomepageSection h2 {
+    #mainHomepageSection h2 {
       font-size: 1rem;
     }
-    .mainHomepageSection h5 {
+    #mainHomepageSection h5 {
       font-size: 0.9rem;
     }
   }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
-  <div class="container">
-    <section class="mainHomepageSection">
+  <div id="container">
+    <section id="mainHomepageSection">
       <h1>{pageTitle}</h1>
       <p class="introText">
         O mapa interativo mostra a distribuição geográfica das centrais solares
@@ -497,9 +504,9 @@ southern Portugal</a>
       </div>
      
     </section>
-    <div id="solar-map"></div>
-
-    <button id="legenda-btn" class="legenda-toggle">Legenda</button>
+    <div id="divider"></div>
+    <div id="solar-map">
+      <button id="legenda-btn" class="legenda-toggle">Legenda</button>
     <div id="legenda-popover" class="legenda-popover" hidden>
         <button id="legenda-close" class="legenda-x" aria-label="Close"
           >✕</button>
@@ -561,6 +568,9 @@ southern Portugal</a>
         </li>
       </ul>
     </div>
+    </div>
+
+    
   </div>
   <div id="lightboxOverlay" class="lightboxOverlay" onclick="closeLightbox()">
   <img id="lightboxImage" class="lightboxImage">
