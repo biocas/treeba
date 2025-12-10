@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LanguagePicker from "../components/LanguagePicker.astro";
+const pageTitle = "Treeba";
+import HomepageCard from "../layouts/homepageCard.astro";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+<BaseLayout currentLocale={currentLocale}>
+  <LanguagePicker />
+  <div class="container">
+    hello world
+  </div>
+</BaseLayout>
