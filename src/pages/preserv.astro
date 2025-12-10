@@ -40,16 +40,7 @@ export async function getStaticPaths() {
   width: 8px;
   cursor: ew-resize;
   position: relative;
-  border-radius: 999px;
-
-  /* Core gradient using your palette */
-  background: linear-gradient(
-    to bottom,
-    var(--primary-yellow) 0%,
-    var(--background-light-green) 35%,
-    var(--background-dark-green) 65%,
-    var(--primary-orange) 100%
-  );
+background: var(--primary-orange);
 
   /* Button-like outline & depth */
   box-shadow:
@@ -73,37 +64,10 @@ export async function getStaticPaths() {
               box-shadow 0.15s ease;
 }
 
-/* Gloss shine strip */
-#divider::before {
-  content: "";
-  position: absolute;
-  top: 8%;
-  left: 15%;
-  width: 70%;
-  height: 26%;
-  border-radius: 999px;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0)
-  );
-
-  pointer-events: none;
-}
 
 /* Hover glow effects */
 #divider:hover {
   filter: brightness(1.1);
-
-  box-shadow:
-    0,
-    0 0 0 4px var(--stroke-green),
-    inset 0 1px 0 rgba(255,255,255,0.85),
-    inset 0 -2px 0 rgba(0,0,0,0.2),
-
-    0 0 10px rgba(182,240,255,0.6),
-    0 0 16px rgba(115,2,96,0.25);
 }
 
 #divider:active {
