@@ -2,3 +2,4 @@
   from = "/centraissolares"
   to = "/preserv"
   status = 301
+force = true
