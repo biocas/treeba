@@ -9,9 +9,10 @@
 
 body {
   cursor: url("/images/beetlecursor.png") 2 2, pointer;
-  ;
 }
-
+.moonHover:hover{
+        cursor: url("/images/mooncursor.png") 2 2, pointer;
+    }
 :root {
   /* Colours */
   --primary-orange: #F46803;
@@ -26,14 +27,16 @@ body {
   --stroke-green: #497400;
   --dark-brown: #684232;
 
+  /* Opacity variants for colors */
+  --transparent-yellow: rgba(254, 249, 110, 0.60);
+  --transparent-orange: rgba(255, 82, 26, 0.32);
+
   /* Fonts */
   --treeba-font: "Rock 3D", system-ui;
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
   /* Border radius */
-  --border-radius-sm: 0.2rem;
-  --border-radius-base: 0.4rem;
-  --border-radius-lg: 0.6rem;
+  --border-radius-base: 25px;
 }
 
 /* Text and Headings */
@@ -45,7 +48,7 @@ body {
 font-size: 22vw;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
-margin-top: -8rem;
+margin-top: -5rem;
 margin-bottom: 0;
 text-align: center;
 }
@@ -68,7 +71,7 @@ h2 {
 h5 {
   font-family: var(--text-font);
   font-size: 1.3rem;
-  margin: 0.5rem;
+  margin: 0;
 }
 
 /* Map styles */
@@ -152,13 +155,29 @@ buttonPillOrange:focus {
   border: 4px solid var(--primary-orange);
 }
 
-/* Media Queries - Phones */
-@media (max-width: 481px) {
+/* dark and light mode toggle styles
+  html.dark {
+    background-color: #0d0950;
+    color: #fff;
+  }
+  
+  .dark .nav-links a {
+    color: #fff;
+  }*/
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+.mainTreebaTitle {
+    font-size: 41vw;
+    margin-top: -2rem;
+    -webkit-text-stroke-width: 1px;
+  }
+  /* map styles */
 .mapboxgl-popup .mapboxgl-popup-content {
   font-size: 0.6rem;
 }
  .popupImage {
-    max-height: 20vh;    /* smaller images on small screens */
+    max-height: 20vh;    
   }
 .mapboxgl-popup {
   max-width: 75vw !important;
@@ -180,13 +199,11 @@ buttonPillOrange:focus {
     font-size: 1.3rem;
   }
 }
-
-/* dark and light mode toggle styles
-  html.dark {
-    background-color: #0d0950;
-    color: #fff;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .mainTreebaTitle {
+    margin-top: -2rem;
   }
-  
-  .dark .nav-links a {
-    color: #fff;
-  }*/
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -2,7 +2,7 @@
 const { image, href, name } = Astro.props;
 ---
 
-<a class="card" href={href}>
+<a class="card moonHover" href={href}>
     <img src={image} class="card-img-top" alt={name} />
     <div class="wrapper">
     <h2 class="card-title">{name}</h2>
@@ -21,7 +21,6 @@ const { image, href, name } = Astro.props;
     }
     .card:hover {
         transform: scale(1.1);
-        cursor: pointer;
     }
     .card-img-top {
         width: 120px;
