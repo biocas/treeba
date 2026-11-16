@@ -41,10 +41,12 @@ body {
   color: var(--primary-yellow);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--primary-orange);
-font-size: 20.371rem;
+font-size: 22vw;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
-
+margin-top: -5rem;
+margin-bottom: 0;
+text-align: center;
 }
 .whiteAndStroke {
   color: white;
