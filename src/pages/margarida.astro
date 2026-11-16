@@ -76,10 +76,7 @@ export async function getStaticPaths() {
 <BaseLayout currentLocale={currentLocale}>
   <LanguagePicker />
   <div class="container">
-    <div class="cardWrapper">
-<HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
-        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
-    </div>
+    
     <div class="middleWrapper">
 <section class="mainHomepageSection">
       <img class="treebaLogo" alt="Treeba" src="/images/Treeba.svg">
@@ -90,20 +87,10 @@ export async function getStaticPaths() {
       </h5>
     
     </section>
-    <div class="cardWrapperBottom"><HomepageCard image="/images/map.svg" href="/map/" name="Map" />
-        <HomepageCard
-          image="/images/bee.svg"
-          href="/bookshelf/"
-          name="Books"
-        /></div>
+    
     </div>
     
-        <div class="cardWrapper"> <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
-        <HomepageCard
-          image="/images/flower.svg"
-          href="/margarida/"
-          name="About"
-        /></div>
+        
   </div>
 </BaseLayout>
 
