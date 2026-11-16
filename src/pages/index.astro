@@ -24,9 +24,6 @@ export async function getStaticPaths() {
     flex-flow: column nowrap;
     margin: 0rem 2rem;
   }
-  .introHome {
-    font-size: 1.615rem;
-  }
   .homeContent {
     display: flex;
     flex-flow: row nowrap;
@@ -63,12 +60,35 @@ export async function getStaticPaths() {
     overflow-y: scroll;
   }
   @media only screen and (min-width: 768px) {
+   
 .contentBox {
     margin-top: 3rem;
   }
   .homeContent {
     margin: 0rem 0rem 5rem;
     gap: 3rem;
+  }
+  }
+  @media only screen and (max-width: 767px) {
+    .contentBar {
+    margin: 0 1.5rem;
+  }
+  
+   .container {
+    margin: 0;
+  }
+  .homeContent {
+    margin: 0;
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+  .cardWrapper {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    justify-items: center;
   }
   }
 </style>

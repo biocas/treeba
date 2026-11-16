@@ -30,6 +30,7 @@ body {
   /* Opacity variants for colors */
   --transparent-yellow: rgba(254, 249, 110, 0.60);
   --transparent-orange: rgba(255, 82, 26, 0.32);
+  --transparent-brown: rgba(104, 66, 50, 0.7);
 
   /* Fonts */
   --treeba-font: "Rock 3D", system-ui;
@@ -57,6 +58,10 @@ text-align: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
+
+  .introHome {
+    font-size: 1.615rem;
+  }
 .note {
   font-size: 0.8rem;
 } 
@@ -167,10 +172,18 @@ buttonPillOrange:focus {
 
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 767px) {
+  .introHome {
+    background-color: var(--transparent-brown);
+    border-radius: var(--border-radius-base);
+    border: 2px solid var(--primary-green);
+    padding: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
 .mainTreebaTitle {
-    font-size: 41vw;
+    font-size: 21vw;
     margin-top: -2rem;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 0.5px;
   }
   /* map styles */
 .mapboxgl-popup .mapboxgl-popup-content {
