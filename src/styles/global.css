@@ -139,10 +139,10 @@ box-shadow: 2px 2px 0px 2px var(--dark-brown);
   border-radius: 11px;
 }
 
-buttonPill:hover,
-buttonPill:focus {
+.buttonPill:hover,
+.buttonPill:focus {
   background-color: var(--stroke-green);
-  color: white;
+  color: var(--background-light-green) !important;
   border: 4px solid var(--background-light-green);
 }
 
@@ -154,8 +154,8 @@ buttonPill:focus {
   border-radius: 11px;
 }
 
-buttonPillOrange:hover,
-buttonPillOrange:focus {
+.buttonPillOrange:hover,
+.buttonPillOrange:focus {
   background-color: white;
   border: 4px solid var(--primary-orange);
 }
