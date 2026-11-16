@@ -19,6 +19,7 @@ body {
   --primary-purple: #730260;
   --primary-blue: #B6F0FF;
   --primary-yellow: #FEF96E;
+  --secondary-yellow: #FFF3C0;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
   --background-cream: #fff3df;
@@ -44,7 +45,7 @@ body {
 font-size: 22vw;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
-margin-top: -5rem;
+margin-top: -8rem;
 margin-bottom: 0;
 text-align: center;
 }

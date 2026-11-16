@@ -5,7 +5,7 @@ const { image, href, name } = Astro.props;
 <a class="card" href={href}>
     <img src={image} class="card-img-top" alt={name} />
     <div class="wrapper">
-    <h2 class="card-title whiteAndStroke ">{name}</h2>
+    <h2 class="card-title">{name}</h2>
     </div>
 </a>
 
@@ -30,7 +30,11 @@ const { image, href, name } = Astro.props;
         transform: rotate(-10deg);
     }
     .card-title {
-       
+        font-family: var(--title-font);
+       color: var(--secondary-yellow);
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: var(--primary-orange);
+  font-size: 1.379rem;
     }
     @media (max-width: 481px) { 
         .card-img-top {
