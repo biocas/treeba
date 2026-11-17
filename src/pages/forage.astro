@@ -1,4 +1,19 @@
 ---
+// image from https://archive.org/details/ida_rentoul_outhwaite_frog_fairy_talking 
+/* “Ask permission of the ones whose lives you seek.
+Abide by the answer.
+Never take the first.
+Never take the last.
+Harvest in a way that minimizes harm.
+Take only what you need and leave some for others.
+Use everything that you take.
+Take only that which is given to you.
+Share it, as the Earth has shared with you.
+Be grateful.
+Reciprocate the gift.
+Sustain the ones who sustain you, and the Earth will last forever.”
+Robin Wall Kimmerer
+*/
 // here I want a really throwback page again with a cute graphic + copy "We are about to go forage on my digital forest. See what it takes you + button that takes you onto a random post page whatever on this website"
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Footer from "../components/Footer.astro";
@@ -13,119 +28,25 @@ export async function getStaticPaths() {
 ---
 
 <style>
-    h1 {
-        text-align: center;
-    }
-  body {
-    background-image: url("/images/rootsBckHome.png");
-    background-color: #FF4E00;
+ body {
+   background-image: url("/images/foragebck1.png");
+    background-color: var(--dark-brown);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-    max-height: 100vh;
-    margin: 0;
-  }
-  .container {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 1rem 2rem 3rem 4rem;
+ }
+ .container {
     align-items: center;
-  }
-  .pagesGrid {
-    display: flex;
-    flex-flow: row wrap;
-    width: 70vw;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px 20px;
-  }
-  .scroll-container {
-  border: 3px solid black;
-  background-color: var(--primary-orange);
-  overflow: hidden;
-}
+ }
 
-.scroll-text {
-    white-space: nowrap;
-  /* animation properties */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  
-  -moz-animation: my-animation 25s linear infinite;
-  -webkit-animation: my-animation 25s linear infinite;
-  animation: my-animation 25s linear infinite;
-}
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-
-  @media (max-width: 481px) {
-    body {
-    height: 100vh;
-        max-height: none;
-  }
-   h1{
-    margin: 0.5rem 0 0.5rem 0;
-  }
-  .pagesGrid {
-    gap: 10px;
-    justify-content: space-evenly;
-  }
-
-  }
 </style>
 
-<BaseLayout currentLocale={currentLocale}>
-    <div class="scroll-container">
-<div class="scroll-text">
-        <h5 class="whiteAndStroke">Digital woodlands where regenerative work germinates and grows, fruits
-        and decays, eventually composting, circling in tender connections and
-        the hopeful flow of gifts. Focused on the Iberian Peninsula.</h5>
-</div>
-    </div>
-  <div class="container">
-      <h1 class="whiteAndStroke">{pageTitle}</h1>
-      
-      <div class="pagesGrid">
-        <HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
-        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
-        <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
-        <HomepageCard
-          image="/images/bee.svg"
-          href="/bookshelf/"
-          name="Books"
-        />
-        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
-        <HomepageCard
-          image="/images/flower.svg"
-          href="/margarida/"
-          name="About"
-        />
-      </div>
-  </div>
+<BaseLayout currentLocale={currentLocale}>   
 
+  <section class="container">
+<img class="frogImg" src="/images/ida_rentoul_outhwaite_frog_fairy_talking 1.png" loading="lazy" alt="ida rentoul outhwaite frog_fairy talking">
+
+  <h2 class="whimsyTitle"> We are about to go forage on my digital forest. Grab your basket, follow the Honourable Harvest and see where it takes you!</h2>
+    <HomepageCard image="/images/basket.svg" href="" name="Yes!" />
+      </section>
 <Footer/>
 </BaseLayout>

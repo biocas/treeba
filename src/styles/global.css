@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
 * {
   box-sizing: border-box;
 
@@ -36,11 +36,20 @@ body {
   --treeba-font: "Rock 3D", system-ui;
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
+  --whimsy-font: "League Script", sans-serif;
+
   /* Border radius */
   --border-radius-base: 25px;
 }
 
 /* Text and Headings */
+.whimsyTitle {
+  font-family: var(--whimsy-font);
+  color: var(--primary-blue);
+font-size: 3rem;
+    font-weight: 100;
+text-align: center;
+}
 .mainTreebaTitle {
   font-family: var(--treeba-font);
   color: var(--primary-yellow);
@@ -86,6 +95,13 @@ a {
 a:hover {
   color: #1700EE;
 }
+
+/* Wrappers */
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0rem 2rem;
+  }
 /* Map styles */
 .popupImage {
    max-width: 100%;
@@ -179,6 +195,10 @@ box-shadow: 2px 2px 0px 2px var(--dark-brown);
 
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 767px) {
+
+   .container {
+    margin: 0;
+  }
   .introHome {
     background-color: var(--transparent-brown);
     border-radius: var(--border-radius-base);
