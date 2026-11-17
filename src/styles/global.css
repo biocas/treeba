@@ -20,6 +20,7 @@ body {
   --primary-purple: #730260;
   --primary-blue: #B6F0FF;
   --primary-yellow: #FEF96E;
+  --primary-pink: #F2A7B1;
   --secondary-yellow: #FFF3C0;
   --background-light-green: #C3EB80;
   --background-dark-green: #A0DF33;
@@ -45,7 +46,7 @@ body {
 /* Text and Headings */
 .whimsyTitle {
   font-family: var(--whimsy-font);
-  color: var(--primary-blue);
+  color: var(--primary-pink);
 font-size: 3rem;
     font-weight: 100;
 text-align: center;
