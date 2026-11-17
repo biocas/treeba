@@ -78,7 +78,14 @@ h5 {
   font-size: 1.3rem;
   margin: 0;
 }
-
+a {
+  font-family: var(--title-font);
+  text-decoration: underline;
+   color: white;
+}
+a:hover {
+  color: #1700EE;
+}
 /* Map styles */
 .popupImage {
    max-width: 100%;

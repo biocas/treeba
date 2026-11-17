@@ -1,24 +1,26 @@
 ---
-import Social from './Social.astro';
 ---
 
 <footer>
-    <Social platform="instagram" username="margarida__ps" />
-    <Social platform="github" username="biocas" />
-    <a class="substack" href={`https://substack.com/@margaridasalvado`}>Substack</a>
-    <Social platform="youtube" username="@JoshandMargarida" />  
+  <a class="moonHover" href={`https://www.yourworldoftext.com/~margaridasalvado/`}>Guestbook</a>
+    <a class="moonHover" href={`https://substack.com/@margaridasalvado`}>Substack</a>
+    <a class="moonHover" href={`https://www.instagram.com/margarida__ps/`}>Instagram</a>
+    <a class="moonHover" href={`https://github.com/biocas`}>GitHub</a>
 </footer>
 
 <style>
-    .substack {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
-      text-decoration: none;
-    }
   footer {
     display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 2rem 5rem 2rem;
+    margin: 0;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+  }
+  @media only screen and (max-width: 767px) {
+    footer {
+      padding: 2rem;
+    }
   }
   </style>

@@ -1,8 +1,10 @@
 ---
+//<bg-sound src="https://geocities.restorativland.org/Area51/Shadowlands/1272/alliance.mid" loop="true" baseurl="/_assets/midi/"></bg-sound>
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Treeba";
 import HomepageCard from "../layouts/homepageCard.astro";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
@@ -99,20 +101,21 @@ export async function getStaticPaths() {
     <h1 class="mainTreebaTitle">Treeba</h1>
     <section class="homeContent"> 
       <div class="cardWrapper">
-<HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
-        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
-        <HomepageCard image="/images/map.svg" href="/map/" name="Map" />
-        <HomepageCard
-          image="/images/bee.svg"
-          href="/bookshelf/"
-          name="Books"
-        />
-        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
         <HomepageCard
           image="/images/flower.svg"
           href="/margarida/"
           name="About"
         />
+<HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
+        <HomepageCard image="/images/forest.svg" href="forest/" name="Forest" />
+        <HomepageCard
+          image="/images/bee.svg"
+          href="/bookshelf/"
+          name="Resources"
+        />
+        <HomepageCard image="/images/map.svg" href="/map/" name="Maps" />
+        <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
+        
     </div>
     <div class="contentBar">
 <h5 class="whiteAndStroke introHome">
@@ -128,5 +131,7 @@ export async function getStaticPaths() {
     </section>
     
   </div>
+<Footer/>
 </BaseLayout>
+
 
