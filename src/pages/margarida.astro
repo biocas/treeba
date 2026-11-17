@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LanguagePicker from "../components/LanguagePicker.astro";
+import Footer from "../components/Footer.astro";
 const pageTitle = "Margarida";
 import HomepageCard from "../layouts/homepageCard.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
@@ -92,5 +93,7 @@ export async function getStaticPaths() {
     
         
   </div>
+
+<Footer/>
 </BaseLayout>
 

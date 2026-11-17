@@ -1,7 +1,15 @@
 ---
+// here I want a really throwback page again with a cute graphic + copy "We are about to go forage on my digital forest. See what it takes you + button that takes you onto a random post page whatever on this website"
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Treeba";
+import Footer from "../components/Footer.astro";
+const pageTitle = "Forage";
 import HomepageCard from "../layouts/homepageCard.astro";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
 ---
 
 <style>
@@ -90,7 +98,7 @@ import HomepageCard from "../layouts/homepageCard.astro";
   }
 </style>
 
-<BaseLayout>
+<BaseLayout currentLocale={currentLocale}>
     <div class="scroll-container">
 <div class="scroll-text">
         <h5 class="whiteAndStroke">Digital woodlands where regenerative work germinates and grows, fruits
@@ -118,4 +126,6 @@ import HomepageCard from "../layouts/homepageCard.astro";
         />
       </div>
   </div>
+
+<Footer/>
 </BaseLayout>

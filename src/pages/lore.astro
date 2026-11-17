@@ -1,3 +1,16 @@
+---
+/// here maybe a good opportunity to explore the content on a different file 
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Lore";
+import Footer from "../components/Footer.astro";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+<BaseLayout currentLocale={currentLocale}>
 <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
 
 <p>I wanted the footer to be very similar to the first footers on the web. This lead me to read through the history of web design, which I never had done and most defintely should have in my career as web dev and designer. Oh well. I bumped into https://www.theatlantic.com/technology/archive/2017/04/the-first-ever-banner-ad-on-the-web/523728/ The First-Ever Banner Ad on the Web and found it amusing. When pop ups where first created, they had good intentions! the first ad banner is hilarious. Again the clunkiness of the digital world would help you maintain the boundary between what is analog and what is digital. </p>
@@ -10,3 +23,8 @@ delicious browse as well here https://geocities.restorativland.org/Area51/Shadow
 https://geocities.restorativland.org/Area51/Shadowlands/2959/seshat.html - temples for the goddeses, each page is a temple with the corresponding picture
 https://geocities.restorativland.org/ 
 https://www.erowid.org/spirit/spirit.shtml
+
+
+<Footer/>
+
+</BaseLayout>

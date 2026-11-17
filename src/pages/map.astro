@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LanguagePicker from "../components/LanguagePicker.astro";
+import Footer from "../components/Footer.astro";
 const pageTitle = "Interactive Map";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
@@ -36,6 +37,8 @@ export async function getStaticPaths() {
 
   </div>
 </BaseLayout>
+
+<Footer/>
 <!-- Link to the JavaScript file for interactivity -->
 <script src="/src/scripts/map.js" defer>
 </script>
