@@ -1,8 +1,8 @@
 ---
-const { image, href, name } = Astro.props;
+const { image, href, name, id } = Astro.props;
 ---
 
-<a class="card moonHover" href={href}>
+<a id={id} class="card moonHover" href={href}>
     <img src={image} class="card-img-top" alt={name} />
     <div class="wrapper">
     <h2 class="card-title">{name}</h2>
@@ -47,6 +47,9 @@ const { image, href, name } = Astro.props;
     .card {
         flex-flow: column wrap;
         align-items: center;
+    }
+    #basket {
+        width: 25vw;
     }
         } 
         

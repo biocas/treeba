@@ -47,7 +47,7 @@ body {
 .whimsyTitle {
   font-family: var(--whimsy-font);
   color: var(--primary-pink);
-font-size: 3rem;
+font-size: 2rem;
     font-weight: 100;
 text-align: center;
 }

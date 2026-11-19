@@ -28,26 +28,58 @@ export async function getStaticPaths() {
 ---
 
 <style>
- body {
-   background-image: url("https://dn710909.ca.archive.org/0/items/clevelandart-1978.52-trees-and-undergrowt/1978.52_full.jpg");
-    background-color: var(--dark-brown);
-    background-size: cover;
-    background-repeat: no-repeat;
+@keyframes faeFly {
+	0% {
+		transform: translate(-40vw, 2vh) rotate(0);
+    opacity: 1;
+	}
+	50% {
+		transform: translate(0vw, 0) rotate(30deg);
+    opacity: 0.1;
+	}
+	100% {
+		transform: translate(80vw, 4vh);
+    opacity: 1;
+	}
+}
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+ .whimsyTitle {
+  width: 80vw;
+ }
+ .bckImage {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+ filter: brightness(0.5) hue-rotate(45deg);
+ }
+ .frogImg {
+animation: faeFly 8s linear reverse infinite;
  }
  .container {
     align-items: center;
-    padding: 1rem 0 10rem;
+    padding: 1rem 0 5rem;
  }
-
+ @media only screen and (max-width: 767px) {
+  
+ }
+ 
 </style>
 
 <BaseLayout currentLocale={currentLocale}>   
-
+<img class="bckImage" src="https://dn710909.ca.archive.org/0/items/clevelandart-1978.52-trees-and-undergrowt/1978.52_full.jpg"/>
   <section class="container">
 <img class="frogImg" src="/images/ida_rentoul_outhwaite_frog_fairy_talking 1.png" loading="lazy" alt="ida rentoul outhwaite frog_fairy talking">
 
   <h2 class="whimsyTitle"> We are about to go forage on my digital forest. Grab your basket, follow the Honourable Harvest and see where it takes you!</h2>
-    <HomepageCard image="/images/basket.svg" href="" name="" />
+    <HomepageCard image="/images/basket.svg" href="" name="" id="basket" />
       </section>
 <Footer/>
 </BaseLayout>
+<!-- Link to the JavaScript file for interactivity -->
+<script src="/src/scripts/forage.js" defer>
+</script>
