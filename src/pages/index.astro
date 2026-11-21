@@ -1,6 +1,7 @@
 ---
 //<bg-sound src="https://geocities.restorativland.org/Area51/Shadowlands/1272/alliance.mid" loop="true" baseurl="/_assets/midi/"></bg-sound>
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
 const pageTitle = "Treeba";
 import HomepageCard from "../layouts/homepageCard.astro";
 import Navigation from "../components/Navigation.astro";
@@ -119,7 +120,7 @@ export async function getStaticPaths() {
       <section class="wrapBase contentBox">
       <Navigation/>
       <div class="FeedContentWrapper">
-
+<BlogPost/>
       </div>
       </section>
     </div>
