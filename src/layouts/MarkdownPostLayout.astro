@@ -30,7 +30,7 @@ import BaseLayout from './BaseLayout.astro';
     }
 </style>
 <BaseLayout pageTitle={frontmatter.title}>
-    <a href="/essays/">Back to Essays</a>
+    <a href="/forest/">Back to the Forest</a>
     <div class="tags">
         {frontmatter.tags.map((tag: string) => (
           <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>

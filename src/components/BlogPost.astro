@@ -2,9 +2,6 @@
 import { getCollection } from "astro:content";
 const posts = await getCollection('blog');
 const now = Date.now();
-
-
-//const { title, url } = Astro.props; --  <a href={url}>{title}</a> 
 ---
 <h1>My posts</h1>
 <ul class="posts">

@@ -96,20 +96,14 @@ animation: faeFly 8s linear reverse infinite;
 </BaseLayout>
 <!-- Link to the JavaScript file for interactivity -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener('DOMContentLoaded', () => {
 const posts = import.meta.glob('/src/blog/[^_]*.{md,mdx}')//relative to this component file
 const postNames = Object.keys(posts);
 const cleanNames = postNames.map(post => {
   return post.split('/').pop().replace(/\.(md|mdx)$/, "");
 });
-
-console.log(cleanNames);
 const randomElement = cleanNames[Math.floor(Math.random() * cleanNames.length)];
-console.log(randomElement);
-
 const randompage = "https://treeba.eu/blog/" + randomElement;
-console.log(randompage);
 document.getElementById("basket").href = randompage;
   
 });
