@@ -1,0 +1,19 @@
+---
+// add the blinkie I made here somewhere
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Credits";
+import Footer from "../components/Footer.astro";
+const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
+export async function getStaticPaths() {
+  return ["en", "pt"].map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+<BaseLayout currentLocale={currentLocale}>
+<a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
+
+
+<Footer/>
+
+</BaseLayout>

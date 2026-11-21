@@ -1,5 +1,4 @@
 ---
-/// here maybe a good opportunity to explore the content on a different file 
 // add the blinkie I made here somewhere
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Lore";
@@ -11,9 +10,22 @@ export async function getStaticPaths() {
   });
 }
 ---
+<style>
+   body {
+    background-image: url("/images/treeba home bck.png");
+    background-color: var(--primary-orange);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+  
+</style>
 <BaseLayout currentLocale={currentLocale}>
 <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
-
+<p>
+This page has been highly influenced by Maggie Appleton's <a href="https://maggieappleton.com/colophon">Colophon page</a>
+I have had a blog <a href="https://simsim-naonao.blogspot.com/">(still live!!!)</a> since I was 11 years old. I still remember getting home from school and opening the Blogger editor to pour my whole heart into it, hit publish and go on about my day as the romantic writter I WAS! Remember other bloggers giving you blog badges? Ah. The bubbling hope of real connection, changing the world witb my essays, pounding thoughts for a living. At 11, I was a writter. Around my 29th birthday, I got back to writing. 
+</p>
 <p>I wanted the footer to be very similar to the first footers on the web. This lead me to read through the history of web design, which I never had done and most defintely should have in my career as web dev and designer. Oh well. I bumped into https://www.theatlantic.com/technology/archive/2017/04/the-first-ever-banner-ad-on-the-web/523728/ The First-Ever Banner Ad on the Web and found it amusing. When pop ups where first created, they had good intentions! the first ad banner is hilarious. Again the clunkiness of the digital world would help you maintain the boundary between what is analog and what is digital. </p>
 <p>I love how one of https://www.webdesignmuseum.org/web-design-history the first communities of websites was called GeoCities, so closely tied to our territory, perhaps a first warp in the language of nature</p>
 <a href="https://medium.com/@apollak/flashback-1995-batmanforever-com-screens-2c7a818dc25d">footer inspo</a>
