@@ -93,10 +93,8 @@ const postNames = Object.keys(posts);
 const cleanNames = postNames.map(post => {
   return post.split('/').pop().replace(/\.(md|mdx)$/, "");
 });
-console.log(cleanNames);
 const randomElement = cleanNames[Math.floor(Math.random() * cleanNames.length)];
 const randomPage = "https://treeba.eu/blog/" + randomElement;
-console.log(randomPage);
 document.getElementById("basket").href = randomPage;
   
 });

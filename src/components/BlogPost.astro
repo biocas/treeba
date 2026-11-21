@@ -10,5 +10,9 @@ const now = Date.now();
 //);
 ---
 
-    <li><a href={`/${slug}`}>{title}</a></li>
+<ul class="posts">
+    {publishedPosts.map(post => (
+    <li><a href={`/${slug}`}>{post.data.title}</a></li>
+  ))}
+</ul>
 
