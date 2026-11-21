@@ -1,18 +1,18 @@
 ---
 title: 'Introducing Treeba'
-description: 'Today I am setting up the website for my Treeba digital garden'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["treeba", "regeneration", "learning in public"]
-startDate: "2025-07-27"
-lastUpdated: "2025-07-27"
+startDate: 2025-07-27
+lastUpdated: 2025-07-27
 successionStage: "placenta"
 growthStage: "seedling"
 stataLevel: "groundcover"
 format: "diary entry"
 draft: false
 topics: ["technology", "learning in public"]
+tags: ["treeba", "regeneration", "learning in public"]
+description: 'Today I am setting up the website for my Treeba digital garden'
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 ---
 ## What I've accomplished
 

@@ -25,6 +25,17 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
+// src/pages/random-post.astro
+import { getCollection } from "astro:content";
+
+// 1. Fetch all posts at build time (Server-side)
+const posts = await getCollection("blog");
+
+// 2. Extract just the slugs for a smaller payload
+const slugs = posts.map((post) => post.id);
+
+// 3. Serialize the data into a JSON string
+const slugsJSON = JSON.stringify(slugs);
 ---
 
 <style>
@@ -72,7 +83,8 @@ animation: faeFly 8s linear reverse infinite;
  
 </style>
 
-<BaseLayout currentLocale={currentLocale}>   
+<BaseLayout currentLocale={currentLocale}>  
+ <div id="blog-data" style="display: none;" data-posts={slugsJSON}></div>  
 <img class="bckImage" src="https://dn710909.ca.archive.org/0/items/clevelandart-1978.52-trees-and-undergrowt/1978.52_full.jpg"/>
   <section class="container">
 <img class="frogImg" src="/images/ida_rentoul_outhwaite_frog_fairy_talking 1.png" loading="lazy" alt="ida rentoul outhwaite frog_fairy talking">
@@ -83,5 +95,24 @@ animation: faeFly 8s linear reverse infinite;
 <Footer/>
 </BaseLayout>
 <!-- Link to the JavaScript file for interactivity -->
-<script src="/src/scripts/forage.js" defer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+const posts = import.meta.glob('/src/blog/[^_]*.{md,mdx}')//relative to this component file
+const postNames = Object.keys(posts);
+const cleanNames = postNames.map(post => {
+  return post.split('/').pop().replace(/\.(md|mdx)$/, "");
+});
+
+console.log(cleanNames);
+const randomElement = cleanNames[Math.floor(Math.random() * cleanNames.length)];
+console.log(randomElement);
+
+const randompage = "https://treeba.eu/blog/" + randomElement;
+console.log(randompage);
+document.getElementById("basket").href = randompage;
+  
+});
+
+
 </script>

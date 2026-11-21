@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/Navigation.astro";
 const pageTitle = "The Digital Forest";
 import Footer from "../components/Footer.astro";
 import BlogPost from "../components/BlogPost.astro";
@@ -11,7 +12,17 @@ export async function getStaticPaths() {
   });
 }
 ---
+<style>
+body {
+    background-image: url("/images/treeba home bck.png");
+    background-color: var(--primary-orange);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+  </style>
 <BaseLayout currentLocale={currentLocale}>
+  <Navigation/>
 <BlogPost/>
 <Footer/>
 </BaseLayout>
