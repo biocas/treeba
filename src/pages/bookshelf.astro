@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
+import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
+import Header from "../components/Header.astro";
 const pageTitle = "Resources";
 import Footer from "../components/Footer.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
@@ -9,7 +12,45 @@ export async function getStaticPaths() {
   });
 }
 ---
+<style>
+   body {
+    margin: 0;
+    overflow: hidden;
+  }
+  .containerScrollonScreen {
+    background-image: url("/images/rootsBckHome.png");
+    background-color: var(--dark-brown);
+  }
+  h1 {
+  font-family: var(--treeba-font);
+  color: var(--primary-yellow);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--primary-orange);
+font-size: 12rem;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+margin-top: -5rem;
+margin-bottom: 0;
+text-align: center;
+}
+</style>
 
 <BaseLayout currentLocale={currentLocale}>
+  <div class="containerScrollonScreen">
+    <div class="containFooter">
+      <Header/>
+      <div class="introSectionAbsolute">
+
+    <h1 class="mainTreebaTitle">{pageTitle}</h1>
+<h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
+    </div>
+<section class="textWrapperWackySections"> 
+
+
+</section>
+<Footer />
+</div>
     
+</div>
+
 </BaseLayout>

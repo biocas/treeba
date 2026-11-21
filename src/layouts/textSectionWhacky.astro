@@ -1,18 +1,21 @@
 ---
-const { color, border, width, textColour, alignSelf } = Astro.props;
+const { color, border, flexBasis, textColour, alignSelf, extraSideSpace } = Astro.props;
 ---
 
 <section class="textSectionWacky">
     <slot />
  </section>
 
-  <style define:vars={{ color , border, width, textColour, alignSelf }}>
+  <style define:vars={{ color , border, flexBasis, textColour, alignSelf, extraSideSpace }}>
 .textSectionWacky {
+    z-index: 11;
     background-color: var(--color);
     padding: 1rem;
     border: var(--border);
-    width: var(--width);
+    flex-basis: var(--flexBasis);
     color: var(--textColour);
     align-self: var(--alignSelf);
+    margin-left: var(--extraSideSpace);
+    margin-right: var(--extraSideSpace);
 }
   </style>

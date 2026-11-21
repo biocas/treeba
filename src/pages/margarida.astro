@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LanguagePicker from "../components/LanguagePicker.astro";
+import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
+import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
+import Header from "../components/Header.astro";
+const pageTitle = "About";
 import Footer from "../components/Footer.astro";
-const pageTitle = "Margarida";
-import HomepageCard from "../layouts/homepageCard.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
@@ -11,88 +12,33 @@ export async function getStaticPaths() {
   });
 }
 ---
-
 <style>
-  body {
-    background-image: url("/images/rootsBckHome.png");
-    background-color: var(--primary-orange);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    max-height: 100vh;
+   body {
+    margin: 0;
     overflow: hidden;
   }
-  .container {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 3.5rem;
-    margin: 3rem 2rem 3rem 4rem;
-  }
-  .treebaLogo {
-    width: 30vw;
-  }
-  .mainHomepageSection {
-    background-color: var(--background-cream);
-    border: 2px solid var(--primary-green);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 10px 10px var(--primary-green);
-    display: flex;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 10px;
-  }
-  .homeAboutText {
-    color: var(--dark-brown);
-  }
-  .cardWrapper {
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 10px;
-  }
-  .cardWrapperBottom {
-    margin-top: 3rem;
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-    gap: 10px;
-  }
-  @media (max-width: 481px) {
-    body {
-    height: 100vh;
-        max-height: none;
-  }
-  .container {
-    gap: 0;
-    margin: 1.5rem;
-  }
-.mainHomepageSection h5{
-    margin: 1rem 0 1.5rem 0;
-  }
+  .containerScrollonScreen {
+    background-image: url("/images/rootsBckHome.png");
+    background-color: var(--dark-brown);
   }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
-  <LanguagePicker />
-  <div class="container">
-    
-    <div class="middleWrapper">
-<section class="mainHomepageSection">
-      <img class="treebaLogo" alt="Treeba" src="/images/Treeba.svg">
-      <h5 class="homeAboutText">
-        Digital woodlands where regenerative work germinates and grows, fruits
-        and decays, eventually composting, circling in tender connections and
-        the hopeful flow of gifts. Focused on the Iberian Peninsula.
-      </h5>
-    
-    </section>
-    
+  <div class="containerScrollonScreen">
+    <div class="containFooter">
+      <Header/>
+      <div class="introSectionAbsolute">
+
+<img class="imgPageTitle" src="/public/images/Lore.svg" alt={pageTitle}/>
+<h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
     </div>
+<section class="textWrapperWackySections"> 
+
+
+</section>
+<Footer />
+</div>
     
-        
-  </div>
+</div>
 
 </BaseLayout>
-

@@ -1,13 +1,36 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Hamburger from "../components/Hamburger.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+// import ThemeIcon from "./ThemeIcon.astro"; - add this and <ThemeIcon /> blow for dark and light theme if we want in the future
 ---
 
 <header>
     <nav>
-        <Hamburger />
-        <ThemeIcon />
-        <Navigation />
+      <a class="moonHover" href="https://treeba.eu/"><img src="/public/favicon.svg" alt="treeba logo to homepage"/></a>  
     </nav>
 </header>
+<style>
+    header {
+        margin: 5px;
+        z-index: 111;
+        position: absolute;
+        width: 5vw;
+    }
+    img {
+        width: 5vw;
+    }
+    @media only screen and (min-width: 768px) {
+       header {
+        width: 8vw;
+    }
+    img {
+        width: 8vw;
+    } 
+    }
+    @media only screen and (max-width: 767px) {
+        header {
+        width: 10vw;
+    }
+    img {
+        width: 10vw;
+    } 
+    }
+</style>

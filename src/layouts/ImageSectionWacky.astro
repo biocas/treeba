@@ -1,0 +1,22 @@
+---
+const {  color, flexBasis, alignSelf, imgWidth, extraSideSpace  } = Astro.props;
+---
+
+<section class="imageSectionWacky">
+    <slot/>
+ </section>
+
+  <style define:vars={{ color, flexBasis, alignSelf, imgWidth, extraSideSpace  }}>
+.imageSectionWacky {
+    z-index: 11;
+    background-color: var(--color);
+    padding: 1rem;
+    flex-basis: var(--flexBasis);
+    align-self: var(--alignSelf);
+    margin-left: var(--extraSideSpace);
+    margin-right: var(--extraSideSpace);
+}
+.imageSectionWacky img {
+width: var(--imgWidth);
+}
+  </style>

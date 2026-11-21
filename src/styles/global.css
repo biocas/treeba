@@ -106,6 +106,15 @@ h5 {
   font-size: 1.3rem;
   margin: 0;
 }
+.bodyPageLinks {
+  font-family: var(--title-font);
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #1700EE;
+}
+.bodyPageLinks:hover {
+  text-decoration: underline;
+}
 a {
   font-family: var(--title-font);
   text-decoration: underline;
@@ -120,6 +129,42 @@ a:hover {
     display: flex;
     flex-flow: column nowrap;
     margin: 0rem 2rem;
+  }
+  /* Setup for wacky pages - Lore, About, Resources */
+.textWrapperWackySections {
+
+ margin-top: 50vh;
+ z-index: 111;
+ display: flex;
+ flex-flow: row wrap;
+    padding: 0 2rem;
+    align-items: baseline;
+    align-content: space-around;
+    gap: 1rem;
+  }
+
+.containerScrollonScreen {
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+ overflow: scroll;
+  }
+  .introSectionAbsolute {
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    z-index: 0;
+  }
+  .wackyTitle {
+    padding: 0 15vw;
+  }
+  .imgPageTitle {
+    width: 38vw;
   }
 /* Map styles */
 .popupImage {

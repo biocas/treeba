@@ -1,7 +1,9 @@
 ---
 // add the blinkie I made here somewhere
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TextSectionWhacky from "../layouts/textSectionWhacky.astro";
+import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
+import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
+import Header from "../components/Header.astro";
 
 const pageTitle = "Lore";
 import Footer from "../components/Footer.astro";
@@ -17,68 +19,44 @@ export async function getStaticPaths() {
     margin: 0;
     overflow: hidden;
   }
-  .container {
+  .containerScrollonScreen {
     background-image: url("/images/loreBck.png");
     background-color: var(--primary-blue);
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-height: 100vh;
-    height: 100vh;
-    display: flex;
-    gap: 10px;
-    margin: 0;
- overflow: scroll;
   }
-  .introSection {
-    position: absolute;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    z-index: 0;
-  }
-  .wackyTitle {
-    padding: 0 15vw;
-  }
-  .loreTitle {
-    width: 38vw;
-  }
-
-
-   .textWrapper {
- z-index: 111;
- margin-top: 50vh;
- display: flex;
- flex-flow: row wrap;
-    padding: 0 2rem;
-    align-items: baseline;
-    align-content: space-around;
-    gap: 10px;
-  }
-  
 </style>
-<BaseLayout currentLocale={currentLocale}>
-  <div class="container">
-    <div class="introSection">
 
-<img class="loreTitle" src="/public/images/Lore.svg" alt={pageTitle}/>
+<BaseLayout currentLocale={currentLocale}>
+  <div class="containerScrollonScreen">
+    <div class="containFooter">
+      <Header/>
+      <div class="introSectionAbsolute">
+
+<img class="imgPageTitle" src="/public/images/Lore.svg" alt={pageTitle}/>
 <h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
     </div>
-<section class="textWrapper"> 
-  <TextSectionWhacky color="var(--primary-green)" border="1px solid white" width="20vw" textColour="white" alignSelf="flex-end"> 
+<section class="textWrapperWackySections"> 
+  <TextSectionWhacky color="var(--primary-green)" border="1px solid white" flexBasis="60vw" textColour="white" alignSelf="center"> 
         <p class="bodyPages"> 
 I started this digital garden in Summer 2025, living in the Beira Baixa region of Portugal, where some of my ancestors came from. I was living in the slowest pace I have ever experienced, in the village I have been visiting every summer growing up. The burnout I felt at the beggining of 2025 was melting away in the summer's languid heat. I came up with the name Treeba for a reforestation project, after reading Braiding Sweetgrass and learn about regenerative agroforestry practices along with the deep plunge I took into Iberian paganism and animism. A lingering deep desire of organising my spirals of meaning and how everything seem to be ardoursly woven together brought me into the idea of starting a digital garden. I can't retell how much
-This page has been highly influenced by Maggie Appleton's <a href="https://maggieappleton.com/colophon">Colophon page</a>
-I have had a blog <a href="https://simsim-naonao.blogspot.com/">(still live!!!)</a> since I was 11 years old. I still remember getting home from school and opening the Blogger editor to pour my whole heart into it, hit publish and go on about my day as the romantic writter I WAS! Remember other bloggers giving you blog badges? Ah. The bubbling hope of real connection, changing the world witb my essays, pounding thoughts for a living. At 11, I was a writter. Around my 29th birthday, I got back to writing. 
+This page has been highly influenced by Maggie Appleton's <a class="bodyPageLinks moonHover" href="https://maggieappleton.com/colophon">Colophon page</a>
+I have had a blog <a class="bodyPageLinks moonHover" href="https://simsim-naonao.blogspot.com/">(still live!!!)</a> since I was 11 years old. I still remember getting home from school and opening the Blogger editor to pour my whole heart into it, hit publish and go on about my day as the romantic writter I WAS! Remember other bloggers giving you blog badges? Ah. The bubbling hope of real connection, changing the world witb my essays, pounding thoughts for a living. At 11, I was a writter. Around my 29th birthday, I got back to writing. 
 </p>
+
+</TextSectionWhacky>
+<TextSectionWhacky color="var(--primary-orange)" border="1px solid white" flexBasis="20vw" textColour="white" alignSelf="flex-end"> 
+       
 <p>I wanted the footer to be very similar to the first footers on the web. This lead me to read through the history of web design, which I never had done and most defintely should have in my career as web dev and designer. Oh well. I bumped into https://www.theatlantic.com/technology/archive/2017/04/the-first-ever-banner-ad-on-the-web/523728/ The First-Ever Banner Ad on the Web and found it amusing. When pop ups where first created, they had good intentions! the first ad banner is hilarious. Again the clunkiness of the digital world would help you maintain the boundary between what is analog and what is digital. </p>
 <p>I love how one of https://www.webdesignmuseum.org/web-design-history the first communities of websites was called GeoCities, so closely tied to our territory, perhaps a first warp in the language of nature</p>
-<a href="https://medium.com/@apollak/flashback-1995-batmanforever-com-screens-2c7a818dc25d">footer inspo</a>
+<a class="bodyPageLinks moonHover" href="https://medium.com/@apollak/flashback-1995-batmanforever-com-screens-2c7a818dc25d">footer inspo</a>
 <p>Found it really suiting I was born in the same year as Internet Explorer! and JavaScript! Was really sad that lynda.com, "one of the first online libraries of training courses for web developers", redirected to Linkedin Learning :(</p>
   
 </TextSectionWhacky>
-  <TextSectionWhacky color="var(--primary-blue)"  border="1px solid var(--primary-orange)" width="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end">
+<ImageSectionWacky flexBasis="2vw"calignSelf="flex-start">
+  <img src="/public/images/beetlecursor.png" alt="beetle"/>
+</ImageSectionWacky>
+  <TextSectionWhacky color="var(--primary-blue)"  border="1px solid var(--primary-orange)" flexBasis="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end" extraSideSpace="3rem">
 <p>We can </p>
-<p>All images and other resources used throughout this website are credited <a href="/credits">here.</a></p>
+<p>All images and other resources used throughout this website are credited <a class="bodyPageLinks moonHover" href="/credits">here.</a></p>
 <p>You are free to do use whatever from this digital woods. Credit is appreciated but not mandatory. Learn more about
 </p>
 <p>Somehow this feels worldbuilding, liberating in the way my branch thinking can action, return back and extend new iterations.</p>
@@ -88,12 +66,16 @@ https://geocities.restorativland.org/Area51/Shadowlands/2959/seshat.html - templ
 https://geocities.restorativland.org/ 
 https://www.erowid.org/spirit/spirit.shtml</TextSectionWhacky>
 
- <TextSectionWhacky color="var(--primary-blue)"  border="1px solid var(--primary-orange)" width="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end">
+ <TextSectionWhacky color="var(--primary-yellow)"  border="1px solid var(--primary-orange)" flexBasis="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end">
 <p>I vouched to never use AI on this project. Twice when I was really stuck I attempted to fix it by prompting, but on both attempts I came back to finding the solution <i>the old way</i>, since I quickly became annoyed and impatient. I want to ultimately honour the feeling of gaming I have always felt when coding. Finding out how to solve the quests, feeling creative and having fun. The clunky feeling of the website celebrates an imperfect individual internet, not the clean aesthetic sales pages gore I.
   </p>
 </TextSectionWhacky>
-</section>
 
+</section>
+<Footer />
+
+    </div>
+    
 </div>
 
 </BaseLayout>
