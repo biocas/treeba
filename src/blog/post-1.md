@@ -1,12 +1,18 @@
 ---
 title: 'Introducing Treeba'
-pubDate: 2025-07-27
 description: 'Today I am setting up the website for my Treeba digital garden'
-author: 'Margarida Salvado'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["treeba", "regeneration", "learning in public"]
+startDate: "2025-07-27"
+lastUpdated: "2025-07-27"
+successionStage: "placenta"
+growthStage: "seedling"
+stataLevel: "groundcover"
+format: "diary entry"
+draft: false
+topics: ["technology", "learning in public"]
 ---
 ## What I've accomplished
 

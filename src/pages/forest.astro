@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "My Digital Forest";
+const pageTitle = "The Digital Forest";
 import Footer from "../components/Footer.astro";
+import BlogPost from "../components/BlogPost.astro";
+
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
   return ["en", "pt"].map((lang) => {
@@ -10,7 +12,7 @@ export async function getStaticPaths() {
 }
 ---
 <BaseLayout currentLocale={currentLocale}>
-
+<BlogPost/>
 <Footer/>
 </BaseLayout>
 

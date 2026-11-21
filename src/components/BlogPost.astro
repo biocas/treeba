@@ -1,6 +1,16 @@
 ---
-const { title, url } = Astro.props;
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog"); 
+
+
+const now = Date.now();
+
+//const { title, url } = Astro.props; --  <a href={url}>{title}</a> 
 ---
+<ul class="posts">
+    {posts.map (({data}) => (
 <li>
-    <a href={url}>{title}</a>
+    <h2>{data.title}</h2>
 </li>
+    ))}
+</ul>

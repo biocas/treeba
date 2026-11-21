@@ -1,11 +1,17 @@
 ---
 title: My Second Blog Post
-author: 'Margarida Salvado'
 description: "After learning some Astro, I couldn't stop!"
+tags: ["blogging", "learning in public"]
 image:
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "The Astro logo on a dark background with a purple gradient arc."
-pubDate: 2025-07-27
-tags: ["blogging", "learning in public"]
+startDate: "2025-07-27"
+lastUpdated: "2025-07-27"
+successionStage: "placenta"
+growthStage: "seedling"
+stataLevel: "groundcover"
+format: "diary entry"
+draft: false
+topics: ["technology", "learning in public"]
 ---
 Lovely way to spend a summer sunday afternoon.
