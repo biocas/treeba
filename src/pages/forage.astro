@@ -25,17 +25,8 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
-// src/pages/random-post.astro
 import { getCollection } from "astro:content";
-
-// 1. Fetch all posts at build time (Server-side)
 const posts = await getCollection("blog");
-
-// 2. Extract just the slugs for a smaller payload
-const slugs = posts.map((post) => post.id);
-
-// 3. Serialize the data into a JSON string
-const slugsJSON = JSON.stringify(slugs);
 ---
 
 <style>
@@ -84,7 +75,6 @@ animation: faeFly 8s linear reverse infinite;
 </style>
 
 <BaseLayout currentLocale={currentLocale}>  
- <div id="blog-data" style="display: none;" data-posts={slugsJSON}></div>  
 <img class="bckImage" src="https://dn710909.ca.archive.org/0/items/clevelandart-1978.52-trees-and-undergrowt/1978.52_full.jpg"/>
   <section class="container">
 <img class="frogImg" src="/images/ida_rentoul_outhwaite_frog_fairy_talking 1.png" loading="lazy" alt="ida rentoul outhwaite frog_fairy talking">
