@@ -1,12 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 const posts = await getCollection('blog');
+const publishedPosts = posts.filter((post) => !post.data.draft);
+const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
+
+//const essays = selectLatestPublicEntries(await getCollection("essays")).filter(
+	//({ data }) => data.featured === true,
+//);
 ---
-<h1>My posts</h1>
-<ul class="posts">
-    {posts.map(post => (
-    <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
-  ))}
-</ul>
+
+    <li><a href={`/${slug}`}>{title}</a></li>
 

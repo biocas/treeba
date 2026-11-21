@@ -4,7 +4,7 @@ startDate: 2025-07-27
 lastUpdated: 2025-07-27
 successionStage: "placenta"
 growthStage: "seedling"
-stataLevel: "groundcover"
+strataLevel: "groundcover"
 format: "diary entry"
 draft: false
 topics: ["technology", "learning in public"]
