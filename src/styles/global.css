@@ -61,7 +61,6 @@ margin: 0;
 .whimsyTitle {
   font-family: var(--whimsy-font);
   color: var(--primary-pink);
-  
 font-size: 2rem;
     font-weight: 100;
 text-align: center;
@@ -130,6 +129,9 @@ a:hover {
     flex-flow: column nowrap;
     margin: 0rem 2rem;
   }
+  .containFooter {
+    width: 100%;
+  }
   /* Setup for wacky pages - Lore, About, Resources */
 .textWrapperWackySections {
 
@@ -159,6 +161,7 @@ a:hover {
     flex-flow: column nowrap;
     align-items: center;
     z-index: 0;
+    width: 100%;
   }
   .wackyTitle {
     padding: 0 15vw;

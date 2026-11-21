@@ -18,9 +18,14 @@ export async function getStaticPaths() {
     overflow: hidden;
   }
   .containerScrollonScreen {
-    background-image: url("/images/rootsBckHome.png");
+    background-image: url("/images/aboutBck.png");
     background-color: var(--dark-brown);
   }
+ h1 {
+  font-size: 8rem;
+  color: var(--primary-blue);
+  margin: 1rem;
+ }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
@@ -28,9 +33,8 @@ export async function getStaticPaths() {
     <div class="containFooter">
       <Header/>
       <div class="introSectionAbsolute">
-
-<img class="imgPageTitle" src="/public/images/Lore.svg" alt={pageTitle}/>
-<h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
+<h1 class="whimsyTitle">Margarida Salvado</h1>
+<h2 class="wackyTitle">mammal from western iberia</h2>
     </div>
 <section class="textWrapperWackySections"> 
 
