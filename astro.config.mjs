@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import mdx from '@astrojs/mdx';
 import preact from "@astrojs/preact";
 
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   site: "https://treeba.eu/",
-  integrations: [preact()]
+  integrations: [mdx(), preact()]
 });
 
 
