@@ -44,9 +44,24 @@ body {
 }
 
 /* Text and Headings */
+.wackyTitle {
+  font-family: var(--treeba-font);
+  color: var(--primary-yellow);
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+font-size: 3rem;
+ -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--primary-blue);
+    paint-order: stroke fill;
+    filter: drop-shadow(0px 1px 0px #B6F0FF);
+    font-weight: 100;
+text-align: center;
+margin: 0;
+}
 .whimsyTitle {
   font-family: var(--whimsy-font);
   color: var(--primary-pink);
+  
 font-size: 2rem;
     font-weight: 100;
 text-align: center;
@@ -68,7 +83,10 @@ text-align: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
-
+.bodyPages {
+  font-family: var(--text-font);
+  font-size: 1rem;
+}
   .introHome {
     font-size: 1.615rem;
   }
