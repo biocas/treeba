@@ -9,3 +9,4 @@ const blog = defineCollection({
 });
 
 export const collections = { blog };
+// I don't know what this page is doing lol

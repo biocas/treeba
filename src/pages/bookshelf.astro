@@ -1,13 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-const resources = await getCollection('resources');
+const resources = await getCollection("resources");
 const publishedResources = resources.filter((resource) => !resource.data.draft);
 const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
-import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
 import Header from "../components/Header.astro";
 const pageTitle = "Resources";
 import Footer from "../components/Footer.astro";
@@ -17,13 +15,14 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
-//add a form so people suggest resources 
-// add a form in individual blog post page that redirects to my email 
+//add a form so people suggest resources
+// add a form in individual blog post page that redirects to my email
 //rss feed
 //bck source -https://giphy.com/gifs/sky-night-11kn6DFp9BNqWA - background-image: url("/images/Night Sky Star GIF.gif");
 ---
+
 <style>
-   body {
+  body {
     margin: 0;
     overflow: hidden;
   }
@@ -32,39 +31,35 @@ export async function getStaticPaths() {
     background-color: var(--primary-orange);
   }
   h1 {
-  font-family: var(--treeba-font);
-  margin-top: 0;
-  color: var(--primary-yellow);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--primary-orange);
-font-size: 12rem;
+    font-family: var(--treeba-font);
+    margin-top: 0;
+    color: var(--primary-yellow);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--primary-orange);
+    font-size: 12rem;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
-margin-bottom: 0;
-text-align: center;
-}
+    margin-bottom: 0;
+    text-align: center;
+  }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
   <div class="containerScrollonScreen">
     <div class="containFooter">
-      <Header/>
-      <div class="introSectionAbsolute">
+      <Header />
+      <h1 class="mainTreebaTitle">{pageTitle}</h1>
+      <div class="resources-books">
+        <ul class="resourceList">
+          {publishedResources.map((resource) => (
+            <li>
+              <h4>{resource.data.title}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-    <h1 class="mainTreebaTitle">{pageTitle}</h1>
-<h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
+      <Footer />
     </div>
-<section class="resources"> 
-<ul class="resourceList">
-    {publishedResources.map(resource => (
-    <li><a href={`/${slug}`}>{resource.data.title}</a></li>
-  ))}
-</ul>
-
-</section>
-<Footer />
-</div>
-    
-</div>
-
+  </div>
 </BaseLayout>

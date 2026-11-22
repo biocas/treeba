@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
-import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
 import Header from "../components/Header.astro";
 const pageTitle = "About";
 import Footer from "../components/Footer.astro";
@@ -20,19 +18,29 @@ export async function getStaticPaths() {
   .containerScrollonScreen {
     background-image: url("/images/aboutbck1s.gif");
     background-color: var(--dark-brown);
+    background-blend-mode: screen;
   }
- 
+ .fancyTitle {
+  text-align: center;
+ }
+ .about {
+  display: flex;
+  background-color: var(--primary-orange);
+  margin: 0 5rem;
+  padding: 5rem;
+  color: white;
+  font-family: var(--text-font);
+  font-size: 1rem;
+ }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
   <div class="containerScrollonScreen">
     <div class="containFooter">
       <Header/>
-      <div class="introSectionAbsolute">
 <h1 class="fancyTitle">Margarida Salvado</h1>
-<h2 class="wackyTitle">mammal from western iberia</h2>
-    </div>
-<section class="textWrapperWackySections"> 
+
+<section class="about"> 
 <p>De flor e osso, farejadora de territórios e estudiosa dos ecossistemas que tecemos e nos tecem, em relação constante.
 
 A minha formação académica inicia-se nas ciências da comunicação, nas áreas da comunicação estratégica e jornalismo, expandindo-se para programação em web, com foco em ferramentas de mapeamento digital.

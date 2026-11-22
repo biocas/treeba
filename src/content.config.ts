@@ -3,7 +3,7 @@ import { glob, file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const blog = defineCollection({
-loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     slug: z.string().optional(),
     title: z.string(),
@@ -24,11 +24,12 @@ loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
   })
 });
 const resources = defineCollection({
-loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/resources' }),
+  loader: file("src/content/resources.json"),
+  //loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/resources' }),
   schema: z.object({
-    slug: z.string().optional(),
+    id: z.number(),
+    link: z.string().optional(),
     title: z.string(),
-    uploadedDate: z.date(),
     type: z.string(),
     author: z.string().optional(),
     yearOfPublication: z.string().optional(),
@@ -36,10 +37,7 @@ loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/resources' }),
     topics: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
     description: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string(), 
-    }).optional()
+    imageURL: z.string().optional(),
   })
 });
 

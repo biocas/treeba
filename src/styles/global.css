@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
 * {
   box-sizing: border-box;
 
@@ -11,9 +12,11 @@
 body {
   cursor: url("/images/beetlecursor.png") 2 2, pointer;
 }
-.moonHover:hover{
-        cursor: url("/images/mooncursor.png") 2 2, pointer;
-    }
+
+.moonHover:hover {
+  cursor: url("/images/mooncursor.png") 2 2, pointer;
+}
+
 :root {
   /* Colours */
   --primary-orange: #F46803;
@@ -50,57 +53,65 @@ body {
   font-family: var(--treeba-font);
   color: var(--primary-yellow);
   -moz-osx-font-smoothing: grayscale;
-    font-weight: 100;
-font-size: 3rem;
- -webkit-text-stroke-width: 1px;
+  font-weight: 100;
+  font-size: 3rem;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--primary-blue);
-    paint-order: stroke fill;
-    filter: drop-shadow(0px 1px 0px #B6F0FF);
-    font-weight: 100;
-text-align: center;
-margin: 0;
+  paint-order: stroke fill;
+  filter: drop-shadow(0px 1px 0px #B6F0FF);
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
 }
+
 .whimsyTitle {
   font-family: var(--whimsy-font);
   color: var(--primary-pink);
-font-size: 2rem;
-    font-weight: 100;
-text-align: center;
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: center;
 }
+
 .fancyTitle {
   font-family: var(--fancy-font);
   font-size: 10rem;
   color: var(--primary-orange);
   margin: 0;
   font-weight: normal;
- }
+}
+
 .mainTreebaTitle {
   font-family: var(--treeba-font);
   color: var(--primary-yellow);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--primary-orange);
-font-size: 22vw;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 100;
-margin-top: -5rem;
-margin-bottom: 0;
-text-align: center;
+  font-size: 22vw;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
+  margin-top: -5rem;
+  margin-bottom: 0;
+  text-align: center;
 }
+
 .whiteAndStroke {
   color: white;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
+
 .bodyPages {
   font-family: var(--text-font);
   font-size: 1rem;
 }
-  .introHome {
-    font-size: 1.615rem;
-  }
+
+.introHome {
+  font-size: 1.615rem;
+}
+
 .note {
   font-size: 0.8rem;
-} 
+}
+
 h1 {
   font-size: 3.1rem;
 }
@@ -114,118 +125,139 @@ h5 {
   font-size: 1.3rem;
   margin: 0;
 }
+
 .bodyPageLinks {
   font-family: var(--title-font);
   text-decoration: none;
   font-size: 0.7rem;
   color: #1700EE;
 }
+
 .bodyPageLinks:hover {
   text-decoration: underline;
 }
+
 a {
   font-family: var(--title-font);
   text-decoration: underline;
-   color: white;
+  color: white;
 }
+
 a:hover {
   color: #1700EE;
 }
 
 /* Wrappers */
 .container {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 0rem 2rem;
-  }
-  .containFooter {
-    width: 100%;
-  }
-  /* Setup for wacky pages - Lore, About, Resources */
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0rem 2rem;
+}
+
+.containFooter {
+  width: 100%;
+}
+
+/* Setup for wacky pages - Lore, About, Resources */
 .textWrapperWackySections {
 
- margin-top: 75vh;
- z-index: 111;
- display: flex;
- flex-flow: row wrap;
-    padding: 0 2rem;
-    align-items: baseline;
-    align-content: space-around;
-    gap: 1rem;
-  }
+  margin-top: 75vh;
+  z-index: 111;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 2rem;
+  align-items: baseline;
+  align-content: space-around;
+  gap: 1rem;
+}
 
 .containerScrollonScreen {
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-height: 100vh;
-    height: 100vh;
-    display: flex;
-    gap: 10px;
-    margin: 0;
- overflow: scroll;
-  }
-  .introSectionAbsolute {
-    position: absolute;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    z-index: 0;
-    width: 100%;
-  }
-  .wackyTitle {
-    padding: 0 15vw;
-  }
-  .imgPageTitle {
-    width: 38vw;
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  overflow: scroll;
+}
+
+.introSectionAbsolute {
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  z-index: 0;
+  width: 100%;
+}
+
+.wackyTitle {
+  padding: 0 15vw;
+}
+
+.imgPageTitle {
+  width: 38vw;
+}
+
 /* Map styles */
 .popupImage {
-   max-width: 100%;
-  max-height: 25vh;      /* prevents huge images */
+  max-width: 100%;
+  max-height: 25vh;
+  /* prevents huge images */
   height: auto;
   width: auto;
   display: block;
   cursor: zoom-in;
   object-fit: contain;
 }
+
 .mapboxgl-popup {
   max-width: 30vw !important;
 }
+
 .mapboxgl-popup .mapboxgl-popup-tip {
   border-top-color: var(--background-cream);
 }
+
 .mapboxgl-popup .mapboxgl-popup-close-button {
   margin-top: 5px;
   margin-right: 5px;
 }
+
 .mapboxgl-popup .mapboxgl-popup-close-button span {
   color: var(--dark-brown);
 }
+
 .mapboxgl-popup .mapboxgl-popup-content {
   font-family: var(--text-font);
   font-size: 0.8rem;
   border-radius: 20px;
-background-color: var(--background-cream);
-box-shadow: 2px 2px 0px 2px var(--dark-brown);
+  background-color: var(--background-cream);
+  box-shadow: 2px 2px 0px 2px var(--dark-brown);
 }
 
 .mapboxgl-popup .mapboxgl-popup-content .popupPropertyTitle {
   font-weight: 500;
 }
+
 /* Hide selected properties inside Mapbox popups */
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-jurisdicao,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-site_code,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-gid,
-.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-sigla,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-sigla,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-inspire_id,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-nut_ii,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-objectid,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-processo,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-thematic_id,
-.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-globalid, 
-.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-propostasid, 
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-globalid,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-propostasid,
 .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-propostasclass,
-.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-integrado_conj, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-outras_des, .mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-situacao_a {
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-publica1,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-integrado_conj,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-outras_des,
+.mapboxgl-popup .mapboxgl-popup-content .popupProperty.prop-situacao_a {
   display: none !important;
 }
 
@@ -269,12 +301,13 @@ box-shadow: 2px 2px 0px 2px var(--dark-brown);
     color: #fff;
   }*/
 
-  /* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 767px) and (max-width: 767px) {
 
-   .container {
+  .container {
     margin: 0;
   }
+
   .introHome {
     background-color: var(--transparent-brown);
     border-radius: var(--border-radius-base);
@@ -283,33 +316,41 @@ box-shadow: 2px 2px 0px 2px var(--dark-brown);
     font-size: 1.4rem;
     margin-bottom: 1rem;
   }
-.mainTreebaTitle {
+
+  .mainTreebaTitle {
     font-size: 21vw;
     margin-top: -2rem;
     -webkit-text-stroke-width: 0.5px;
   }
+
   /* Setup for wacky pages - Lore, About, Resources */
-.textWrapperWackySections {
- margin-top: 55vh;
- padding: 0 2rem;
+  .textWrapperWackySections {
+    margin-top: 55vh;
+    padding: 0 2rem;
   }
+
   .wackyTitle {
     font-size: 2.2rem;
     padding: 1.5rem;
   }
+
   .imgPageTitle {
     width: 98vw;
   }
+
   /* map styles */
-.mapboxgl-popup .mapboxgl-popup-content {
-  font-size: 0.6rem;
-}
- .popupImage {
-    max-height: 20vh;    
+  .mapboxgl-popup .mapboxgl-popup-content {
+    font-size: 0.6rem;
   }
-.mapboxgl-popup {
-  max-width: 75vw !important;
-}
+
+  .popupImage {
+    max-height: 20vh;
+  }
+
+  .mapboxgl-popup {
+    max-width: 75vw !important;
+  }
+
   h1 {
     font-size: 2.5rem;
   }

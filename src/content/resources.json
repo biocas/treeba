@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "link": "https://milkweed.org/book/braiding-sweetgrass",
+        "title": "Braiding Sweetgrass",
+        "type": "book",
+        "author": "Robin Wall Kimmerer",
+        "yearOfPublication": "2015",
+        "draft": false,
+        "topics": [
+            "Indigenous Knowledge",
+            "Animism",
+            "Ecology"
+        ],
+        "tags": [
+            "Connecting with plants",
+            "Nonfiction"
+        ],
+        "description": "This book made me fall in love deeper with Earth, stat a bookclub, start this digital garden. Oh the gifts!",
+        "imageURL": "https://milkweed.org/sites/default/files/styles/book_cover/public/books/front/BraidingSweetgrass_PB_Cover_NB.jpg?itok=e7d_zlYu"
+    }, 
+    {
+        "id": 2,
+        "link": "https://rewildingeurope.com/online-rewilding-course/",
+        "title": "Free Online Rewilding Course",
+        "type": "course",
+        "author": "Rewilding Europe",
+        "draft": false,
+        "topics": [
+            "Ecology"
+        ],
+        "tags": [
+            "Regeneration",
+            "Rewilding"
+        ],
+        "description": "",
+        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
+    }
+]
