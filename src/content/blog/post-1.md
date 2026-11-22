@@ -25,3 +25,5 @@ image:
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+https://medium.com/@raysims/a-digital-garden-inventory-d6450fe74b4 

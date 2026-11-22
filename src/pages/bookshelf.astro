@@ -1,4 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+const resources = await getCollection('resources');
+const publishedResources = resources.filter((resource) => !resource.data.draft);
+const { slug, cover, title, growthStage, date, description, id } = Astro.props;
+const now = Date.now();
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TextSectionWhacky from "../layouts/TextSectionWhacky.astro";
 import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
@@ -48,8 +54,12 @@ text-align: center;
     <h1 class="mainTreebaTitle">{pageTitle}</h1>
 <h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
     </div>
-<section class="textWrapperWackySections"> 
-
+<section class="resources"> 
+<ul class="resourceList">
+    {publishedResources.map(resource => (
+    <li><a href={`/${slug}`}>{resource.data.title}</a></li>
+  ))}
+</ul>
 
 </section>
 <Footer />
