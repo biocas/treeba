@@ -1,7 +1,7 @@
 ---
 // add the blinkie I made here somewhere
 import BaseLayout from "../layouts/BaseLayout.astro";
-//import TextSectionWhacky from "../layouts/TextSectionWhacky.astro"; 
+import TextSectionWhacky from "../layouts/TextSectionWacky.astro"; 
 import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
 import Header from "../components/Header.astro";
 
@@ -24,3 +24,67 @@ export async function getStaticPaths() {
     background-color: var(--primary-blue);
   }
 </style>
+
+<BaseLayout currentLocale={currentLocale}>
+  <div class="containerScrollonScreen">
+    <div class="containFooter">
+      <Header/>
+      <div class="introSectionAbsolute">
+
+<img class="imgPageTitle" src="/images/Lore.svg" alt={pageTitle}/>
+<h2 class="wackyTitle">The juicy lore of how these digital woods came to be.</h2>
+    </div>
+<section class="textWrapperWackySections"> 
+  <TextSectionWhacky color="var(--primary-green)" border="1px solid white" flexBasis="60vw" textColour="white" alignSelf="center"> 
+        <p class="bodyPages"> 
+I started this digital garden in Summer 2025, living in the Beira Baixa region of Portugal, in the village my ancestors came from. I experienced the  slowest pace ever and the burnout I had felt at the beggining of 2025 was melting away in the summer's languid heat. I came up with the name Treeba for a reforestation project, after reading Braiding Sweetgrass and learning about regenerative agroforestry practices along with the deep plunge I took into Iberian paganism and animism. A lingering burning desire of organising my spirals of meaning and how everything seem to be ardoursly woven together brought me into the idea of starting a digital garden. I can't retell how much
+This page has been highly influenced by Maggie Appleton's <a class="bodyPageLinks moonHover" href="https://maggieappleton.com/colophon">Colophon page</a>
+I have had a blog <a class="bodyPageLinks moonHover" href="https://simsim-naonao.blogspot.com/">(still live!!!)</a> since I was 11 years old. I still remember getting home from school and opening the Blogger editor to pour my whole heart into it, hit publish and go on about my day as the romantic writter I WAS! Remember other bloggers giving you blog badges? Ah. The bubbling hope of real connection, changing the world witb my essays, pounding thoughts for a living. At 11, I was a writter. Around my 29th birthday, I got back to writing. 
+</p>
+
+</TextSectionWhacky>
+<TextSectionWhacky color="var(--primary-orange)" border="1px solid white" flexBasis="20vw" textColour="white" alignSelf="flex-end"> 
+       
+<p>I wanted the footer to be very similar to the first footers on the web. This lead me to read through the history of web design, which I never had done and most defintely should have in my career as web dev and designer. Oh well. I bumped into https://www.theatlantic.com/technology/archive/2017/04/the-first-ever-banner-ad-on-the-web/523728/ The First-Ever Banner Ad on the Web and found it amusing. When pop ups where first created, they had good intentions! the first ad banner is hilarious. Again the clunkiness of the digital world would help you maintain the boundary between what is analog and what is digital. </p>
+<p>I love how one of https://www.webdesignmuseum.org/web-design-history the first communities of websites was called GeoCities, so closely tied to our territory, perhaps a first warp in the language of nature</p>
+<a class="bodyPageLinks moonHover" href="https://medium.com/@apollak/flashback-1995-batmanforever-com-screens-2c7a818dc25d">footer inspo</a>
+<p>Found it really suiting I was born in the same year as Internet Explorer! and JavaScript! Was really sad that lynda.com, "one of the first online libraries of training courses for web developers", redirected to Linkedin Learning :(</p>
+  
+</TextSectionWhacky>
+<ImageSectionWacky flexBasis="2vw"calignSelf="flex-start">
+  <img src="https://media.thuvien.org/photo/66306/image/fd141ea8b9d57e5558ed62a13b3f539b.gif" alt="pidgeons"/>
+  <img src="https://media.thuvien.org/photo/64643/image/028a3be76a0ea4c31095b0604cd7265c.gif" alt="neopets"/>
+
+  <img src="https://media.thuvien.org/photo/13400/image/078894a6fb67dc0a6266ca00a76d6e59.gif" alt="pidgeons"/>
+  <img src="https://media.thuvien.org/photo/13379/image/4dca5f97fc6d3703453c627799efe7f5.gif" alt="pidgeons"/>
+  <img src="https://media.thuvien.org/photo/13383/image/f6f08cad8c7a5733d1fe899b52d28976.gif" alt="pidgeons"/>
+
+  <img src="https://media.thuvien.org/photo/49827/image/b2a7182a903191afc22db97ea95d2be4.gif" alt="pidgeons"/>
+  <img src="https://media.thuvien.org/photo/16915/image/0c8c0701230f15cce517bbf438ef397e.png" alt="pidgeons"/>
+  <img src="https://media.thuvien.org/photo/13383/image/f6f08cad8c7a5733d1fe899b52d28976.gif" alt="pidgeons"/>
+</ImageSectionWacky>
+  <TextSectionWhacky color="var(--primary-blue)"  border="1px solid var(--primary-orange)" flexBasis="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end" extraSideSpace="3rem">
+<p>We can </p>
+<p>All images and other resources used throughout this website are credited <a class="bodyPageLinks moonHover" href="/credits">here.</a></p>
+<p>You are free to do use whatever from this digital woods. Credit is appreciated but not mandatory. Learn more about
+</p>
+<p>Somehow this feels worldbuilding, liberating in the way my branch thinking can action, return back and extend new iterations.</p>
+https://everything2000s.tumblr.com/ this was a very delicous part of my research for the design of my woods.
+delicious browse as well here https://geocities.restorativland.org/Area51/Shadowlands/ 
+https://geocities.restorativland.org/Area51/Shadowlands/2959/seshat.html - temples for the goddeses, each page is a temple with the corresponding picture
+https://geocities.restorativland.org/ 
+https://www.erowid.org/spirit/spirit.shtml</TextSectionWhacky>
+
+ <TextSectionWhacky color="var(--primary-yellow)"  border="1px solid var(--primary-orange)" flexBasis="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end">
+<p>I vouched to never use AI on this project. Twice when I was really stuck I attempted to fix it by prompting, but on both attempts I came back to finding the solution <i>the old way</i>, since I quickly became annoyed and impatient. I want to ultimately honour the feeling of gaming I have always felt when coding. Finding out how to solve the quests, feeling creative and having fun. The clunky feeling of the website celebrates an imperfect individual internet, not the clean aesthetic sales pages gore I.
+  </p>
+</TextSectionWhacky>
+
+</section>
+<Footer />
+
+    </div>
+    
+</div>
+
+</BaseLayout>
