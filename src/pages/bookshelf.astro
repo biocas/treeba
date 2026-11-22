@@ -11,6 +11,10 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
+//add a form so people suggest resources 
+// add a form in individual blog post page that redirects to my email 
+//rss feed
+//bck source -https://giphy.com/gifs/sky-night-11kn6DFp9BNqWA - background-image: url("/images/Night Sky Star GIF.gif");
 ---
 <style>
    body {
@@ -18,8 +22,8 @@ export async function getStaticPaths() {
     overflow: hidden;
   }
   .containerScrollonScreen {
-    background-image: url("/images/rootsBckHome.png");
-    background-color: var(--dark-brown);
+    background-image: url("/images/resourcesBck.png");
+    background-color: var(--primary-orange);
   }
   h1 {
   font-family: var(--treeba-font);

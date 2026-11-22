@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
 * {
   box-sizing: border-box;
 
@@ -38,6 +39,7 @@ body {
   --title-font: "Press Start 2P", system-ui;
   --text-font: "Fira Sans", sans-serif;
   --whimsy-font: "League Script", sans-serif;
+  --fancy-font: "Aguafina Script", sans-serif;
 
   /* Border radius */
   --border-radius-base: 25px;
@@ -65,6 +67,13 @@ font-size: 2rem;
     font-weight: 100;
 text-align: center;
 }
+.fancyTitle {
+  font-family: var(--fancy-font);
+  font-size: 10rem;
+  color: var(--primary-orange);
+  margin: 0;
+  font-weight: normal;
+ }
 .mainTreebaTitle {
   font-family: var(--treeba-font);
   color: var(--primary-yellow);
