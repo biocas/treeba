@@ -16,7 +16,7 @@ Robin Wall Kimmerer
 */
 // here I want a really throwback page again with a cute graphic + copy "We are about to go forage on my digital forest. See what it takes you + button that takes you onto a random post page whatever on this website"
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 const pageTitle = "Forage";
 import HomepageCard from "../layouts/homepageCard.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
@@ -75,6 +75,7 @@ animation: faeFly 8s linear reverse infinite;
 </style>
 
 <BaseLayout currentLocale={currentLocale}>  
+  <Header/>
 <img class="bckImage" src="https://dn710909.ca.archive.org/0/items/clevelandart-1978.52-trees-and-undergrowt/1978.52_full.jpg"/>
   <section class="container">
 <img class="frogImg" src="/images/ida_rentoul_outhwaite_frog_fairy_talking 1.png" loading="lazy" alt="ida rentoul outhwaite frog_fairy talking">
