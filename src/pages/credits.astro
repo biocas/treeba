@@ -9,10 +9,92 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
+//https://www.youtube.com/watch?v=3sY21Ry2JgI&t=6s maybe for this page
 ---
 <BaseLayout currentLocale={currentLocale}>
 <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
 
 https://thuvien.org/webcore/browse/c9e34de1b07b4f898473a32f4854c833 
+<!--
+Source - https://stackoverflow.com/a/61719129
+Posted by Temani Afif, modified by community. See post 'Timeline' for change history
+Retrieved 2026-11-22, License - CC BY-SA 4.0
+-->
 
+<section class="star-wars">
+  <div class="crawl">
+    <div class="title">
+      <h1>Credits</h1>
+    </div>
+<p>text</p>
+  </div>
+</section>
 </BaseLayout>
+<style>
+  /*
+Source - https://stackoverflow.com/a/61719129
+Posted by Temani Afif, modified by community. See post 'Timeline' for change history
+Retrieved 2026-11-22, License - CC BY-SA 4.0
+*/
+
+html {
+  background: #000;
+  overflow: hidden;
+  background: #000 url(https://cssanimation.rocks/demo/starwars/images/bg.jpg);
+}
+html::before {
+  content:"";
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  min-height: 60vh;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  align-items:center;
+  height: 100vh;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 100px;
+  text-align: justify;
+}
+
+.crawl {
+  transform-origin: bottom;
+  width:90%;
+  animation: crawl 80s linear forwards; /* velocidad del texto */
+}
+
+.crawl>.title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl>.title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    transform:rotateX(20deg) translateY(100%);
+  }
+  100% {
+    transform:rotateX(25deg) translateY(-100%);
+    /* OR
+    transform:rotateX(25deg) translateY(0%);
+    if you want the text to stop at the bottom
+    */
+  }
+}
+</style>
