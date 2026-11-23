@@ -22,7 +22,7 @@
     {
         "id": 2,
         "link": "https://rederesistenciarural.org/",
-        "title": "Mapa ",
+        "title": "Mapa de Resistências em Portugal",
         "type": "map",
         "author": "BRAVA",
         "draft": false,
@@ -33,8 +33,8 @@
             "Commons",
             "Community", "Extractivism"
         ],
-        "description": "",
-        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
+        "description": "A map of resistence movements in Portugal",
+        "imageURL": "/images/map.svg"
     }, 
     {
         "id": 3,
@@ -325,6 +325,23 @@
         ],
         "description": "I bought this when I visited NZ, I loved learning about Māori moon wisdom",
         "imageURL": "https://cdn.pagebound.co/books/bebc4097-29c7-4cda-b3f5-26cfc34fb1bf/large.webp"
+    }, 
+    {
+        "id": 20,
+        "link": "https://pagebound.co/books/1ed15043-bef8-46c9-9a10-2c8943f3071b",
+        "title": "Anam Cara",
+        "type": "book",
+        "author": "John O'Donohue",
+        "yearOfPublication": "1996",
+        "draft": false,
+        "topics": [
+            "Being Human"
+        ],
+        "tags": [
+            "celtic", "spirituality", "philosophy"
+        ],
+        "description": "I have read this a couple years ago and found it beautiful. It is this month's book for my book club!",
+        "imageURL": "https://cdn.pagebound.co/books/1ed15043-bef8-46c9-9a10-2c8943f3071b/large.webp"
     }
 ]
 
