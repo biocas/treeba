@@ -35,5 +35,39 @@
         ],
         "description": "",
         "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
+    },
+    {
+        "id": 3,
+        "link": "https://rewildingeurope.com/online-rewilding-course/",
+        "title": "Digital Folklore",
+        "type": "link",
+        "author": "Rewilding Europe",
+        "draft": false,
+        "topics": [
+            "Ecology"
+        ],
+        "tags": [
+            "Regeneration",
+            "Rewilding"
+        ],
+        "description": "",
+        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
+    },
+    {
+        "id": 4,
+        "link": "https://rewildingeurope.com/online-rewilding-course/",
+        "title": "Mapa BRAVA",
+        "type": "map",
+        "author": "Rewilding Europe",
+        "draft": false,
+        "topics": [
+            "Ecology"
+        ],
+        "tags": [
+            "Regeneration",
+            "Rewilding"
+        ],
+        "description": "",
+        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
     }
 ]

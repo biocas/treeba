@@ -1,7 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 const resources = await getCollection("resources");
-const publishedResources = resources.filter((resource) => !resource.data.draft);
+const publishedBooks = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "book"));
+const publishedCourses = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "course"));
+const publishedLinks = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "link"));
+const publishedMaps = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "map"));
+
 const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
 
@@ -42,6 +46,13 @@ export async function getStaticPaths() {
     margin-bottom: 0;
     text-align: center;
   }
+  .resources-section {
+    padding: 0 5rem;
+  }
+  h3 {
+    -webkit-text-stroke-color: var(--primary-orange);
+  filter: drop-shadow(0px 1px 0px #F46803);
+  }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
@@ -49,15 +60,46 @@ export async function getStaticPaths() {
     <div class="containFooter">
       <Header />
       <h1 class="mainTreebaTitle">{pageTitle}</h1>
-      <div class="resources-books">
-        <ul class="resourceList">
-          {publishedResources.map((resource) => (
-            <li>
+      <section class="resources-section">
+        <h3 class="resourcesCategories wackyTitle">Books</h3>
+        <div class="resourceList">
+          {publishedBooks.map((resource) => (
+            <div>
               <h4>{resource.data.title}</h4>
-            </li>
+            </div>
           ))}
-        </ul>
-      </div>
+        </div>
+      </section>
+      <section class="resources-section">
+        <div class="resourceList">
+          <h3 class="resourcesCategories wackyTitle">Courses</h3>
+          {publishedCourses.map((resource) => (
+            <div>
+              <h4>{resource.data.title}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section class="resources-section">
+        <div class="resourceList">
+          <h3 class="resourcesCategories wackyTitle">Links</h3>
+          {publishedLinks.map((resource) => (
+            <div>
+              <h4>{resource.data.title}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section class="resources-section">
+        <div class="resourceList">
+          <h3 class="resourcesCategories wackyTitle">Maps</h3>
+          {publishedMaps.map((resource) => (
+            <div>
+              <h4>{resource.data.title}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Footer />
     </div>
