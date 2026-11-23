@@ -342,6 +342,39 @@
         ],
         "description": "I have read this a couple years ago and found it beautiful. It is this month's book for my book club!",
         "imageURL": "https://cdn.pagebound.co/books/1ed15043-bef8-46c9-9a10-2c8943f3071b/large.webp"
+    }, 
+    {
+        "id": 21,
+        "link": "https://www.coursera.org/learn/indigenous-religions-ecology/reviews",
+        "title": "Indigenous Religions & Ecology",
+        "type": "course",
+        "author": "Yale University",
+        "draft": false,
+        "topics": [
+            "Indigenous Knowledge"
+        ],
+        "tags": [
+            "studies"
+        ],
+        "description": "Good free course for introducing you to a vast range of indigenous cosmologies and their importance in ecology, with good resources to keep you exploring further",
+        "imageURL": "public/images/books.svg"
+    }, 
+    {
+        "id": 22,
+        "link": "hhttps://www.coursera.org/learn/learning-for-sustainable-futures#recommendations",
+        "title": "Learning for Sustainable Futures",
+        "type": "course",
+        "author": "University of Edinburgh",
+        "draft": false,
+        "topics": [
+            "Ecology"
+        ],
+        "tags": [
+            "studies", "nature", "Community"
+        ],
+        "description": "I thought for some reason this was gonna be really high tech but actually it so much about community, connection to place and love. ",
+        "imageURL": "public/images/books.svg"
     }
+    
 ]
 

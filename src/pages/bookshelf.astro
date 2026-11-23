@@ -72,7 +72,7 @@ export async function getStaticPaths() {
       </section>
       <section class="resources-section">
         <div class="resourceList">
-          <h3 class="resourcesCategories wackyTitle">Courses</h3>
+          <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
           {publishedCourses.map((resource) => (
             <div class="moonHover">
               <h4>{resource.data.title}</h4>
@@ -80,16 +80,7 @@ export async function getStaticPaths() {
           ))}
         </div>
       </section>
-      <section class="resources-section">
-        <div class="resourceList">
-          <h3 class="resourcesCategories wackyTitle">Links</h3>
-          {publishedLinks.map((resource) => (
-            <div class="moonHover">
-              <h4>{resource.data.title}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
+      
       <section class="resources-section">
         <div class="resourceList">
           <h3 class="resourcesCategories wackyTitle">Maps</h3>
