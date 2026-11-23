@@ -10,7 +10,7 @@
         "topics": [
             "Indigenous Knowledge",
             "Animism",
-            "Ecology"
+            "Ecology", "Regenerative Systems"
         ],
         "tags": [
             "Connecting with plants",
@@ -18,56 +18,313 @@
         ],
         "description": "This book made me fall in love deeper with Earth, stat a bookclub, start this digital garden. Oh the gifts!",
         "imageURL": "https://milkweed.org/sites/default/files/styles/book_cover/public/books/front/BraidingSweetgrass_PB_Cover_NB.jpg?itok=e7d_zlYu"
-    }, 
+    },
     {
         "id": 2,
-        "link": "https://rewildingeurope.com/online-rewilding-course/",
-        "title": "Free Online Rewilding Course",
-        "type": "course",
-        "author": "Rewilding Europe",
+        "link": "https://rederesistenciarural.org/",
+        "title": "Mapa ",
+        "type": "map",
+        "author": "BRAVA",
         "draft": false,
         "topics": [
-            "Ecology"
+            "Ecology", "Regenerative Systems"
         ],
         "tags": [
-            "Regeneration",
-            "Rewilding"
+            "Commons",
+            "Community", "Extractivism"
         ],
         "description": "",
         "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
-    },
+    }, 
     {
         "id": 3,
-        "link": "https://rewildingeurope.com/online-rewilding-course/",
-        "title": "Digital Folklore",
-        "type": "link",
-        "author": "Rewilding Europe",
+        "link": "https://pagebound.co/books/7fef44e5-c61a-41f7-910b-7299ab4da600",
+        "title": "The Faithful Gardener: A Wise Tale About That Which Can Never Die",
+        "type": "book",
+        "author": "Clarissa Pinkola Estés",
+        "yearOfPublication": "1995",
         "draft": false,
         "topics": [
-            "Ecology"
+            "Stories"
         ],
         "tags": [
-            "Regeneration",
-            "Rewilding"
+            "tenderness",
+            "spirituality"
         ],
-        "description": "",
-        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
-    },
+        "description": "I cried so much reading these beautiful stories",
+        "imageURL": "https://cdn.pagebound.co/books/7fef44e5-c61a-41f7-910b-7299ab4da600/large.webp"
+    }, 
     {
         "id": 4,
-        "link": "https://rewildingeurope.com/online-rewilding-course/",
-        "title": "Mapa BRAVA",
-        "type": "map",
-        "author": "Rewilding Europe",
+        "link": "https://pagebound.co/books/2af37012-d34c-48b8-8bb6-22425b1765b0",
+        "title": "A máquina de fazer espanhóis",
+        "type": "book",
+        "author": "Valter Hugo Mãe",
+        "yearOfPublication": "2010",
         "draft": false,
         "topics": [
-            "Ecology"
+            "Stories"
         ],
         "tags": [
-            "Regeneration",
-            "Rewilding"
+            "tenderness"
+        ],
+        "description": "Sobbed and laughed really hard reading this. About getting old and all the complexities of the human experience",
+        "imageURL": "https://cdn.pagebound.co/books/2af37012-d34c-48b8-8bb6-22425b1765b0/large.webp"
+    }, 
+    {
+        "id": 5,
+        "link": "https://pagebound.co/books/5c233803-734d-462e-94db-93c14846b6fe",
+        "title": "Anchored: How to Befriend Your Nervous System Using Polyvagal Theory",
+        "type": "book",
+        "author": "Deb Dana",
+        "yearOfPublication": "2021",
+        "draft": false,
+        "topics": [
+            "Being Human"
+        ],
+        "tags": [
+            "nervous sytem"
+        ],
+        "description": "Very eye opening, loved the exercises!",
+        "imageURL": "https://cdn.pagebound.co/books/5c233803-734d-462e-94db-93c14846b6fe/large.webp"
+    }, 
+    {
+        "id": 6,
+        "link": "https://pagebound.co/books/04352500-b00a-4fb3-9a71-9db524f7eff2",
+        "title": "Siddhartha",
+        "type": "book",
+        "author": "Hermann Hesse",
+        "yearOfPublication": "1922",
+        "draft": false,
+        "topics": [
+            "Being Human"
+        ],
+        "tags": [
+            "philosophy"
+        ],
+        "description": "I read this book mostly through an insomnia and when I finished I felt the Om filling my body and I fell asleep. It is a balmy read, the images it portrays are useful and wise, the story perfectly imprinting lessons in your heart. Delicious",
+        "imageURL": "https://cdn.pagebound.co/books/04352500-b00a-4fb3-9a71-9db524f7eff2/large.webp"
+    }, 
+    {
+        "id": 7,
+        "link": "https://pagebound.co/books/821be206-d432-4ce3-a512-235c5e733e7a",
+        "title": "Active Hope: How to Face the Mess We're in without Going Crazy",
+        "type": "book",
+        "author": "Joanna Macy",
+        "yearOfPublication": "2012",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems"
+        ],
+        "tags": [
+            "activism", "hope", "new stories"
+        ],
+        "description": "It does what it sets out to do: teach you how to practice active hope. It is a wonderful tool for action.",
+        "imageURL": "https://cdn.pagebound.co/books/821be206-d432-4ce3-a512-235c5e733e7a/large.webp"
+    }, 
+    {
+        "id": 8,
+        "link": "https://pagebound.co/books/0884b161-3fa5-4bbd-a4b7-a71dd7abda6d",
+        "title": "All About Love: New Visions",
+        "type": "book",
+        "author": "bell hooks",
+        "yearOfPublication": "1999",
+        "draft": false,
+        "topics": [
+            "Being Human"
+        ],
+        "tags": [
+            "love", "philosophy", "feminism"
+        ],
+        "description": "“Love is as love does” I love the sense of agency through love that bell hooks provides, it’s refreshing. Love as action, love as craft, love as art, it gives us the autonomy to actually be loving agents",
+        "imageURL": "https://cdn.pagebound.co/books/0884b161-3fa5-4bbd-a4b7-a71dd7abda6d/large.webp"
+    }, 
+    {
+        "id": 9,
+        "link": "https://pagebound.co/books/65458d93-493d-4262-a3b6-652b31184438",
+        "title": "Research Is Ceremony: Indigenous Research Methods",
+        "type": "book",
+        "author": "Shawn Wilson",
+        "yearOfPublication": "2008",
+        "draft": false,
+        "topics": [
+            "Indigenous Knowledge"
+        ],
+        "tags": [
+            "research", "ceremony"
+        ],
+        "description": "The way the book is structured and presents the indigenous research paradigm is much needed today for everybody. The notion that knowledge is collective and doesn’t belong to us is precious.",
+        "imageURL": "https://cdn.pagebound.co/books/65458d93-493d-4262-a3b6-652b31184438/large.webp"
+    }, 
+    {
+        "id": 10,
+        "link": "https://pagebound.co/books/b69c8c93-b33b-4352-9506-caa1811b2a25",
+        "title": "The Chalice and the Blade",
+        "type": "book",
+        "author": "Riane Eisler",
+        "yearOfPublication": "1987",
+        "draft": false,
+        "topics": [
+            "Being Human", "History", "Animism"
+        ],
+        "tags": [
+            "history", "feminism"
+        ],
+        "description": "Very thorough historical and anthropological account of partnership vs dominator societies, providing a solid framework to analyse today’s issues. I feel this book is so needed for us today to be able to reclaim our past, namely the gylanic partnership that did indeed exist, to be able to imagine new alternative futures. ",
+        "imageURL": "https://cdn.pagebound.co/books/b69c8c93-b33b-4352-9506-caa1811b2a25/large.webp"
+    }, 
+    {
+        "id": 11,
+        "link": "https://pagebound.co/books/2014313b-f116-49c8-a1f6-bf8d6ef122c6",
+        "title": "Sacred Economics: Money, Gift, and Society in the Age of Transition",
+        "type": "book",
+        "author": "Charles Eisenstein",
+        "yearOfPublication": "2011",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems", "Stories"
+        ],
+        "tags": [
+            "economy", "Commons", "hope", "gift economy"
+        ],
+        "description": "Very inspiring, challenging and necessary read. I am still lingering on all the new concepts this book has brought me, I might have to write an essay on it so I can integrate it better. ",
+        "imageURL": "https://cdn.pagebound.co/books/2014313b-f116-49c8-a1f6-bf8d6ef122c6/large.webp"
+    }, 
+    {
+        "id": 12,
+        "link": "https://pagebound.co/books/f28bfc67-a098-4589-9b13-0b734e379c32",
+        "title": "Sand Talk: How Indigenous Thinking Can Save the World",
+        "type": "book",
+        "author": "Tyson Yunkaporta",
+        "yearOfPublication": "2019",
+        "draft": false,
+        "topics": [
+            "Indigenous Knowledge", "Regenerative Systems"
+        ],
+        "tags": [
+            "ceremony", "Community", "spirituality"
         ],
         "description": "",
-        "imageURL": "https://rewildingeurope.com/wp-content/uploads/2019/12/Rewilding-Europe-web.svg"
+        "imageURL": "https://cdn.pagebound.co/books/f28bfc67-a098-4589-9b13-0b734e379c32/large.webp"
+    }, 
+    {
+        "id": 13,
+        "link": "https://pagebound.co/books/2756d661-74a2-4b92-9187-59f42eeae477",
+        "title": "Food of the Gods: The Search for the Original Tree of Knowledge",
+        "type": "book",
+        "author": "Terence McKenna",
+        "yearOfPublication": "1992",
+        "draft": false,
+        "topics": [
+            "History", "Regenerative Systems"
+        ],
+        "tags": [
+            "Connecting with plants", "nature"
+        ],
+        "description": "I felt it was a bit rigid but definitely broadened my horizons ",
+        "imageURL": "https://cdn.pagebound.co/books/2756d661-74a2-4b92-9187-59f42eeae477/large.webp"
+    }, 
+    {
+        "id": 14,
+        "link": "https://pagebound.co/books/7f99d697-bb17-4489-b7dc-f47bf9a5a4fc",
+        "title": "The More Beautiful World Our Hearts Know Is Possible (Sacred Activism)",
+        "type": "book",
+        "author": "Charles Eisenstein",
+        "yearOfPublication": "2013",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems"
+        ],
+        "tags": [
+            "ceremony", "activism", "Commons", "Community", "gift economy", "love", "hope"
+        ],
+        "description": "",
+        "imageURL": "https://cdn.pagebound.co/books/7f99d697-bb17-4489-b7dc-f47bf9a5a4fc/large.webp"
+    }, 
+    {
+        "id": 15,
+        "link": "https://pagebound.co/books/c168b35a-8e6c-43bc-b472-9f7c3f5aba91",
+        "title": "Sowing Seeds in the Desert",
+        "type": "book",
+        "author": "Masanobu Fukuoka",
+        "yearOfPublication": "2012",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems"
+        ],
+        "tags": [
+            "agroforestry", "regenerative agriculture", "activism", "nature"
+        ],
+        "description": "Very hopeful, practical read, with such an inspiring example. I loved that he outs his philosophy at the core and applies it so beautifully",
+        "imageURL": "https://cdn.pagebound.co/books/c168b35a-8e6c-43bc-b472-9f7c3f5aba91/large.webp"
+    }, 
+    {
+        "id": 16,
+        "link": "https://pagebound.co/books/48e40334-24fe-45cd-8ddf-8aba295f8fe0",
+        "title": "If Women Rose Rooted: The Power of the Celtic Woman",
+        "type": "book",
+        "author": "Sharon Blackie",
+        "yearOfPublication": "2023",
+        "draft": false,
+        "topics": [
+            "Being Human"
+        ],
+        "tags": [
+            "feminism", "spirituality", "celtic"
+        ],
+        "description": "Beautifully written, a Call in itself to plant our feet on the earth and rise up.",
+        "imageURL": "https://cdn.pagebound.co/books/48e40334-24fe-45cd-8ddf-8aba295f8fe0/large.webp"
+    }, 
+    {
+        "id": 17,
+        "link": "https://pagebound.co/books/6679e4c1-ef63-4247-9770-cce685ac94cf",
+        "title": "The Serviceberry: Abundance and Reciprocity in the Natural World",
+        "type": "book",
+        "author": "Robin Wall Kimmerer",
+        "yearOfPublication": "2024",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems", "Indigenous Knowledge"
+        ],
+        "tags": [
+            "ceremony", "gift economy"
+        ],
+        "description": "Such a delicious read that prompts you into hopeful action.",
+        "imageURL": "https://cdn.pagebound.co/books/6679e4c1-ef63-4247-9770-cce685ac94cf/large.webp"
+    }, 
+    {
+        "id": 18,
+        "link": "https://pagebound.co/books/43d856de-8390-4d55-a53f-39cfdf4508b9",
+        "title": "The Secret Network of Nature",
+        "type": "book",
+        "author": "Peter Wohlleben",
+        "yearOfPublication": "2017",
+        "draft": false,
+        "topics": [
+            "Regenerative Systems"
+        ],
+        "tags": [
+            "nature", "Community", "Connecting with plants"
+        ],
+        "description": "Soooo many interesting connections in nature and a lot of cool facts you can drop at dinner luring people into realising how cool nature is",
+        "imageURL": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1659039269i/61766153.jpg"
+    }, 
+    {
+        "id": 19,
+        "link": "https://pagebound.co/books/bebc4097-29c7-4cda-b3f5-26cfc34fb1bf?view=reviews",
+        "title": "Wawata - Moon Dreaming: Daily wisdom guided by Hina, the Māori moon",
+        "type": "book",
+        "author": "Hinemoa Elder",
+        "yearOfPublication": "2022",
+        "draft": false,
+        "topics": [
+            "Indigenous Knowledge"
+        ],
+        "tags": [
+            "ceremony", "nature"
+        ],
+        "description": "I bought this when I visited NZ, I loved learning about Māori moon wisdom",
+        "imageURL": "https://cdn.pagebound.co/books/bebc4097-29c7-4cda-b3f5-26cfc34fb1bf/large.webp"
     }
 ]
+
