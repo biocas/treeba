@@ -80,7 +80,16 @@ export async function getStaticPaths() {
           ))}
         </div>
       </section>
-      
+      <section class="resources-section">
+        <div class="resourceList">
+          <h3 class="resourcesCategories wackyTitle">Hyperlinks</h3>
+          {publishedLinks.map((resource) => (
+            <div class="moonHover">
+              <h4>{resource.data.title}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
       <section class="resources-section">
         <div class="resourceList">
           <h3 class="resourcesCategories wackyTitle">Maps</h3>

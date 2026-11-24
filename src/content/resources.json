@@ -374,6 +374,22 @@
         ],
         "description": "I thought for some reason this was gonna be really high tech but actually it so much about community, connection to place and love. ",
         "imageURL": "public/images/books.svg"
+    }, 
+    {
+        "id": 23,
+        "link": "https://futuresecologies.soif.network/repository/explorer/",
+        "title": "Repository of Future Methods",
+        "type": "link",
+        "author": "Futures Methods from Around the World",
+        "draft": false,
+        "topics": [
+            "Ecology", "Regenerative Systems", "Indigenous Knowledge"
+        ],
+        "tags": [
+            "futures", "nature", "activism"
+        ],
+        "description": "Research repository of future methods, including research on time, infrastructure, stewardship & ecology, community and agency. It's very fun to explore!",
+        "imageURL": "public/images/books.svg"
     }
     
 ]

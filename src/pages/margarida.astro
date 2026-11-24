@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import Header from "../components/Header.astro";
+
+import TextSectionWhacky from "../layouts/TextSectionWacky.astro"; 
+import ImageSectionWacky from "../layouts/ImageSectionWacky.astro";
 const pageTitle = "About";
 import Footer from "../components/Footer.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
@@ -17,7 +20,7 @@ export async function getStaticPaths() {
     overflow: hidden;
   }
   .containerScrollonScreen {
-    background-image: url("/images/aboutPattern.png");
+    background-image: url("/images/moonRise.png");
     background-color: var(--dark-brown);
     background-blend-mode: screen;
   }
@@ -33,15 +36,30 @@ export async function getStaticPaths() {
   font-family: var(--text-font);
   font-size: 1rem;
  }
+ .fancyTitle {
+  z-index: -2;
+ }
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
+  <div class="introSectionAbsolute">
+<h1 class="fancyTitle">Margarida Salvado</h1>
+    </div>
   <div class="containerScrollonScreen">
     <div class="containFooter">
       <Header/>
-<h1 class="fancyTitle">Margarida Salvado</h1>
 
-<section class="about"> 
+    <div class="spacer"></div>
+
+<section class="textWrapperWackySections"> 
+<img src="https://www.gigaglitters.com/g/0i1z1vbbq2w.gif" alt="frangipani with sparkles"/>
+
+<img src="/images/glitter-059ym0mb1j2.gif" alt="Margarida swimming"/>
+<img src="/images/glitter-0prnuftsrcd.gif" alt="onagra"/>
+<img src="/images/glitter-0osswqdo0yz.gif" alt="stone circle in Castlerigg England"/>
+
+  <TextSectionWhacky color="var(--primary-blue)"  border="1px solid var(--primary-orange)" flexBasis="30vw" textColour="var(--primary-orange)"  alignSelf="flex-end" extraSideSpace="3rem">
+
 <p>De flor e osso, farejadora de territórios e estudiosa dos ecossistemas que tecemos e nos tecem, em relação constante.
 
 A minha formação académica inicia-se nas ciências da comunicação, nas áreas da comunicação estratégica e jornalismo, expandindo-se para programação em web, com foco em ferramentas de mapeamento digital.
@@ -49,8 +67,9 @@ A minha formação académica inicia-se nas ciências da comunicação, nas áre
 Investigadora e facilitadora das relações entre as comunidades e os seus lugares, no âmbito do planeamento de espaços públicos, placemaking e community engagement. Programadora ávida, interesso-me particularmente por explorar tecnologia como ponte e veículo de relação. Mais recentemente, procuro aprofundar conhecimento e experiência nas áreas da agrofloresta regenerativa, agricultura sintrópica e permacultura.
 
 Escrevo, caminho, cuido e crio, eternamente apaixonada pela teia que nos conecta uns aos outros e à Terra.</p>
-
+</TextSectionWhacky>
 </section>
+
 <Footer />
 </div>
     

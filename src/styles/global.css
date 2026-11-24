@@ -92,6 +92,13 @@ body {
   margin-bottom: 0;
   text-align: center;
 }
+.wackyTitle {
+  padding: 0 15vw;
+}
+
+.imgPageTitle {
+  width: 38vw;
+}
 
 .whiteAndStroke {
   color: white;
@@ -160,9 +167,7 @@ a:hover {
 
 /* Setup for wacky pages - Lore, About, Resources */
 .textWrapperWackySections {
-
-  margin-top: 75vh;
-  z-index: 111;
+box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   padding: 0 2rem;
@@ -170,7 +175,11 @@ a:hover {
   align-content: space-around;
   gap: 1rem;
 }
-
+.spacer {
+  height: 75vh;
+      width: 100%;
+position: relative;
+}
 .containerScrollonScreen {
   background-size: cover;
   background-repeat: no-repeat;
@@ -181,7 +190,9 @@ a:hover {
   margin: 0;
   overflow: scroll;
 }
-
+.containFooter {
+  z-index: 100;
+}
 .introSectionAbsolute {
   position: absolute;
   display: flex;
@@ -191,13 +202,6 @@ a:hover {
   width: 100%;
 }
 
-.wackyTitle {
-  padding: 0 15vw;
-}
-
-.imgPageTitle {
-  width: 38vw;
-}
 
 /* Map styles */
 .popupImage {
