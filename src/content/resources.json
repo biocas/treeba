@@ -390,6 +390,21 @@
         ],
         "description": "Research repository of future methods, including research on time, infrastructure, stewardship & ecology, community and agency. It's very fun to explore!",
         "imageURL": "public/images/books.svg"
+    }, 
+    {
+        "id": 24,
+        "link": "https://www.gridjun.com/",
+        "title": "Make pixel art grids online",
+        "type": "link",
+        "draft": false,
+        "topics": [
+            "The Art of the Craft"
+        ],
+        "tags": [
+            "crochet", "digital tools"
+        ],
+        "description": "pixel graphics for crochet projects",
+        "imageURL": "public/images/books.svg"
     }
     
 ]
