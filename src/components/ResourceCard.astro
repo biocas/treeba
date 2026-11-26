@@ -1,0 +1,14 @@
+---
+const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
+---
+<div class="moonHover resourceTextOnly">
+        <h5 class="resourceTitle">{title}</h5>
+</div>
+
+<style>
+    .resourceTitle:hover {
+transform: translateY(-5px);
+color: #1700EE;
+text-decoration: underline;
+}
+</style>

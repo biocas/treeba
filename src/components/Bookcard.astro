@@ -1,0 +1,18 @@
+---
+const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
+---
+<div class="moonHover resourceLink">
+              <img class="bookImg" src={imageURL} alt={title}/>
+              <h5 class="resourceTitle">{title}, {author}</h5>
+</div>
+
+<style>
+.resourceLink img:hover {
+transform: rotate(2deg);
+}
+.bookImg {
+    object-fit: contain;
+    height: 34vh;
+    width: 80%;
+}
+</style>

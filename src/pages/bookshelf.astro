@@ -9,6 +9,8 @@ const publishedMaps = resources.filter((resource) => (!resource.data.draft) && (
 const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
 
+import Bookcard from "../components/Bookcard.astro"; 
+import ResourceCard from "../components/ResourceCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 const pageTitle = "Resources";
@@ -19,6 +21,7 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
+//books and other resources: make grid instead of sliders. I am not sure what to put on the other types of resources because there are no images. also add a sticky div with filters and maybe a jump to section
 //add a form so people suggest resources
 // add a form in individual blog post page that redirects to my email
 //rss feed
@@ -52,6 +55,7 @@ export async function getStaticPaths() {
   h3 {
     -webkit-text-stroke-color: var(--primary-orange);
   filter: drop-shadow(0px 1px 0px #F46803);
+  margin-bottom: 2rem;
   }
 </style>
 
@@ -62,41 +66,73 @@ export async function getStaticPaths() {
       <h1 class="mainTreebaTitle">{pageTitle}</h1>
       <section class="resources-section">
         <h3 class="resourcesCategories wackyTitle">Books</h3>
-        <div class="resourceList">
+        <div class="bookGrid">
           {publishedBooks.map((resource) => (
-            <div class="moonHover">
-              <h4>{resource.data.title}</h4>
-            </div>
+            <Bookcard 
+            title={resource.data.title}
+            author={resource.data.author}
+            description={resource.data.description}
+            id={resource.data.id}
+            imageURL={resource.data.imageURL}
+            link={resource.data.link}
+            tags={resource.data.tags}
+            topics={resource.data.topics}
+            yearOfPublication={resource.data.yearOfPublication}
+            />
           ))}
-        </div>
+          </div>
       </section>
       <section class="resources-section">
-        <div class="resourceList">
           <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
+        <div class="resourceGrid">
           {publishedCourses.map((resource) => (
-            <div class="moonHover">
-              <h4>{resource.data.title}</h4>
-            </div>
+            <ResourceCard 
+            title={resource.data.title}
+            author={resource.data.author}
+            description={resource.data.description}
+            id={resource.data.id}
+            imageURL={resource.data.imageURL}
+            link={resource.data.link}
+            tags={resource.data.tags}
+            topics={resource.data.topics}
+            yearOfPublication={resource.data.yearOfPublication}
+            />
           ))}
         </div>
       </section>
       <section class="resources-section">
-        <div class="resourceList">
           <h3 class="resourcesCategories wackyTitle">Hyperlinks</h3>
+        <div class="resourceGrid">
           {publishedLinks.map((resource) => (
-            <div class="moonHover">
-              <h4>{resource.data.title}</h4>
-            </div>
+            <ResourceCard 
+            title={resource.data.title}
+            author={resource.data.author}
+            description={resource.data.description}
+            id={resource.data.id}
+            imageURL={resource.data.imageURL}
+            link={resource.data.link}
+            tags={resource.data.tags}
+            topics={resource.data.topics}
+            yearOfPublication={resource.data.yearOfPublication}
+            />
           ))}
         </div>
       </section>
       <section class="resources-section">
-        <div class="resourceList">
           <h3 class="resourcesCategories wackyTitle">Maps</h3>
+        <div class="resourceGrid">
           {publishedMaps.map((resource) => (
-            <div class="moonHover">
-              <h4>{resource.data.title}</h4>
-            </div>
+            <ResourceCard 
+            title={resource.data.title}
+            author={resource.data.author}
+            description={resource.data.description}
+            id={resource.data.id}
+            imageURL={resource.data.imageURL}
+            link={resource.data.link}
+            tags={resource.data.tags}
+            topics={resource.data.topics}
+            yearOfPublication={resource.data.yearOfPublication}
+            />
           ))}
         </div>
       </section>

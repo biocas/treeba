@@ -12,6 +12,7 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
+//latest can be title What has been tended to lately in these digital woods?
 ---
 
 <style>
@@ -97,20 +98,21 @@ export async function getStaticPaths() {
     <h1 class="mainTreebaTitle">Treeba</h1>
     <section class="homeContent"> 
       <div class="cardWrapper">
+<HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
+        <HomepageCard image="/images/forest.svg" href="/forest/" name="Forest" />
         <HomepageCard
           image="/images/flower.svg"
           href="/margarida/"
           name="About"
         />
-<HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
-        <HomepageCard image="/images/forest.svg" href="/forest/" name="Forest" />
         <HomepageCard
           image="/images/bee.svg"
           href="/bookshelf/"
           name="Resources"
         />
-        <HomepageCard image="/images/map.svg" href="/map/" name="Maps" />
+        
         <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
+        <HomepageCard image="/images/map.svg" href="/preserv/" name="My Maps" />
         
     </div>
     <div class="contentBar">
