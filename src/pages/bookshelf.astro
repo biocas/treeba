@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 const resources = await getCollection("resources");
 const uniqueTags = [...new Set(resources.map((post: any) => post.data.tags).flat())];
-
+const uniqueThemes = [...new Set(resources.map((post: any) => post.data.topics).flat())];
 const publishedBooks = resources.filter(
   (resource) => !resource.data.draft && resource.data.type == "book",
 );
@@ -22,7 +22,6 @@ import Bookcard from "../components/Bookcard.astro";
 import ResourceCard from "../components/ResourceCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
-import Modal from "../components/Modal.astro";
 const pageTitle = "Resources";
 import Footer from "../components/Footer.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
@@ -31,11 +30,9 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
-//add a sticky div with filters and maybe a jump to section
 //add a form so people suggest resources
 // add a form in individual blog post page that redirects to my email
 //rss feed
-//bck source -https://giphy.com/gifs/sky-night-11kn6DFp9BNqWA - background-image: url("/images/Night Sky Star GIF.gif");
 ---
 
 <style>
@@ -43,9 +40,28 @@ export async function getStaticPaths() {
     margin: 0;
     overflow: hidden;
   }
-    .filters a {
+    .filters summary {
     color: var(--stroke-green);
     font-size: 0.8rem;
+}
+    .filters summary::marker {
+ display: none; 
+ content: "";
+}
+.filters ul
+{
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    height: 10vh;
+    overflow-y: scroll;
+}
+.listItem {
+  font-family: var(--text-font);
+  color: var(--stroke-green);
+}
+.resourceModalTitle:hover summary {
+    color: var(--background-light-green);
 }
   .containerScrollonScreen {
     background-image: url("/images/resourcesBck.png");
@@ -162,15 +178,47 @@ export async function getStaticPaths() {
         </div>
       </section>
       <div class="filters">
-    <a class="buttonPill moonHover" id='themeFilterBttn'>Filter by Theme</a>
-    <a class="buttonPill moonHover" id='tagFilterBttn'>Filter by Tag</a>
+<div id="tagList" class="resourceModalTitle">
+  <details name="mytagList" class ="buttonPill">
+  <summary>Filter by tag</summary>
+  <form>
+      <ul>
+        {
+          
+          uniqueTags.map((tag, index) => {
+            return (  
+          <li class="listItem"><label for={`${index}Tag`}>{tag.toLowerCase()}</label>
+          <input type="checkbox" id={`${index}Tag`} name={tag} value={tag} /></li>
+            );
+          })
+        }
+      </ul>
+  </form>
+
+</details>
 </div>
-<Modal id={`${id}ModalEl`}  open="OpenModal">
-        <button class="closeBttn moonHover" id={`${id}closeBttn`} slot="close">X</button>
-        <main slot="main">
-          <p>{uniqueTags}</p>
-        </main>
-      </Modal>
+<div id="themeList" class="resourceModalTitle">
+  <details name="myThemeList" class ="buttonPill">
+  <summary>Filter by theme</summary>
+  <form>
+      <ul>
+        {
+          
+          uniqueThemes.map((topic, index) => {
+            return (  
+              <li class="listItem"><input type="checkbox" id={`${index}Topic`} name={topic} value={topic} />
+          <label for={`${index}Topic`}>{topic.toLowerCase()}</label></li>
+          
+            );
+          })
+        }
+      </ul>
+  </form>
+
+</details>
+</div>
+</div>
+
       <Footer />
     </div>
   </div>

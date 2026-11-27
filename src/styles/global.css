@@ -208,9 +208,8 @@ a:hover {
 .tagsWrapper {
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
-
 .filters {
   position: absolute;
   z-index: 99;
@@ -321,9 +320,6 @@ a:hover {
 
 }
 
-.resourceModalPills:hover {
-  border: 2px solid var(--links-blue);
-}
 
 /* Grids */
 .bookGrid {

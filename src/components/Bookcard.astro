@@ -20,9 +20,9 @@ const { title, author, description, id, imageURL, link, tags, topics, yearOfPubl
 <div class="tagsWrapper">{
           topics.map((topic) => {
             return (
-                <a class="resourceModalPills" href={`/blog/topic/${topic.toLowerCase()}/`}>
+                <p class="resourceModalPills noMargin">
                   {topic.toLowerCase()}
-                </a>
+                </p>
             );
           })
         }</div>
@@ -30,9 +30,9 @@ const { title, author, description, id, imageURL, link, tags, topics, yearOfPubl
         <div class="tagsWrapper">{
           tags.map((tag) => {
             return (
-                <a class="resourceModalPills" href={`/blog/tags/${tag.toLowerCase()}/`}>
+                <p class="resourceModalPills noMargin">
                   {tag.toLowerCase()}
-                </a>
+                </p>
             );
           })
         }</div>

@@ -8,15 +8,12 @@
         "yearOfPublication": "2015",
         "draft": false,
         "topics": [
-            "Indigenous Knowledge",
-            "Animism",
-            "Ecology", "Regenerative Systems"
+            "Regenerative Systems"
         ],
         "tags": [
-            "Connecting with plants",
-            "Nonfiction"
+            "Ecology", "Indigenous Knowledge", "Animism"
         ],
-        "description": "This book made me fall in love deeper with Earth, stat a bookclub, start this digital garden. Oh the gifts!",
+        "description": "This book made me fall in love deeper with Earth, start a bookclub, start this digital garden. Oh the gifts!",
         "imageURL": "https://milkweed.org/sites/default/files/styles/book_cover/public/books/front/BraidingSweetgrass_PB_Cover_NB.jpg?itok=e7d_zlYu"
     },
     {
@@ -27,11 +24,11 @@
         "author": "BRAVA",
         "draft": false,
         "topics": [
-            "Ecology", "Regenerative Systems"
+            "Regenerative Systems"
         ],
         "tags": [
             "Commons",
-            "Community", "Extractivism"
+            "Ecology", "Extractivism"
         ],
         "description": "A map of resistence movements in Portugal",
         "imageURL": "/images/map.svg"
@@ -48,8 +45,7 @@
             "Stories"
         ],
         "tags": [
-            "tenderness",
-            "spirituality"
+            "Animism"
         ],
         "description": "I cried so much reading these beautiful stories",
         "imageURL": "https://cdn.pagebound.co/books/7fef44e5-c61a-41f7-910b-7299ab4da600/large.webp"
@@ -66,7 +62,7 @@
             "Stories"
         ],
         "tags": [
-            "tenderness"
+            "Community"
         ],
         "description": "Sobbed and laughed really hard reading this. About getting old and all the complexities of the human experience",
         "imageURL": "https://cdn.pagebound.co/books/2af37012-d34c-48b8-8bb6-22425b1765b0/large.webp"
@@ -117,7 +113,7 @@
             "Regenerative Systems"
         ],
         "tags": [
-            "activism", "hope", "new stories"
+            "activism"
         ],
         "description": "It does what it sets out to do: teach you how to practice active hope. It is a wonderful tool for action.",
         "imageURL": "https://cdn.pagebound.co/books/821be206-d432-4ce3-a512-235c5e733e7a/large.webp"
@@ -134,7 +130,7 @@
             "Being Human"
         ],
         "tags": [
-            "love", "philosophy", "feminism"
+           "philosophy", "feminism"
         ],
         "description": "“Love is as love does” I love the sense of agency through love that bell hooks provides, it’s refreshing. Love as action, love as craft, love as art, it gives us the autonomy to actually be loving agents",
         "imageURL": "https://cdn.pagebound.co/books/0884b161-3fa5-4bbd-a4b7-a71dd7abda6d/large.webp"
@@ -148,10 +144,10 @@
         "yearOfPublication": "2008",
         "draft": false,
         "topics": [
-            "Indigenous Knowledge"
+            "Regenerative Systems"
         ],
         "tags": [
-            "research", "ceremony"
+            "Indigenous Knowledge"
         ],
         "description": "The way the book is structured and presents the indigenous research paradigm is much needed today for everybody. The notion that knowledge is collective and doesn’t belong to us is precious.",
         "imageURL": "https://fernwoodpublishing.ca/images/_cover/9781773633282.jpg"
@@ -165,10 +161,10 @@
         "yearOfPublication": "1987",
         "draft": false,
         "topics": [
-            "Being Human", "History", "Animism"
+         "History"
         ],
         "tags": [
-            "history", "feminism"
+            "Animism", "feminism"
         ],
         "description": "Very thorough historical and anthropological account of partnership vs dominator societies, providing a solid framework to analyse today’s issues. I feel this book is so needed for us today to be able to reclaim our past, namely the gylanic partnership that did indeed exist, to be able to imagine new alternative futures. ",
         "imageURL": "https://cdn.pagebound.co/books/b69c8c93-b33b-4352-9506-caa1811b2a25/large.webp"
@@ -182,10 +178,10 @@
         "yearOfPublication": "2011",
         "draft": false,
         "topics": [
-            "Regenerative Systems", "Stories"
+            "Regenerative Systems"
         ],
         "tags": [
-            "economy", "Commons", "hope", "gift economy"
+            "economy", "Commons", "gift economy"
         ],
         "description": "Very inspiring, challenging and necessary read. I am still lingering on all the new concepts this book has brought me, I might have to write an essay on it so I can integrate it better. ",
         "imageURL": "https://cdn.pagebound.co/books/2014313b-f116-49c8-a1f6-bf8d6ef122c6/large.webp"
@@ -199,10 +195,10 @@
         "yearOfPublication": "2019",
         "draft": false,
         "topics": [
-            "Indigenous Knowledge", "Regenerative Systems"
+             "Regenerative Systems"
         ],
         "tags": [
-            "ceremony", "Community", "spirituality"
+             "Community", "spirituality", "Indigenous Knowledge"
         ],
         "description": "",
         "imageURL": "https://cdn.pagebound.co/books/f28bfc67-a098-4589-9b13-0b734e379c32/large.webp"
@@ -216,10 +212,10 @@
         "yearOfPublication": "1992",
         "draft": false,
         "topics": [
-            "History", "Regenerative Systems"
+             "Regenerative Systems"
         ],
         "tags": [
-            "Connecting with plants", "nature"
+            "History"
         ],
         "description": "I felt it was a bit rigid but definitely broadened my horizons ",
         "imageURL": "https://cdn.pagebound.co/books/2756d661-74a2-4b92-9187-59f42eeae477/large.webp"
@@ -236,7 +232,7 @@
             "Regenerative Systems"
         ],
         "tags": [
-            "ceremony", "activism", "Commons", "Community", "gift economy", "love", "hope"
+           "activism", "Commons", "gift economy"
         ],
         "description": "",
         "imageURL": "https://cdn.pagebound.co/books/7f99d697-bb17-4489-b7dc-f47bf9a5a4fc/large.webp"
@@ -253,7 +249,7 @@
             "Regenerative Systems"
         ],
         "tags": [
-            "agroforestry", "regenerative agriculture", "activism", "nature"
+            "agroforestry", "regenerative agriculture", "activism"
         ],
         "description": "Very hopeful, practical read, with such an inspiring example. I loved that he outs his philosophy at the core and applies it so beautifully",
         "imageURL": "https://cdn.pagebound.co/books/c168b35a-8e6c-43bc-b472-9f7c3f5aba91/large.webp"
@@ -270,7 +266,7 @@
             "Being Human"
         ],
         "tags": [
-            "feminism", "spirituality", "celtic"
+            "feminism", "spirituality"
         ],
         "description": "Beautifully written, a Call in itself to plant our feet on the earth and rise up.",
         "imageURL": "https://cdn.pagebound.co/books/48e40334-24fe-45cd-8ddf-8aba295f8fe0/large.webp"
@@ -284,10 +280,10 @@
         "yearOfPublication": "2024",
         "draft": false,
         "topics": [
-            "Regenerative Systems", "Indigenous Knowledge"
+            "Regenerative Systems"
         ],
         "tags": [
-            "ceremony", "gift economy"
+            "Indigenous Knowledge", "gift economy"
         ],
         "description": "Such a delicious read that prompts you into hopeful action.",
         "imageURL": "https://cdn.pagebound.co/books/6679e4c1-ef63-4247-9770-cce685ac94cf/large.webp"
@@ -304,7 +300,7 @@
             "Regenerative Systems"
         ],
         "tags": [
-            "nature", "Community", "Connecting with plants"
+           "Animism","Community"
         ],
         "description": "Soooo many interesting connections in nature and a lot of cool facts you can drop at dinner luring people into realising how cool nature is",
         "imageURL": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1659039269i/61766153.jpg"
@@ -321,7 +317,7 @@
             "Indigenous Knowledge"
         ],
         "tags": [
-            "ceremony", "nature"
+            "Animis", "feminism"
         ],
         "description": "I bought this when I visited NZ, I loved learning about Māori moon wisdom",
         "imageURL": "https://cdn.pagebound.co/books/bebc4097-29c7-4cda-b3f5-26cfc34fb1bf/large.webp"
@@ -338,7 +334,7 @@
             "Being Human"
         ],
         "tags": [
-            "celtic", "spirituality", "philosophy"
+            "spirituality", "philosophy"
         ],
         "description": "I have read this a couple years ago and found it beautiful. It is this month's book for my book club!",
         "imageURL": "https://cdn.pagebound.co/books/1ed15043-bef8-46c9-9a10-2c8943f3071b/large.webp"
@@ -367,10 +363,10 @@
         "author": "University of Edinburgh",
         "draft": false,
         "topics": [
-            "Ecology"
+            "Regenerative Systems"
         ],
         "tags": [
-            "studies", "nature", "Community"
+            "studies","Community"
         ],
         "description": "I thought for some reason this was gonna be really high tech but actually it so much about community, connection to place and love. ",
         "imageURL": "public/images/books.svg"
@@ -383,10 +379,10 @@
         "author": "Futures Methods from Around the World",
         "draft": false,
         "topics": [
-            "Ecology", "Regenerative Systems", "Indigenous Knowledge"
+            "Regenerative Systems"
         ],
         "tags": [
-            "futures", "nature", "activism"
+           "Ecology", "activism", "Indigenous Knowledge"
         ],
         "description": "Research repository of future methods, including research on time, infrastructure, stewardship & ecology, community and agency. It's very fun to explore!",
         "imageURL": "public/images/books.svg"
