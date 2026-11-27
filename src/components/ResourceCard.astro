@@ -1,4 +1,5 @@
 ---
+import Modal from "../components/Modal.astro";
 const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
 const iconArray = ['/images/bee.svg', '/images/bird.svg', '/images/butterfly.svg', '/images/cherries.svg', '/images/favicon.svg', '/images/Fox.svg', '/images/ladybug.svg', '/images/oak leaf.svg', '/images/plant.svg', '/images/tree.svg', '/images/sun.svg']; 
 const randomElement = iconArray[Math.floor(Math.random() * iconArray.length)];
@@ -24,8 +25,53 @@ color: #1700EE;
 text-decoration: underline;
 }
 </style>
-<div class="moonHover linkWrapper">
+<div class="moonHover linkWrapper" id={`${id}ModalBttn`} onclick={`window.{id}.showModal()`}>
     <img class='icon' src={randomElement}/>
         <h5 class="resourceTextOnly">{title}</h5>
 </div>
+<Modal id={`${id}ModalEl`}  open="OpenModal">
+        <button id={`${id}closeBttn`} slot="close">X</button>
+        <main slot="main">
+          <p>{title}</p>
+          <p>{author}</p>
+          <p>{yearOfPublication}</p>
+          <p>{description}</p>
+          <a href={link}>Learn more</a>
+          <div>{tags}</div>
+          <div>{topics}</div>
+          <hr />
+        </main>
+      </Modal>
+<script define:vars={{ id }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dialog = document.getElementById(`${id}ModalEl`);
+    const showButton = document.getElementById(`${id}ModalBttn`);
+    const closeButton = document.getElementById(`${id}closeBttn`);
+console.log(dialog, showButton, closeButton);
+    if (dialog) {
+      // "Show the dialog" button opens the dialog modally
+      showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
 
+      // "Close" button closes the dialog
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      // "Click" outside the dialog closes it
+      dialog.addEventListener("click", event => {
+        // console.log("clicked: ", event.target, event.currentTarget);
+        if (event.target === dialog && event.currentTarget === dialog) {
+          dialog.close();
+        }
+      });
+    } else {
+      console.error("Dialog elements not found:", {
+        dialog,
+        showButton,
+        closeButton
+      });
+    }
+  });
+</script>

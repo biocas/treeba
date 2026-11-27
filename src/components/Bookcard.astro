@@ -7,11 +7,17 @@ const { title, author, description, id, imageURL, link, tags, topics, yearOfPubl
               <h5 class="resourceTitle">{title}, {author}</h5>
 </div>
 <Modal id={`${id}ModalEl`}  open="OpenModal">
+        <button class="closeBttn moonHover" id={`${id}closeBttn`} slot="close">X</button>
         <main slot="main">
-          <p>Some extra content you would like here</p>
-          <hr />
+          <p class="resourceModalTitle">{title}</p>
+          <div class="linkDeets"><p>{author}</p>
+          <p>{yearOfPublication}</p></div>
+          <p class="resourceModalDescription">{description}</p>
+          <div class="resourceModalTags" >{tags}</div>
+          <div class="resourceModalTopics" >{topics}</div>
+          <a target="_blank"
+	rel="noopener noreferrer" class="bodyPageLinks" href={link}>Learn more</a>
         </main>
-        <button id={`${id}closeBttn`} slot="close">Close modal</button>
       </Modal>
 <style>
 .resourceLink img:hover {

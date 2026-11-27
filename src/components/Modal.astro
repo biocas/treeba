@@ -3,6 +3,7 @@
 const {id, open} = Astro.props;
 ---
 <style>
+
 dialog {
   position: fixed;
   left: 50%;
@@ -20,9 +21,9 @@ dialog::backdrop {
   }
 </style>
 <dialog id={id}>
+    <slot name="close" />
   <slot name="main" />
   <form method="dialog">
-    <slot name="close" />
   </form>
 </dialog>
 

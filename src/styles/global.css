@@ -31,6 +31,7 @@ body {
   --background-cream: #fff3df;
   --stroke-green: #497400;
   --dark-brown: #684232;
+  --links-blue: #1700EE;
 
   /* Opacity variants for colors */
   --transparent-yellow: rgba(254, 249, 110, 0.60);
@@ -145,7 +146,7 @@ h5 {
   font-family: var(--title-font);
   text-decoration: none;
   font-size: 0.7rem;
-  color: #1700EE;
+  color: var(--links-blue);
 }
 
 .bodyPageLinks:hover {
@@ -159,8 +160,23 @@ a {
 }
 
 a:hover {
-  color: #1700EE;
+  color:  var(--links-blue);
 }
+.closeBttn {
+        position: absolute;
+    right: 1rem;
+    background-color: transparent;
+    border: 0 !important;
+    font-weight: bold;
+    color: black;
+    font-family: var(--title-font);
+    }
+    .closeBttn:hover {
+        color: var(--links-blue);
+    }
+    .closeBttn:focus, .closeBttn:active {
+        border: 0 !important;
+    }
 /* Icons */
 .icon {
   height: 2rem;
@@ -229,7 +245,22 @@ a:hover {
   z-index: 0;
   width: 100%;
 }
+/* Modals */
+.resourceModalTitle {
 
+}
+.linkDeets {
+
+}
+.resourceModalDescription {
+
+}
+.resourceModalTags {
+
+}
+.resourceModalTopics {
+
+}
 /* Grids */
 .bookGrid {
   display: grid;
