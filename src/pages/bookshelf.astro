@@ -48,18 +48,24 @@ export async function getStaticPaths() {
  display: none; 
  content: "";
 }
-
+.buttonPill:hover .listItem {
+  color: var(--background-light-green);
+}
 .filters ul
 {
     list-style: none;
     padding: 0;
-    margin-top: 0;
-    height: 10vh;
-    overflow-y: scroll;
+    margin: 0;
 }
 .listItem {
   font-family: var(--text-font);
   color: var(--stroke-green);
+}
+.filterForm {
+  position: absolute;
+    bottom: 8vh;
+    height: 28vh;
+    overflow-y: scroll;
 }
 .resourceModalTitle:hover summary {
     color: var(--background-light-green);
@@ -98,6 +104,15 @@ export async function getStaticPaths() {
     .resources-section {
       padding: 0 2rem;
     }
+     .filters summary {
+    font-size: 0.5rem;
+}
+.filterForm {
+    bottom: 5vh;
+    width: 40vw;
+    height: 28vh;
+    padding: 5px;
+}
   }
 </style>
 
@@ -182,14 +197,14 @@ export async function getStaticPaths() {
 <div id="tagList">
   <details name="mytagList">
   <summary class="resourceModalTitle buttonPill">Filter by tag</summary>
-  <form class="resourceModalTitle buttonPill">
+  <form class="resourceModalTitle buttonPill filterForm">
       <ul>
         {
           
           uniqueTags.map((tag, index) => {
             return (  
-          <li class="listItem"><label for={`${index}Tag`}>{tag.toLowerCase()}</label>
-          <input type="checkbox" id={`${index}Tag`} name={tag} value={tag} /></li>
+          <li class="listItem">
+          <input type="checkbox" id={`${index}Tag`} name={tag} value={tag} /><label for={`${index}Tag`}>{tag.toLowerCase()}</label></li>
             );
           })
         }
@@ -198,17 +213,17 @@ export async function getStaticPaths() {
 
 </details>
 </div>
-<div id="themeList" class="resourceModalTitle">
-  <details name="myThemeList" class ="buttonPill">
-  <summary>Filter by theme</summary>
-  <form>
+<div id="themeList">
+  <details name="myThemeList">
+  <summary class="resourceModalTitle buttonPill">Filter by theme</summary>
+  <form class="resourceModalTitle buttonPill filterForm">
       <ul>
         {
           
           uniqueThemes.map((topic, index) => {
             return (  
-              <li class="listItem"><input type="checkbox" id={`${index}Topic`} name={topic} value={topic} />
-          <label for={`${index}Topic`}>{topic.toLowerCase()}</label></li>
+              <li class="listItem"><input type="checkbox" id={`${index}Topic`} name={topic} value={topic} /><label for={`${index}Topic`}>{topic.toLowerCase()}</label>
+          </li>
           
             );
           })

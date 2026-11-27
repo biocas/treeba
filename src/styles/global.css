@@ -215,7 +215,7 @@ a:hover {
   z-index: 99;
   bottom: 1vh;
   display: flex;
-  gap: 1rem;
+  gap: 4rem;
   left: 50%;
   transform: translate(-50%, -50%);
   flex-flow: row nowrap;
@@ -475,7 +475,12 @@ a:hover {
   .container {
     margin: 0;
   }
-
+  /* Wrappers */
+  .filters {
+  gap: 1rem;
+  width: 90%;
+}
+/* Headings */
   .introHome {
     background-color: var(--transparent-brown);
     border-radius: var(--border-radius-base);
