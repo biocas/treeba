@@ -48,6 +48,7 @@ export async function getStaticPaths() {
  display: none; 
  content: "";
 }
+
 .filters ul
 {
     list-style: none;
@@ -178,10 +179,10 @@ export async function getStaticPaths() {
         </div>
       </section>
       <div class="filters">
-<div id="tagList" class="resourceModalTitle">
-  <details name="mytagList" class ="buttonPill">
-  <summary>Filter by tag</summary>
-  <form>
+<div id="tagList">
+  <details name="mytagList">
+  <summary class="resourceModalTitle buttonPill">Filter by tag</summary>
+  <form class="resourceModalTitle buttonPill">
       <ul>
         {
           
