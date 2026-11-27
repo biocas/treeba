@@ -187,6 +187,15 @@ a:hover {
   transform: rotate(-20deg);
 }
 /* Wrappers */
+.filters {   
+   position: absolute;
+    z-index: 99;
+    bottom: 1vh;
+    display: flex;
+    gap: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .container {
   display: flex;
   flex-flow: column nowrap;
