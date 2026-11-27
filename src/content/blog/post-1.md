@@ -31,3 +31,5 @@ https://slipbox.eleanorkonik.com/nonfiction/published/2020-06-05+Women+%26+Milit
 
 https://iandennismiller.github.io/solarpunk/about/ 
 https://yesterweb.org/ 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6fj-OJ6RcNQ?si=X5stTCdKNHgy59mo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

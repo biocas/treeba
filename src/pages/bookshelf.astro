@@ -6,9 +6,9 @@ const publishedCourses = resources.filter((resource) => (!resource.data.draft) &
 const publishedLinks = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "link"));
 const publishedMaps = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "map"));
 
-const { slug, cover, title, growthStage, date, description, id } = Astro.props;
+//const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
-
+const {modalId, open} = Astro.props;
 import Bookcard from "../components/Bookcard.astro"; 
 import ResourceCard from "../components/ResourceCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -21,7 +21,8 @@ export async function getStaticPaths() {
     return { params: { lang } };
   });
 }
-//books and other resources: make grid instead of sliders. I am not sure what to put on the other types of resources because there are no images. also add a sticky div with filters and maybe a jump to section
+//add a sticky div with filters and maybe a jump to section
+//add a star
 //add a form so people suggest resources
 // add a form in individual blog post page that redirects to my email
 //rss feed
@@ -76,6 +77,7 @@ h3 {
       <Header />
       <h1 class="rockTitle">{pageTitle}</h1>
       <section class="resources-section">
+        <button onclick="{`window.${id}.showModal()`}">{open}</button>
         <h3 class="resourcesCategories wackyTitle">Books</h3>
         <div class="bookGrid">
           {publishedBooks.map((resource) => (

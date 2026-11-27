@@ -1,17 +1,31 @@
 ---
 const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
+const iconArray = ['/images/bee.svg', '/images/bird.svg', '/images/butterfly.svg', '/images/cherries.svg', '/images/favicon.svg', '/images/Fox.svg', '/images/ladybug.svg', '/images/oak leaf.svg', '/images/plant.svg', '/images/tree.svg', '/images/sun.svg']; 
+const randomElement = iconArray[Math.floor(Math.random() * iconArray.length)];
 ---
-<div class="moonHover resourceTextOnly">
-        <h5 class="resourceTitle">{title}</h5>
-</div>
-
 <style>
-    .resourceTextOnly>.resourceTitle:hover {
-transform: translateY(-5px);
+.resourceTextOnly {
+    font-family: var(--text-font);
+    color:white;
+    font-weight: 400;
+}
+.linkWrapper {
+    display: flex;
+    flex-flow: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.linkWrapper:hover img {
+    transform: rotate(-20deg);
+}
+.linkWrapper:hover .resourceTextOnly {
+    transform: translateY(-5px);
 color: #1700EE;
 text-decoration: underline;
 }
-.resourceTextOnly>.resourceTitle {
-    
-}
 </style>
+<div class="moonHover linkWrapper">
+    <img class='icon' src={randomElement}/>
+        <h5 class="resourceTextOnly">{title}</h5>
+</div>
+

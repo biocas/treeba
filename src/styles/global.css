@@ -161,7 +161,15 @@ a {
 a:hover {
   color: #1700EE;
 }
-
+/* Icons */
+.icon {
+  height: 2rem;
+    width: 2rem;
+    display: block;
+}
+.icon:hover {
+  transform: rotate(-20deg);
+}
 /* Wrappers */
 .container {
   display: flex;
