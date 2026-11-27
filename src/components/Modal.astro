@@ -2,13 +2,15 @@
 //code from https://github.com/rebelchris/astro-modal 
 const {id, open} = Astro.props;
 ---
-<style lang="scss">
+<style>
 dialog {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  &::backdrop {
+  
+}
+dialog::backdrop {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -16,14 +18,12 @@ dialog {
     left: 0px;
     background: rgba(255, 0, 0, 0.1);
   }
-}
 </style>
-
-<button onclick={`window.${id}.showModal()`}>{open}</button>
-
-<dialog id='{id}'>
+<dialog id={id}>
   <slot name="main" />
   <form method="dialog">
     <slot name="close" />
   </form>
 </dialog>
+
+

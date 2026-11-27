@@ -1,11 +1,18 @@
 ---
+import Modal from "../components/Modal.astro";
 const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
 ---
-<div class="moonHover resourceLink">
+<div class="moonHover resourceLink" id={`${id}ModalBttn`} onclick={`window.{id}.showModal()`}>
               <img class="bookImg" src={imageURL} alt={title}/>
               <h5 class="resourceTitle">{title}, {author}</h5>
 </div>
-
+<Modal id={`${id}ModalEl`}  open="OpenModal">
+        <main slot="main">
+          <p>Some extra content you would like here</p>
+          <hr />
+        </main>
+        <button id={`${id}closeBttn`} slot="close">Close modal</button>
+      </Modal>
 <style>
 .resourceLink img:hover {
 transform: rotate(2deg);
@@ -16,3 +23,36 @@ transform: rotate(2deg);
     width: 80%;
 }
 </style>
+<script define:vars={{ id }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dialog = document.getElementById(`${id}ModalEl`);
+    const showButton = document.getElementById(`${id}ModalBttn`);
+    const closeButton = document.getElementById(`${id}closeBttn`);
+console.log(dialog, showButton, closeButton);
+    if (dialog) {
+      // "Show the dialog" button opens the dialog modally
+      showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      // "Close" button closes the dialog
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      // "Click" outside the dialog closes it
+      dialog.addEventListener("click", event => {
+        // console.log("clicked: ", event.target, event.currentTarget);
+        if (event.target === dialog && event.currentTarget === dialog) {
+          dialog.close();
+        }
+      });
+    } else {
+      console.error("Dialog elements not found:", {
+        dialog,
+        showButton,
+        closeButton
+      });
+    }
+  });
+</script>

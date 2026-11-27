@@ -1,15 +1,22 @@
 ---
 import { getCollection } from "astro:content";
 const resources = await getCollection("resources");
-const publishedBooks = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "book"));
-const publishedCourses = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "course"));
-const publishedLinks = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "link"));
-const publishedMaps = resources.filter((resource) => (!resource.data.draft) && (resource.data.type == "map"));
+const publishedBooks = resources.filter(
+  (resource) => !resource.data.draft && resource.data.type == "book",
+);
+const publishedCourses = resources.filter(
+  (resource) => !resource.data.draft && resource.data.type == "course",
+);
+const publishedLinks = resources.filter(
+  (resource) => !resource.data.draft && resource.data.type == "link",
+);
+const publishedMaps = resources.filter(
+  (resource) => !resource.data.draft && resource.data.type == "map",
+);
 
 //const { slug, cover, title, growthStage, date, description, id } = Astro.props;
 const now = Date.now();
-const {modalId, open} = Astro.props;
-import Bookcard from "../components/Bookcard.astro"; 
+import Bookcard from "../components/Bookcard.astro";
 import ResourceCard from "../components/ResourceCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
@@ -22,7 +29,6 @@ export async function getStaticPaths() {
   });
 }
 //add a sticky div with filters and maybe a jump to section
-//add a star
 //add a form so people suggest resources
 // add a form in individual blog post page that redirects to my email
 //rss feed
@@ -55,20 +61,20 @@ export async function getStaticPaths() {
   }
   h3 {
     -webkit-text-stroke-color: var(--primary-orange);
-  filter: drop-shadow(0px 1px 0px #F46803);
-  margin-bottom: 2rem;
+    filter: drop-shadow(0px 1px 0px #f46803);
+    margin-bottom: 2rem;
   }
   @media only screen and (max-width: 767px) {
-.rockTitle {
-  font-size: 3.8rem;
-}
-h3 {
-  margin-bottom: 0;
-}
-.resources-section {
-    padding: 0 2rem;
+    .rockTitle {
+      font-size: 3.8rem;
+    }
+    h3 {
+      margin-bottom: 0;
+    }
+    .resources-section {
+      padding: 0 2rem;
+    }
   }
-}
 </style>
 
 <BaseLayout currentLocale={currentLocale}>
@@ -77,74 +83,73 @@ h3 {
       <Header />
       <h1 class="rockTitle">{pageTitle}</h1>
       <section class="resources-section">
-        <button onclick="{`window.${id}.showModal()`}">{open}</button>
         <h3 class="resourcesCategories wackyTitle">Books</h3>
         <div class="bookGrid">
           {publishedBooks.map((resource) => (
-            <Bookcard 
-            title={resource.data.title}
-            author={resource.data.author}
-            description={resource.data.description}
-            id={resource.data.id}
-            imageURL={resource.data.imageURL}
-            link={resource.data.link}
-            tags={resource.data.tags}
-            topics={resource.data.topics}
-            yearOfPublication={resource.data.yearOfPublication}
+            <Bookcard
+              title={resource.data.title}
+              author={resource.data.author}
+              description={resource.data.description}
+              id={resource.data.id}
+              imageURL={resource.data.imageURL}
+              link={resource.data.link}
+              tags={resource.data.tags}
+              topics={resource.data.topics}
+              yearOfPublication={resource.data.yearOfPublication}
             />
           ))}
-          </div>
+        </div>
       </section>
       <section class="resources-section">
-          <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
+        <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
         <div class="resourceGrid">
           {publishedCourses.map((resource) => (
-            <ResourceCard 
-            title={resource.data.title}
-            author={resource.data.author}
-            description={resource.data.description}
-            id={resource.data.id}
-            imageURL={resource.data.imageURL}
-            link={resource.data.link}
-            tags={resource.data.tags}
-            topics={resource.data.topics}
-            yearOfPublication={resource.data.yearOfPublication}
+            <ResourceCard
+              title={resource.data.title}
+              author={resource.data.author}
+              description={resource.data.description}
+              id={resource.data.id}
+              imageURL={resource.data.imageURL}
+              link={resource.data.link}
+              tags={resource.data.tags}
+              topics={resource.data.topics}
+              yearOfPublication={resource.data.yearOfPublication}
             />
           ))}
         </div>
       </section>
       <section class="resources-section">
-          <h3 class="resourcesCategories wackyTitle">Hyperlinks</h3>
+        <h3 class="resourcesCategories wackyTitle">Hyperlinks</h3>
         <div class="resourceGrid">
           {publishedLinks.map((resource) => (
-            <ResourceCard 
-            title={resource.data.title}
-            author={resource.data.author}
-            description={resource.data.description}
-            id={resource.data.id}
-            imageURL={resource.data.imageURL}
-            link={resource.data.link}
-            tags={resource.data.tags}
-            topics={resource.data.topics}
-            yearOfPublication={resource.data.yearOfPublication}
+            <ResourceCard
+              title={resource.data.title}
+              author={resource.data.author}
+              description={resource.data.description}
+              id={resource.data.id}
+              imageURL={resource.data.imageURL}
+              link={resource.data.link}
+              tags={resource.data.tags}
+              topics={resource.data.topics}
+              yearOfPublication={resource.data.yearOfPublication}
             />
           ))}
         </div>
       </section>
       <section class="resources-section">
-          <h3 class="resourcesCategories wackyTitle">Maps</h3>
+        <h3 class="resourcesCategories wackyTitle">Maps</h3>
         <div class="resourceGrid">
           {publishedMaps.map((resource) => (
-            <ResourceCard 
-            title={resource.data.title}
-            author={resource.data.author}
-            description={resource.data.description}
-            id={resource.data.id}
-            imageURL={resource.data.imageURL}
-            link={resource.data.link}
-            tags={resource.data.tags}
-            topics={resource.data.topics}
-            yearOfPublication={resource.data.yearOfPublication}
+            <ResourceCard
+              title={resource.data.title}
+              author={resource.data.author}
+              description={resource.data.description}
+              id={resource.data.id}
+              imageURL={resource.data.imageURL}
+              link={resource.data.link}
+              tags={resource.data.tags}
+              topics={resource.data.topics}
+              yearOfPublication={resource.data.yearOfPublication}
             />
           ))}
         </div>
