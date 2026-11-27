@@ -2,6 +2,7 @@
 import Modal from "../components/Modal.astro";
 const { title, author, description, id, imageURL, link, tags, topics, yearOfPublication} = Astro.props;
 ---
+
 <div class="moonHover resourceLink" id={`${id}ModalBttn`} onclick={`window.{id}.showModal()`}>
               <img class="bookImg" src={imageURL} alt={title}/>
               <h5 class="resourceTitle">{title}, {author}</h5>
@@ -19,6 +20,7 @@ const { title, author, description, id, imageURL, link, tags, topics, yearOfPubl
 	rel="noopener noreferrer" class="bodyPageLinks moonHover" href={link}>Learn more</a>
         </main>
       </Modal>
+     
 <style>
 .resourceLink img:hover {
 transform: rotate(2deg);
