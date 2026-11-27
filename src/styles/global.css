@@ -246,20 +246,28 @@ a:hover {
   width: 100%;
 }
 /* Modals */
-.resourceModalTitle {
-
+.resourceModal {
+color: var(--dark-brown);
+background-color: var(--background-cream);
+border-radius: 20px;
+ font-family: var(--text-font);
 }
-.linkDeets {
-
+.resourceModalTitle {
+  margin: 1rem 0;
+  font-family: var(--title-font);
 }
 .resourceModalDescription {
-
+  margin: 0;
 }
-.resourceModalTags {
-
+.linkDeets {
+ display: flex;
+ flex-flow: row wrap;
+ gap: 1rem;
 }
-.resourceModalTopics {
-
+.resourceModalPills {
+border: 2px solid var(--dark-brown);
+padding: 10px;
+border-radius: 20px;
 }
 /* Grids */
 .bookGrid {
