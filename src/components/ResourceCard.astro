@@ -25,7 +25,7 @@ color: #1700EE;
 text-decoration: underline;
 }
 </style>
-<div class="moonHover linkWrapper" id={`${id}ModalBttn`} onclick={`window.{id}.showModal()`}>
+<div class="moonHover linkWrapper" id={`${id}ModalBttn`}>
     <img class='icon' src={randomElement}/>
         <h5 class="resourceTextOnly">{title}</h5>
 </div>
@@ -38,9 +38,26 @@ text-decoration: underline;
     {(author ||yearOfPublication) && <div class="linkDeets"><p>{author}</p>
           <p>{yearOfPublication}</p></div>}
           {description && <p class="resourceModalDescription">{description}</p>}
-          {tags && <h6>tags:</h6> <div class="resourceModalPills" >{tags}</div>}
-          {topics && <h6>topics:</h6><div class="resourceModalPills" >{topics}</div>}
-          
+           <h6  class="fineHeadings">TOPICS</h6>
+<div class="tagsWrapper">{
+          topics.map((topic) => {
+            return (
+                <a class="resourceModalPills" href={`/blog/topic/${topic.toLowerCase()}/`}>
+                  {topic.toLowerCase()}
+                </a>
+            );
+          })
+        }</div>
+       <h6 class="fineHeadings">TAGS</h6>
+        <div class="tagsWrapper">{
+          tags.map((tag) => {
+            return (
+                <a class="resourceModalPills" href={`/blog/tags/${tag.toLowerCase()}/`}>
+                  {tag.toLowerCase()}
+                </a>
+            );
+          })
+        }</div>
         </main>
       </Modal>
 <script define:vars={{ id }}>
@@ -48,7 +65,6 @@ text-decoration: underline;
     const dialog = document.getElementById(`${id}ModalEl`);
     const showButton = document.getElementById(`${id}ModalBttn`);
     const closeButton = document.getElementById(`${id}closeBttn`);
-console.log(dialog, showButton, closeButton);
     if (dialog) {
       // "Show the dialog" button opens the dialog modally
       showButton.addEventListener("click", () => {
