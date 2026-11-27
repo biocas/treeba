@@ -30,16 +30,16 @@ text-decoration: underline;
         <h5 class="resourceTextOnly">{title}</h5>
 </div>
 <Modal id={`${id}ModalEl`}  open="OpenModal">
-        <button id={`${id}closeBttn`} slot="close">X</button>
+        <button class="closeBttn moonHover" id={`${id}closeBttn`} slot="close">X</button>
         <main slot="main">
-          <p>{title}</p>
-          <p>{author}</p>
-          <p>{yearOfPublication}</p>
-          <p>{description}</p>
-          <a href={link}>Learn more</a>
-          <div>{tags}</div>
-          <div>{topics}</div>
-          <hr />
+          <p class="resourceModalTitle">{title}</p>
+          <a target="_blank"
+	rel="noopener noreferrer" class="bodyPageLinks moonHover" href={link}>Go to resource</a>
+    {(author ||yearOfPublication) && <div class="linkDeets"><p>{author}</p>
+          <p>{yearOfPublication}</p></div>}
+          <p class="resourceModalDescription">{description}</p>
+          <div class="resourceModalPills" >{tags}</div>
+          <div class="resourceModalPills" >{topics}</div>
         </main>
       </Modal>
 <script define:vars={{ id }}>

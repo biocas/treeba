@@ -10,13 +10,13 @@ const { title, author, description, id, imageURL, link, tags, topics, yearOfPubl
         <button class="closeBttn moonHover" id={`${id}closeBttn`} slot="close">X</button>
         <main slot="main">
           <p class="resourceModalTitle">{title}</p>
-          <div class="linkDeets"><p>{author}</p>
-          <p>{yearOfPublication}</p></div>
+          {(author ||yearOfPublication) && <div class="linkDeets"><p>{author}</p>
+          <p>{yearOfPublication}</p></div>}
           <p class="resourceModalDescription">{description}</p>
           <div class="resourceModalPills" >{tags}</div>
           <div class="resourceModalPills" >{topics}</div>
           <a target="_blank"
-	rel="noopener noreferrer" class="bodyPageLinks" href={link}>Learn more</a>
+	rel="noopener noreferrer" class="bodyPageLinks moonHover" href={link}>Learn more</a>
         </main>
       </Modal>
 <style>
