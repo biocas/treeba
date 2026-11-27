@@ -37,9 +37,10 @@ text-decoration: underline;
 	rel="noopener noreferrer" class="bodyPageLinks moonHover" href={link}>Go to resource</a>
     {(author ||yearOfPublication) && <div class="linkDeets"><p>{author}</p>
           <p>{yearOfPublication}</p></div>}
-          <p class="resourceModalDescription">{description}</p>
-          <div class="resourceModalPills" >{tags}</div>
-          <div class="resourceModalPills" >{topics}</div>
+          {description && <p class="resourceModalDescription">{description}</p>}
+          {tags && <h6>tags:</h6> <div class="resourceModalPills" >{tags}</div>}
+          {topics && <h6>topics:</h6><div class="resourceModalPills" >{topics}</div>}
+          
         </main>
       </Modal>
 <script define:vars={{ id }}>
