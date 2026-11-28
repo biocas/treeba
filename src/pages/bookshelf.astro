@@ -1,8 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 const resources = await getCollection("resources");
-const uniqueTags = [...new Set(resources.map((post: any) => post.data.tags).flat())];
-const uniqueThemes = [...new Set(resources.map((post: any) => post.data.topics).flat())];
+const uniqueTags = [
+  ...new Set(resources.map((post: any) => post.data.tags).flat()),
+];
+const uniqueThemes = [
+  ...new Set(resources.map((post: any) => post.data.topics).flat()),
+];
 const publishedBooks = resources.filter(
   (resource) => !resource.data.draft && resource.data.type == "book",
 );
@@ -40,36 +44,35 @@ export async function getStaticPaths() {
     margin: 0;
     overflow: hidden;
   }
-    .filters summary {
+  .filters summary {
     color: var(--stroke-green);
     font-size: 0.8rem;
-}
-    .filters summary::marker {
- display: none; 
- content: "";
-}
-.buttonPill:hover .listItem {
-  color: var(--background-light-green);
-}
-.filters ul
-{
+  }
+  .filters summary::marker {
+    display: none;
+    content: "";
+  }
+  .buttonPill:hover .listItem {
+    color: var(--background-light-green);
+  }
+  .filters ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-.listItem {
-  font-family: var(--text-font);
-  color: var(--stroke-green);
-}
-.filterForm {
-  position: absolute;
+  }
+  .listItem {
+    font-family: var(--text-font);
+    color: var(--stroke-green);
+  }
+  .filterForm {
+    position: absolute;
     bottom: 8vh;
     height: 28vh;
     overflow-y: scroll;
-}
-.resourceModalTitle:hover summary {
+  }
+  .resourceModalTitle:hover summary {
     color: var(--background-light-green);
-}
+  }
   .containerScrollonScreen {
     background-image: url("/images/resourcesBck.png");
     background-color: var(--primary-orange);
@@ -104,15 +107,15 @@ export async function getStaticPaths() {
     .resources-section {
       padding: 0 2rem;
     }
-     .filters summary {
-    font-size: 0.5rem;
-}
-.filterForm {
-    bottom: 5vh;
-    width: 40vw;
-    height: 28vh;
-    padding: 5px;
-}
+    .filters summary {
+      font-size: 0.5rem;
+    }
+    .filterForm {
+      bottom: 5vh;
+      width: 40vw;
+      height: 28vh;
+      padding: 5px;
+    }
   }
 </style>
 
@@ -123,21 +126,25 @@ export async function getStaticPaths() {
       <h1 class="rockTitle">{pageTitle}</h1>
       <section class="resources-section">
         <h3 class="resourcesCategories wackyTitle">Books</h3>
-        <div class="bookGrid">
-          {publishedBooks.map((resource) => (
-            <Bookcard
-              title={resource.data.title}
-              author={resource.data.author}
-              description={resource.data.description}
-              id={resource.data.id}
-              imageURL={resource.data.imageURL}
-              link={resource.data.link}
-              tags={resource.data.tags}
-              topics={resource.data.topics}
-              yearOfPublication={resource.data.yearOfPublication}
-            />
-          ))}
-        </div>
+        
+          <resource-colection>
+            <div class="bookGrid">
+            {publishedBooks.map((resource) => (
+              <Bookcard
+                title={resource.data.title}
+                author={resource.data.author}
+                description={resource.data.description}
+                id={resource.data.id}
+                imageURL={resource.data.imageURL}
+                link={resource.data.link}
+                tags={resource.data.tags}
+                topics={resource.data.topics}
+                yearOfPublication={resource.data.yearOfPublication}
+              />
+            ))}
+            </div>
+          </resource-colection>
+        
       </section>
       <section class="resources-section">
         <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
@@ -194,48 +201,112 @@ export async function getStaticPaths() {
         </div>
       </section>
       <div class="filters">
-<div id="tagList">
-  <details name="mytagList">
-  <summary class="resourceModalTitle buttonPill">Filter by tag</summary>
-  <form class="resourceModalTitle buttonPill filterForm">
-      <ul>
-        {
-          
-          uniqueTags.map((tag, index) => {
-            return (  
-          <li class="listItem">
-          <input type="checkbox" id={`${index}Tag`} name={tag} value={tag} /><label for={`${index}Tag`}>{tag.toLowerCase()}</label></li>
-            );
-          })
-        }
-      </ul>
-  </form>
-
-</details>
-</div>
-<div id="themeList">
-  <details name="myThemeList">
-  <summary class="resourceModalTitle buttonPill">Filter by theme</summary>
-  <form class="resourceModalTitle buttonPill filterForm">
-      <ul>
-        {
-          
-          uniqueThemes.map((topic, index) => {
-            return (  
-              <li class="listItem"><input type="checkbox" id={`${index}Topic`} name={topic} value={topic} /><label for={`${index}Topic`}>{topic.toLowerCase()}</label>
-          </li>
-          
-            );
-          })
-        }
-      </ul>
-  </form>
-
-</details>
-</div>
-</div>
+        <div>
+          <details name="mytagList">
+            <summary class="resourceModalTitle buttonPill">
+              Filter by tag
+            </summary>
+            <form class="resourceModalTitle buttonPill filterForm" id="tagList">
+              <ul>
+                {uniqueTags.map((tag, index) => {
+                  return (
+                    <li class="listItem">
+                      <input
+                        type="checkbox"
+                        id={`${index}Tag`}
+                        name={tag}
+                        value={tag}
+                      />
+                      <label for={`${index}Tag`}>{tag.toLowerCase()}</label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+        </div>
+        <div>
+          <details name="myThemeList">
+            <summary class="resourceModalTitle buttonPill">
+              Filter by theme
+            </summary>
+            <form
+              class="resourceModalTitle buttonPill filterForm"
+              id="themeList"
+            >
+              <ul>
+                {uniqueThemes.map((topic, index) => {
+                  return (
+                    <li class="listItem">
+                      <input
+                        type="checkbox"
+                        id={`${index}Topic`}
+                        name={topic}
+                        value={topic}
+                      />
+                      <label for={`${index}Topic`}>{topic.toLowerCase()}</label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+        </div>
+      </div>
 
       <Footer />
     </div>
   </div>
 </BaseLayout>
+<script>
+  const tagFilter = document.querySelectorAll("#tagList input");
+  const themeFilter = document.querySelectorAll("#themeList input");
+  let checkedTags = [];
+  let checkedThemes = [];
+
+  for (var i = 0; i < tagFilter.length; i++) {
+    tagFilter[i].addEventListener("change", () => {
+      for (const checkbox of tagFilter) {
+        if (checkbox.checked === true) {
+          var newItem = checkbox.name;
+          checkedTags.indexOf(newItem) === -1
+            ? checkedTags.push(newItem)
+            : checkedTags;
+        } else {
+          var removeItem = checkbox.name;
+          checkedTags.indexOf(removeItem) === 1
+            ? checkedTags.splice(removeItem, 1)
+            : checkedTags;
+        }
+        console.log("all checked tags: " + checkedTags);
+      }
+    });
+  }
+  for (var i = 0; i < themeFilter.length; i++) {
+    themeFilter[i].addEventListener("change", () => {
+      for (const checkbox of themeFilter) {
+        if (checkbox.checked === true) {
+          var newItem = checkbox.name;
+          checkedThemes.indexOf(newItem) === -1
+            ? checkedThemes.push(newItem)
+            : console.log("This item already exists");
+          console.log("all checked themes: " + checkedThemes);
+        }
+      }
+    });
+  }
+
+  //update output books lists etc - Web components with custom elements - https://docs.astro.build/en/guides/client-side-scripts/#web-components-with-custom-elements
+  //I think I need to create a web components to be able to re render the collections
+  //  https://docs.astro.build/en/guides/client-side-scripts/
+
+  class resourceCollection extends HTMLElement {
+    connectedCallback() {
+      // code here - when i add the code here it console.log() doesnt work so I'll try later once I have everything ready
+
+    }
+  }
+
+  // Tell the browser to use our resourceCollection class for <resourceCollection> elements.
+  customElements.define("resource-collection", resourceCollection);
+</script>
