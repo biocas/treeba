@@ -397,6 +397,9 @@ a:hover {
 }
 
 /* Buttons */
+.gifBttn {
+  display: flex;
+}
 .buttonPill {
   text-decoration: none;
   padding: 10px 14px;

@@ -317,7 +317,7 @@
             "Indigenous Knowledge"
         ],
         "tags": [
-            "Animis", "feminism"
+            "Animism", "feminism"
         ],
         "description": "I bought this when I visited NZ, I loved learning about Māori moon wisdom",
         "imageURL": "https://cdn.pagebound.co/books/bebc4097-29c7-4cda-b3f5-26cfc34fb1bf/large.webp"
@@ -400,6 +400,21 @@
             "crochet", "digital tools"
         ],
         "description": "pixel graphics for crochet projects",
+        "imageURL": "public/images/books.svg"
+    }, 
+    {
+        "id": 25,
+        "link": "https://oa.mg/",
+        "title": "Browse academic papers",
+        "type": "link",
+        "draft": false,
+        "topics": [
+            "study"
+        ],
+        "tags": [
+            "digital tools"
+        ],
+        "description": "I want to explore more crochet related studies",
         "imageURL": "public/images/books.svg"
     }
     

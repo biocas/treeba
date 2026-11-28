@@ -134,8 +134,70 @@ export async function getStaticPaths() {
 
          <h6 class="resourceTitle noMargin">What has been tended to lately in these woods?</h6>
       <div class="FeedContentWrapper">
-<BlogPost/>
-<a href="/forest/" class="moonHover"><img src="/images/glitter-07gsflb66h5.gif" alt="forest button"/></a>
+
+<ul class="latestPosts">
+<BlogPost/></ul>
+<details name="themesDetails">
+            <summary>
+              Themes
+            </summary>
+            <form>
+              <ul>
+                {topics.map((topic, index) => {
+                  return (
+                    <li class="listItem"><a href={`/themes/${topic}`}>{topic}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+<details name="tagsDetails">
+            <summary>
+              Tags
+            </summary>
+            <form >
+              <ul>
+                {tags.map((tag, index) => {
+                  return (
+                    <li class="listItem"><a href={`/tags/${tag}`}>{tag}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+          <details name="growthStagesDetails">
+            <summary>
+              Growth Stage
+            </summary>
+            <form >
+              <ul>
+                {growthStages.map((growthStage, index) => {
+                  return (
+                    <li class="listItem"><a href={`/growthStages/${growthStage}`}>{growthStage}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+<details name="formatsDetails">
+            <summary>
+              Format
+            </summary>
+            <form >
+              <ul>
+                {formats.map((format, index) => {
+                  return (
+                    <li class="listItem"><a href={`/formats/${format}`}>{format}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </form>
+          </details>
+<a href="/forest/" class="moonHover gifBttn"><img src="/images/glitter-07gsflb66h5.gif" alt="forest button"/></a>
     </div>
       </section>
     </div>
