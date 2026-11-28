@@ -2,18 +2,18 @@
 import { getCollection } from "astro:content";
 const posts = await getCollection('blog');
 const publishedPosts = posts.filter((post) => !post.data.draft);
-const { slug, cover, title, growthStage, date, description, id } = Astro.props;
-const now = Date.now();
+const sortedPosts = publishedPosts.sort((a, b) => Date.parse(b.data.lastUpdated.toDateString()) - Date.parse(a.data.lastUpdated.toDateString()));
 
-//const essays = selectLatestPublicEntries(await getCollection("essays")).filter(
-	//({ data }) => data.featured === true,
-//);
+const tags = [...new Set(publishedPosts.map((post: any) => post.data.tags).flat())];
+const growthStages = [...new Set(publishedPosts.map((post: any) => post.data.growthStage).flat())];
+const { frontmatter } = Astro.props;
 ---
-
-<ul class="posts">
-    {publishedPosts.map(post => (
-    <li><a href={`/${slug}`}>{post.data.title}</a></li>
+<ul class="latestPosts">
+  {sortedPosts.map(post => (
+    <li>
+      <a href={`/blog/${post.id}/`} class="postTitle">
+        {post.data.title}
+      </a>
+    </li>
   ))}
 </ul>
-
- 
