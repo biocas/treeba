@@ -126,9 +126,9 @@ export async function getStaticPaths() {
       <h1 class="rockTitle">{pageTitle}</h1>
       <section class="resources-section">
         <h3 class="resourcesCategories wackyTitle">Books</h3>
-        
-          <resource-colection>
-            <div class="bookGrid">
+
+        <resource-colection>
+          <div class="bookGrid">
             {publishedBooks.map((resource) => (
               <Bookcard
                 title={resource.data.title}
@@ -142,9 +142,8 @@ export async function getStaticPaths() {
                 yearOfPublication={resource.data.yearOfPublication}
               />
             ))}
-            </div>
-          </resource-colection>
-        
+          </div>
+        </resource-colection>
       </section>
       <section class="resources-section">
         <h3 class="resourcesCategories wackyTitle">Free Learning Resources</h3>
@@ -267,32 +266,37 @@ export async function getStaticPaths() {
   for (var i = 0; i < tagFilter.length; i++) {
     tagFilter[i].addEventListener("change", () => {
       for (const checkbox of tagFilter) {
+        var newItem = checkbox.name;
         if (checkbox.checked === true) {
-          var newItem = checkbox.name;
-          checkedTags.indexOf(newItem) === -1
-            ? checkedTags.push(newItem)
-            : checkedTags;
+          if (checkedTags.indexOf(newItem) === -1) {
+            checkedTags.push(newItem);
+          }
         } else {
-          var removeItem = checkbox.name;
-          checkedTags.indexOf(removeItem) === 1
-            ? checkedTags.splice(removeItem, 1)
-            : checkedTags;
+          const indexedTag = checkedTags.indexOf(newItem);
+          if (indexedTag !== -1) {
+            checkedTags.splice(indexedTag, 1);
+          }
         }
-        console.log("all checked tags: " + checkedTags);
       }
     });
   }
   for (var i = 0; i < themeFilter.length; i++) {
     themeFilter[i].addEventListener("change", () => {
       for (const checkbox of themeFilter) {
-        if (checkbox.checked === true) {
           var newItem = checkbox.name;
-          checkedThemes.indexOf(newItem) === -1
-            ? checkedThemes.push(newItem)
-            : console.log("This item already exists");
-          console.log("all checked themes: " + checkedThemes);
-        }
+        if (checkbox.checked === true) {
+          if (checkedThemes.indexOf(newItem) === -1) {
+            checkedThemes.push(newItem);
+          } 
+        } else {
+            const indexedTag = checkedThemes.indexOf(newItem);
+          if (indexedTag !== -1) {
+            checkedThemes.splice(indexedTag, 1);
+          }
+          }
       }
+
+        console.log("all checked tags: " + checkedThemes);
     });
   }
 
@@ -303,7 +307,6 @@ export async function getStaticPaths() {
   class resourceCollection extends HTMLElement {
     connectedCallback() {
       // code here - when i add the code here it console.log() doesnt work so I'll try later once I have everything ready
-
     }
   }
 
