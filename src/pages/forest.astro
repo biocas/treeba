@@ -1,4 +1,13 @@
 ---
+
+import { getCollection } from "astro:content";
+const posts = await getCollection('blog');
+const publishedPosts = posts.filter((post) => !post.data.draft);
+const tags = [...new Set(publishedPosts.map((post: any) => post.data.tags).flat())];
+const growthStages = [...new Set(publishedPosts.map((post: any) => post.data.growthStage).flat())];
+const topics = [...new Set(publishedPosts.map((post: any) => post.data.topics).flat())];
+const formats = [...new Set(publishedPosts.map((post: any) => post.data.format).flat())];
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navigation from "../components/Navigation.astro";
 const pageTitle = "The Digital Forest";
@@ -25,6 +34,30 @@ body {
   <Header/>
   <Navigation/>
 <BlogPost/>
+<h6>Themes</h6>
+<ul class="postsGrowthStages">
+    <li>
+    {topics.map((topic) => <a href={`/themes/${topic}`}>{topic}</a>)}
+    </li>
+</ul>
+ <h6>Tags</h6>
+<ul class="postsTags">
+    <li>
+    {tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a>)}
+    </li>
+</ul>
 
+<h6>Growth Stage</h6>
+<ul class="postsGrowthStages">
+    <li>
+    {growthStages.map((growthStage) => <a href={`/tags/${growthStage}`}>{growthStage}</a>)}
+    </li>
+</ul>
+<h6>Format</h6>
+<ul class="postsGrowthStages">
+    <li>
+    {formats.map((format) => <a href={`/tags/${format}`}>{format}</a>)}
+    </li>
+</ul>
 </BaseLayout>
 

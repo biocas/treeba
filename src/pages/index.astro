@@ -13,7 +13,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 const pageTitle = "Treeba";
 import HomepageCard from "../layouts/homepageCard.astro";
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 const currentLocale = Astro.currentLocale; // Get the current locale (e.g., 'en', 'es', 'fr')
 export async function getStaticPaths() {
@@ -67,6 +66,10 @@ export async function getStaticPaths() {
     flex-grow: 1;
     overflow-y: scroll;
   }
+  .resourceTitle {
+    font-size: 3rem;
+    padding: 0 3rem;
+  }
   @media only screen and (min-width: 768px) {
    .cardWrapper {
    padding: 0 2vw;
@@ -107,16 +110,16 @@ export async function getStaticPaths() {
     <section class="homeContent"> 
       <div class="cardWrapper">
 <HomepageCard image="/images/favicon.svg" href="/lore/" name="Lore" />
+        <HomepageCard
+          image="/images/bee.svg"
+          href="/bookshelf/"
+          name="Resources"
+        />
         <HomepageCard image="/images/forest.svg" href="/forest/" name="Forest" />
         <HomepageCard
           image="/images/flower.svg"
           href="/margarida/"
           name="About"
-        />
-        <HomepageCard
-          image="/images/bee.svg"
-          href="/bookshelf/"
-          name="Resources"
         />
         
         <HomepageCard image="/images/berry.svg" href="/forage/" name="Forage" />
@@ -128,35 +131,11 @@ export async function getStaticPaths() {
        Hello world! I am Margarida Salvado, from West Iberia. Welcome to my digital woodlands, where I gather findings from inner and outer territories, finding paths for expression, spiralling in tender connections and the hopeful flow of gifts, germinating, budding, branching off or decaying, eventually composting.
       </h5>
       <section class="wrapBase contentBox">
-      <Navigation/>
-      <div class="FeedContentWrapper">
-         <h6>What has been tended to lately in these woods?</h6>
-<BlogPost/>
-<h6>Themes</h6>
-<ul class="postsGrowthStages">
-    <li>
-    {topics.map((topic) => <a href={`/themes/${topic}`}>{topic}</a>)}
-    </li>
-</ul>
- <h6>Tags</h6>
-<ul class="postsTags">
-    <li>
-    {tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a>)}
-    </li>
-</ul>
 
-<h6>Growth Stage</h6>
-<ul class="postsGrowthStages">
-    <li>
-    {growthStages.map((growthStage) => <a href={`/tags/${growthStage}`}>{growthStage}</a>)}
-    </li>
-</ul>
-<h6>Format</h6>
-<ul class="postsGrowthStages">
-    <li>
-    {formats.map((format) => <a href={`/tags/${format}`}>{format}</a>)}
-    </li>
-</ul>
+         <h6 class="resourceTitle noMargin">What has been tended to lately in these woods?</h6>
+      <div class="FeedContentWrapper">
+<BlogPost/>
+<a href="/forest/" class="moonHover">Explore the whole Forest<img src="/images/glitter-0c8ss6izxwq.gif" alt="forest button"/></a>
       </div>
       </section>
     </div>
